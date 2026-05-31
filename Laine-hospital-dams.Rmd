@@ -99,16 +99,16 @@ Same thing as above
 googledrive::drive_auth()
 drive_download(
   as_id("1GgVgzo7DSv1pn8BjCuhygmILEjGT04Ja"),  # from the share link
-  path = "../data/AHRF2024.csv",
+  path = "./data/AHRF2024.csv",
   overwrite = TRUE
 )
-AHRF2024 <- read_csv("../data/AHRF2024.csv")|> 
+AHRF2024 <- read_csv("./data/AHRF2024.csv")|> 
   clean_names()
 
 AHRF2024_MI <- AHRF2024 |> 
   filter(st_name_abbrev == "MI")
 
-write_csv(AHRF2024_MI, "../data/AHRF2024_MI.csv" )
+write_csv(AHRF2024_MI, "./data/AHRF2024_MI.csv" )
 
 ```
 
