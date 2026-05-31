@@ -8,6 +8,7 @@ For example, a student working at the Baltimore Sun would profile Under Armour I
 
 Investigate Your Community will equip students to:
 
+YES IT WORKS!!
 Produce detailed story proposals
 * Use data to find stories 
 * Create data visualizations 
