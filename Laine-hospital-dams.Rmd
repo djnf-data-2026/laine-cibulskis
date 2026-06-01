@@ -1,12 +1,42 @@
 5/31: The Idea
 
-Last week, Blue Cross Blue Shield of Michigan finally reached a settlement with the University of Michigan Health (Michigan Medicine). The contract renegotiation between the two systems, which allows BCBS Michigan patients to receive care at Michigan Medicine, had nearly failed, threatening 300,000 residents with a loss of care from one of the state's most reputable health systems. As in many industries, consolidation has taken over healthcare. A 2022 Michigan health care merger created a combined 22-hospital system, Corewell Health, with claims of improving patient care. In 2023, Michigan Medicine acquired another health system as well. Still, insurance companies blame hospitals for rising costs, and insurance companies blame hospitals. This April, Michigan Medicine sang praise for the results of the 2023 merger. But a May KFF study showed hospital prices are rising much faster for private insurance than Medicare since 2019. Michigan Medicine claims it should be rewarded with better contracts thanks to its quality of care and focus on specialty medicine. But how has consolidation really worked out for patients, from their health to their pocketbooks? Especially as Detroit's hospital buildings get shinier (see Henry Ford Hospital's recent $2.2 billion expansion). Enter: Health Resources and Services Administration data. The HRSA's Areah Health Resource files provide a wealth of information on hospitals by county, state and for the entire nation. An initial look reveals that in just one (fiscal) year, hospital expenditures per non-general/long term hospital in Washtenaw County (where Ann Arbor is/Michigan Health is based) grew nearly 30 million to reach over $1 billion per hospital as of the most recent data available from 2023 (we have a data lag here according to the documentation). Why is that so much larger than Illinois' largest county for the same measure, at about $600 million? How quickly have these expenditures risen, county-by-county? Is Michigan rising faster than other states, and how do increases show in areas with newly-merged hospitals? Are the mergers good for expenditures? And patients, such as with data on care quality also in the data?
+Last week, Blue Cross Blue Shield of Michigan finally reached a settlement with
+the University of Michigan Health (Michigan Medicine). The contract
+renegotiation between the two systems, which allows BCBS Michigan patients to
+receive care at Michigan Medicine, had nearly failed, threatening 300,000
+residents with a loss of care from one of the state's most reputable health
+systems. As in many industries, consolidation has taken over healthcare. A 2022
+Michigan health care merger created a combined 22-hospital system, Corewell
+Health, with claims of improving patient care. In 2023, Michigan Medicine
+acquired another health system as well. Still, insurance companies blame
+hospitals for rising costs, and insurance companies blame hospitals. This April,
+Michigan Medicine sang praise for the results of the 2023 merger. But a May KFF
+study showed hospital prices are rising much faster for private insurance than
+Medicare since 2019. Michigan Medicine claims it should be rewarded with better
+contracts thanks to its quality of care and focus on specialty medicine. But how
+has consolidation really worked out for patients, from their health to their
+pocketbooks? Especially as Detroit's hospital buildings get shinier (see Henry
+Ford Hospital's recent \$2.2 billion expansion). Enter: Health Resources and
+Services Administration data. The HRSA's Area Health Resource files provide a
+wealth of information on hospitals by county, state and for the entire nation.
+An initial look reveals that in just one (fiscal) year, hospital expenditures
+per non-general/long term hospital in Washtenaw County (where Ann Arbor
+is/Michigan Health is based) grew nearly 30 million to reach over \$1 billion
+per hospital as of the most recent data available from 2023 (we have a data lag
+here according to the documentation). Why is that so much larger than Illinois'
+largest county for the same measure, at about \$600 million? How quickly have
+these expenditures risen, county-by-county? Is Michigan rising faster than other
+states, and how do increases show in areas with newly-merged hospitals? Are the
+mergers good for expenditures? And patients, such as with data on care quality
+also in the data?
 
 ---
 title: "Laine-Hospital Data"
 author: "Laine Cibulskis"
 date: "2026-05-31"
 output: html_document
+editor_options: 
+  markdown: 
 ---
 
 For the Detroit News:
@@ -35,7 +65,9 @@ library(dplyr)
 ```
 
 # Loading data AHRFSN data for 2024 and 2025
+
 **need documentation files**
+
 ```{r}
 ahrfsn2025 <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/ahrfsn2025.csv")
 
@@ -44,7 +76,6 @@ ahrfsn2024 <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-c
 glimpse(ahrfsn2025)
 
 ```
-
 
 # Loading AHRF 2025 and 2024 files for Michigan only
 
@@ -56,23 +87,15 @@ AHRF2025_MI <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-
 AHRF2024_MI <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/AHRF2024_MI.csv")
 ```
 
-
-
-Load healthcare market saturation csv 
+Load healthcare market saturation csv
 
 Some of the HSRA hospital data is saved as ACS files, unfortunately. I have the documentation but I'm going to have to edit it so I can easily add the column names as it is not in a nicely joinable format. I might need some help with that during the training
 
 I tried for quite some time to save each HSRA file properly through Visual Studio Code and R, but it's going to take longer than I thought given the scale and the documentation issues. Perhaps I'd need to heavily cut the HRSA data before looking into it because having every single county in the U.S. for all of those rows is jamming it up quite a bit.
 
-
-#-------------------------------------------------------
-# 
-# Data Wrangling Notes
-#
-#-------------------------------------------------------
+#------------------------------------------------------- \# \# Data Wrangling Notes \# #-------------------------------------------------------
 
 You don't need to run this code below -- I kept it to show you how I loaded the AHRF2025 file from a Google Drive link and then created the filtered Michigan files
-
 
 ```{r}
 googledrive::drive_auth() #you may need to authorize your browser
@@ -95,7 +118,9 @@ AHRF2025_MI <- AHRF2025 |>
 ```
 
 # Load AHRF2024 file
+
 Same thing as above
+
 ```{r}
 #https://drive.google.com/file/d/1GgVgzo7DSv1pn8BjCuhygmILEjGT04Ja/view?usp=sharing
 googledrive::drive_auth()
@@ -115,6 +140,7 @@ write_csv(AHRF2024_MI, "./data/AHRF2024_MI.csv" )
 ```
 
 # Create Illinois files for comparison, 2025
+
 ```{r}
 library(googledrive)
 googledrive::drive_auth() #you may need to authorize your browser
@@ -137,6 +163,7 @@ write_csv(AHRF2025_IL, "C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulski
 ```
 
 # Create Illinois files for comparison, 2024
+
 ```{r}
 #https://drive.google.com/file/d/1GgVgzo7DSv1pn8BjCuhygmILEjGT04Ja/view?usp=sharing
 googledrive::drive_auth()
@@ -155,26 +182,26 @@ write_csv(AHRF2024_MI, "C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulski
 
 ```
 
-What are
-.ASC & .ASCII files?
-An ASC file is a variant of the ASCII format, which is an encryption file used by Pretty Good Privacy (PGP) for secure online communication. It includes messages and digital signatures, as well as plain text and binary information. It also includes a verification key. It’s mainly used to post online security notices and to transmit messages by text and email.
+What are .ASC & .ASCII files? An ASC file is a variant of the ASCII format, which is an encryption file used by Pretty Good Privacy (PGP) for secure online communication. It includes messages and digital signatures, as well as plain text and binary information. It also includes a verification key. It’s mainly used to post online security notices and to transmit messages by text and email.
 
 # 5/31: Inital Analysis for Memo
+
 # Plan: look at hospital expenditures by county and calculate expenditures per capita to compare
 
 # Starting to pull documentation for variables:
+
 ```{r}
 AHRF2024documentation <- read_excel("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/documentation/AHRF 2023-2024 User Tech/AHRF 2023-2024 User Tech/AHRF 2023-2024 Technical DocumentationCSV_Feb2025.xlsx")
 # Expenditures
 AHRF2024documentation[c(3310, 3311, 3312, 3313, 3080, 3081, 3082, 3083, 3084, 3316, 3317, 3318, 3319, 3320, 3321, 3367, 3368, 2379), ]
 
 ```
+
 # Initial look at data for 5/31
 
-#2024:
-# ST Non-Gen + Long Term Hosp Expenditures by county
+#2024: \# ST Non-Gen + Long Term Hosp Expenditures by county
 
-``` {r}
+```{r}
 AHRF2024_MI |>
   select(cnty_name,stnglth_reprtd_fac_exp_thou_22) |>
   group_by(cnty_name) |>
@@ -183,7 +210,8 @@ AHRF2024_MI |>
 ```
 
 ## Per Capita
-``` {r}
+
+```{r}
 AHRF2024_MI |>
   select(cnty_name,stnglth_reprtd_fac_exp_thou_22, popn_est_22) |>
   group_by(cnty_name) |>
@@ -191,8 +219,10 @@ AHRF2024_MI |>
   arrange(desc(pc_exp)
 )
 ```
+
 ## Per hospital in the county
-``` {r}
+
+```{r}
 AHRF2024_MI |>
   select(cnty_name,stnglth_reprtd_fac_exp_thou_22, hosp_22) |>
   group_by(cnty_name) |>
@@ -200,9 +230,10 @@ AHRF2024_MI |>
   arrange(desc(ph_exp)
 )
 ```
+
 # Short Term General Hospitals
 
-``` {r}
+```{r}
 AHRF2024_MI |>
   select(cnty_name,stgh_reprtd_fac_exp_thou_22) |>
   group_by(cnty_name) |>
@@ -210,8 +241,9 @@ AHRF2024_MI |>
 )
 ```
 
-## Per Capita
-``` {r}
+## Per capita
+
+```{r}
 AHRF2024_MI |>
   select(cnty_name,stgh_reprtd_fac_exp_thou_22, popn_est_22) |>
   group_by(cnty_name) |>
@@ -219,8 +251,10 @@ AHRF2024_MI |>
   arrange(desc(pc_exp)
 )
 ```
+
 ## Per hospital in the county
-``` {r}
+
+```{r}
 AHRF2024_MI |>
   select(cnty_name,stgh_reprtd_fac_exp_thou_22, hosp_22) |>
   group_by(cnty_name) |>
@@ -229,9 +263,9 @@ AHRF2024_MI |>
 )
 ```
 
-#2025:
-# ST Non-Gen + Long Term Hosp Expenditures by county
-``` {r}
+#2025: # ST Non-Gen + Long Term Hosp Expenditures by county
+
+```{r}
 AHRF2025_MI |>
   select(cnty_name,stnglth_reprtd_fac_exp_thou_22) |>
   group_by(cnty_name) |>
@@ -240,7 +274,8 @@ AHRF2025_MI |>
 ```
 
 ## Per capita
-``` {r}
+
+```{r}
 AHRF2025_MI |>
   select(cnty_name,stnglth_reprtd_fac_exp_thou_23, popn_est_23) |>
   group_by(cnty_name) |>
@@ -250,7 +285,8 @@ AHRF2025_MI |>
 ```
 
 # Per hosptial in the county
-``` {r}
+
+```{r}
 AHRF2025_MI |>
   select(cnty_name,stnglth_reprtd_fac_exp_thou_23, hosp_23) |>
   group_by(cnty_name) |>
@@ -260,7 +296,8 @@ AHRF2025_MI |>
 ```
 
 # Short Term General Hospitals
-``` {r}
+
+```{r}
 AHRF2025_MI |>
   select(cnty_name,stgh_reprtd_fac_exp_thou_23) |>
   group_by(cnty_name) |>
@@ -268,8 +305,9 @@ AHRF2025_MI |>
 )
 ```
 
-## Per Capita
-``` {r}
+## Per capita
+
+```{r}
 AHRF2025_MI |>
   select(cnty_name,stgh_reprtd_fac_exp_thou_23, popn_est_23) |>
   group_by(cnty_name) |>
@@ -279,7 +317,8 @@ AHRF2025_MI |>
 ```
 
 ## Per hospital in the county
-``` {r}
+
+```{r}
 AHRF2025_MI |>
   select(cnty_name,stgh_reprtd_fac_exp_thou_23, hosp_23) |>
   group_by(cnty_name) |>
@@ -289,8 +328,10 @@ AHRF2025_MI |>
 ```
 
 # Quick IL comparison
+
 ## Per hospital in the county
-``` {r}
+
+```{r}
 AHRF2025_IL |>
   select(cnty_name,stgh_reprtd_fac_exp_thou_23, hosp_23) |>
   group_by(cnty_name) |>
@@ -299,9 +340,80 @@ AHRF2025_IL |>
 )
 ```
 
-#Washtenaw math
+# Washtenaw math
 
-``` {r}
+```{r}
 1014027286 - 984818286
-
 ```
+
+#6/1 data work
+
+# Total short term general hospital expenditures by state (state nation dataset does not have any expenditure data)
+
+```{r}
+AHRF2025 |>
+  select(st_name_abbrev, stgh_reprtd_fac_exp_thou_23) |>
+  group_by(st_name_abbrev) |>
+  summarise(stgh_23_exp_by_state = (sum((stgh_reprtd_fac_exp_thou_23 * 1000)))) |>
+  arrange(desc(stgh_23_exp_by_state)
+  )
+```
+
+# Save the by state expenditures to use in other operations
+```{r}
+stgh_23_exp_by_state <- 
+  AHRF2025 |>
+  select(st_name_abbrev, stgh_reprtd_fac_exp_thou_23) |>
+  group_by(st_name_abbrev) |>
+  summarise(stgh_23_by_state = (sum((stgh_reprtd_fac_exp_thou_23 * 1000)))
+  )
+```
+
+# View the short term general hosptials by state
+
+```{r}
+AHRF2025 |>
+  select(st_name_abbrev, stgh_23) |>
+  group_by(st_name_abbrev) |>
+  summarise(stgh_23_by_state = (sum(stgh_23))) |>
+  arrange(desc(stgh_23_by_state))
+```
+
+
+# Save the short term general hospitals by state to use in other operations
+
+```{r}
+stgh_23_by_state <- 
+  AHRF2025 |>
+  select(st_name_abbrev, stgh_23) |>
+  group_by(st_name_abbrev) |>
+  summarise(stgh_23_by_state = (sum(stgh_23))) |>
+  arrange(desc(stgh_23_by_state)
+  )
+```
+
+#Joining the two new dataframes
+
+```{r}
+stgh_23 <-
+merge(x = stgh_23_exp_by_state, y = stgh_23_by_state, by = "st_name_abbrev", all = TRUE)
+```
+
+# Total short term general hospital expenditures by state, per hospital in the state
+
+```{r}
+stgh_23 |>
+  mutate(stgh_23_exp_by_state_ph = (stgh_23_by_state.x / stgh_23_by_state.y)) |>
+  arrange(desc(stgh_23_exp_by_state_ph))
+```
+
+```{r}
+stgh_23_exp_by_state_ph <-
+  AHRF2025 |>
+  select(stgh_23_exp_by_state, stgh_23_by_state) |
+  summarise(stg_23_exp_by_state_ph = (stgh_23_exp_by_state / stgh_23_by_state)) |>
+  arrange(desc(stgh_exp_by_state_ph)
+  )
+```
+
+stgh_exp_by_state / 
