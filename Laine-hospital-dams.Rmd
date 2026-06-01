@@ -1,6 +1,10 @@
+5/31: The Idea
+
+Last week, Blue Cross Blue Shield of Michigan finally reached a settlement with the University of Michigan Health (Michigan Medicine). The contract renegotiation between the two systems, which allows BCBS Michigan patients to receive care at Michigan Medicine, had nearly failed, threatening 300,000 residents with a loss of care from one of the state's most reputable health systems. As in many industries, consolidation has taken over healthcare. A 2022 Michigan health care merger created a combined 22-hospital system, Corewell Health, with claims of improving patient care. In 2023, Michigan Medicine acquired another health system as well. Still, insurance companies blame hospitals for rising costs, and insurance companies blame hospitals. This April, Michigan Medicine sang praise for the results of the 2023 merger. But a May KFF study showed hospital prices are rising much faster for private insurance than Medicare since 2019. Michigan Medicine claims it should be rewarded with better contracts thanks to its quality of care and focus on specialty medicine. But how has consolidation really worked out for patients, from their health to their pocketbooks? Especially as Detroit's hospital buildings get shinier (see Henry Ford Hospital's recent $2.2 billion expansion). Enter: Health Resources and Services Administration data. The HRSA's Areah Health Resource files provide a wealth of information on hospitals by county, state and for the entire nation. An initial look reveals that in just one (fiscal) year, hospital expenditures per non-general/long term hospital in Washtenaw County (where Ann Arbor is/Michigan Health is based) grew nearly 30 million to reach over $1 billion per hospital as of the most recent data available from 2023 (we have a data lag here according to the documentation). Why is that so much larger than Illinois' largest county for the same measure, at about $600 million? How quickly have these expenditures risen, county-by-county? Is Michigan rising faster than other states, and how do increases show in areas with newly-merged hospitals? Are the mergers good for expenditures? And patients, such as with data on care quality also in the data?
+
 ---
 title: "Laine-Hospital Data"
-author: "Wells"
+author: "Laine Cibulskis"
 date: "2026-05-31"
 output: html_document
 ---
@@ -9,27 +13,25 @@ For the Detroit News:
 
 Examine hospital expenditures over time by county, the effects of consolidation
 
-**We really need documentation files for this data**
-
 # Load packages - do this once
 
 ```{r}
-# install.packages("tidyverse")
-# install.packages("janitor")
-# install.packages("rio")
-# install.packages("googledrive")
-
+#install.packages("tidyverse")
+#install.packages("janitor")
+#install.packages("rio")
+#install.packages("googledrive")
+#install.packages("readxl")
 ```
 
 # Load libraries, do this every time
 
-```{r}
+```{r echo=FALSE}
 library(tidyverse)
 library(janitor)
 library(rio)
 library(googledrive)
-
-
+library(readxl)
+library(dplyr)
 ```
 
 # Loading data AHRFSN data for 2024 and 2025
@@ -112,6 +114,194 @@ write_csv(AHRF2024_MI, "./data/AHRF2024_MI.csv" )
 
 ```
 
+# Create Illinois files for comparison, 2025
+```{r}
+library(googledrive)
+googledrive::drive_auth() #you may need to authorize your browser
 
-What are .ASC & .ASCII files?
+# Here's the file: https://drive.google.com/file/d/1K8DzTY5yTNI0EeIUpadeCrE552tcxRsj/view?usp=sharing
+
+drive_download(
+  as_id("1K8DzTY5yTNI0EeIUpadeCrE552tcxRsj"),  # copied from the file link
+  path = "C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025.csv", #a random data path - you can select any folder you want
+  overwrite = TRUE
+)
+AHRF2025 <- read_csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025.csv")|> 
+  clean_names()
+
+AHRF2025_IL <- AHRF2025 |> 
+  filter(st_name_abbrev == "IL")
+
+write_csv(AHRF2025_IL, "C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025_IL.csv" )
+
+```
+
+# Create Illinois files for comparison, 2024
+```{r}
+#https://drive.google.com/file/d/1GgVgzo7DSv1pn8BjCuhygmILEjGT04Ja/view?usp=sharing
+googledrive::drive_auth()
+drive_download(
+  as_id("1GgVgzo7DSv1pn8BjCuhygmILEjGT04Ja"),  # from the share link
+  path = "C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2024.csv",
+  overwrite = TRUE
+)
+AHRF2024 <- read_csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2024.csv")|> 
+  clean_names()
+
+AHRF2024_MI <- AHRF2024 |> 
+  filter(st_name_abbrev == "IL")
+
+write_csv(AHRF2024_MI, "C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2024_IL.csv" )
+
+```
+
+What are
+.ASC & .ASCII files?
 An ASC file is a variant of the ASCII format, which is an encryption file used by Pretty Good Privacy (PGP) for secure online communication. It includes messages and digital signatures, as well as plain text and binary information. It also includes a verification key. It’s mainly used to post online security notices and to transmit messages by text and email.
+
+# 5/31: Inital Analysis for Memo
+# Plan: look at hospital expenditures by county and calculate expenditures per capita to compare
+
+# Starting to pull documentation for variables:
+```{r}
+AHRF2024documentation <- read_excel("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/documentation/AHRF 2023-2024 User Tech/AHRF 2023-2024 User Tech/AHRF 2023-2024 Technical DocumentationCSV_Feb2025.xlsx")
+# Expenditures
+AHRF2024documentation[c(3310, 3311, 3312, 3313, 3080, 3081, 3082, 3083, 3084, 3316, 3317, 3318, 3319, 3320, 3321, 3367, 3368, 2379), ]
+
+```
+# Initial look at data for 5/31
+
+#2024:
+# ST Non-Gen + Long Term Hosp Expenditures by county
+
+``` {r}
+AHRF2024_MI |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_22) |>
+  group_by(cnty_name) |>
+  arrange(desc(stnglth_reprtd_fac_exp_thou_22)
+)
+```
+
+## Per Capita
+``` {r}
+AHRF2024_MI |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_22, popn_est_22) |>
+  group_by(cnty_name) |>
+  summarise(pc_exp = ((stnglth_reprtd_fac_exp_thou_22 * 1000)/ popn_est_22)) |>
+  arrange(desc(pc_exp)
+)
+```
+## Per hospital in the county
+``` {r}
+AHRF2024_MI |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_22, hosp_22) |>
+  group_by(cnty_name) |>
+  summarise(ph_exp = ((stnglth_reprtd_fac_exp_thou_22 * 1000) / hosp_22)) |>
+  arrange(desc(ph_exp)
+)
+```
+# Short Term General Hospitals
+
+``` {r}
+AHRF2024_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_22) |>
+  group_by(cnty_name) |>
+  arrange(desc(stgh_reprtd_fac_exp_thou_22)
+)
+```
+
+## Per Capita
+``` {r}
+AHRF2024_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_22, popn_est_22) |>
+  group_by(cnty_name) |>
+  summarise(pc_exp = ((stgh_reprtd_fac_exp_thou_22 * 1000) / popn_est_22)) |>
+  arrange(desc(pc_exp)
+)
+```
+## Per hospital in the county
+``` {r}
+AHRF2024_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_22, hosp_22) |>
+  group_by(cnty_name) |>
+  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_22 * 1000) / hosp_22)) |>
+  arrange(desc(ph_exp)
+)
+```
+
+#2025:
+# ST Non-Gen + Long Term Hosp Expenditures by county
+``` {r}
+AHRF2025_MI |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_22) |>
+  group_by(cnty_name) |>
+  arrange(desc(stnglth_reprtd_fac_exp_thou_22)
+)
+```
+
+## Per capita
+``` {r}
+AHRF2025_MI |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_23, popn_est_23) |>
+  group_by(cnty_name) |>
+  summarise(pc_exp = ((stnglth_reprtd_fac_exp_thou_23 * 1000)/ popn_est_23)) |>
+  arrange(desc(pc_exp)
+)
+```
+
+# Per hosptial in the county
+``` {r}
+AHRF2025_MI |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_23, hosp_23) |>
+  group_by(cnty_name) |>
+  summarise(ph_exp = ((stnglth_reprtd_fac_exp_thou_23 * 1000) / hosp_23)) |>
+  arrange(desc(ph_exp)
+)
+```
+
+# Short Term General Hospitals
+``` {r}
+AHRF2025_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_23) |>
+  group_by(cnty_name) |>
+  arrange(desc(stgh_reprtd_fac_exp_thou_23)
+)
+```
+
+## Per Capita
+``` {r}
+AHRF2025_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_23, popn_est_23) |>
+  group_by(cnty_name) |>
+  summarise(pc_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / popn_est_23)) |>
+  arrange(desc(pc_exp)
+)
+```
+
+## Per hospital in the county
+``` {r}
+AHRF2025_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_23, hosp_23) |>
+  group_by(cnty_name) |>
+  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / hosp_23)) |>
+  arrange(desc(ph_exp)
+)
+```
+
+# Quick IL comparison
+## Per hospital in the county
+``` {r}
+AHRF2025_IL |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_23, hosp_23) |>
+  group_by(cnty_name) |>
+  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / hosp_23)) |>
+  arrange(desc(ph_exp)
+)
+```
+
+#Washtenaw math
+
+``` {r}
+1014027286 - 984818286
+
+```
