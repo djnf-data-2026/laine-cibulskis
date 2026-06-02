@@ -9,7 +9,7 @@ format:
 # 6/3: The Memo, Second Draft
 
 Plan for second memo:
-- Narrow pitch and create two angles: one focused on costs/money, and another focused on health outcomes
+- Narrow pitch: focus on connecting hospital finances to patients
 - Contextualize every table with context on why it matters:
 - what the data mean
 - why the frames were chosen (i.e. why Illinois)
@@ -317,11 +317,11 @@ AHRF2024_MI |>
 ### Per hospital in the county
 
 ```{r}
-AHRF2024_MI |>
-  select(cnty_name,stnglth_reprtd_fac_exp_thou_22, hosp_22) |>
+stnglth_exp_ph_22_MIc <- AHRF2024_MI |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_22, stnglth_rptng_exp_22) |>
   group_by(cnty_name) |>
-  summarise(ph_exp = ((stnglth_reprtd_fac_exp_thou_22 * 1000) / hosp_22)) |>
-  arrange(desc(ph_exp)
+  summarise(stnglth_exp_ph_22_MIc = ((stnglth_reprtd_fac_exp_thou_22 * 1000) / stnglth_rptng_exp_22)) |>
+  arrange(desc(stnglth_exp_ph_22_MIc)
 )
 ```
 
@@ -350,11 +350,13 @@ AHRF2024_MI |>
 ### Per hospital in the county
 
 ```{r}
-AHRF2024_MI |>
-  select(cnty_name,stgh_reprtd_fac_exp_thou_22, hosp_22) |>
+stgh_exp_ph_22_MIc <- AHRF2024_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_22, stgh_rptng_exp_22
+) |>
   group_by(cnty_name) |>
-  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_22 * 1000) / hosp_22)) |>
-  arrange(desc(ph_exp)
+  summarise(stgh_exp_ph_22_MIc = ((stgh_reprtd_fac_exp_thou_22 * 1000) / stgh_rptng_exp_22
+)) |>
+  arrange(desc(stgh_exp_ph_22_MIc)
 )
 ```
 
@@ -383,9 +385,9 @@ AHRF2025_MI |>
 
 ```{r}
 AHRF2025_MI |>
-  select(cnty_name,stnglth_reprtd_fac_exp_thou_23, hosp_23) |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_23, stgh_rptng_exp_23) |>
   group_by(cnty_name) |>
-  summarise(ph_exp = ((stnglth_reprtd_fac_exp_thou_23 * 1000) / hosp_23)) |>
+  summarise(ph_exp = ((stnglth_reprtd_fac_exp_thou_23 * 1000) / stgh_rptng_exp_23)) |>
   arrange(desc(ph_exp)
 )
 ```
@@ -415,9 +417,9 @@ AHRF2025_MI |>
 
 ```{r}
 AHRF2025_MI |>
-  select(cnty_name,stgh_reprtd_fac_exp_thou_23, hosp_23) |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_23, stgh_rptng_exp_23) |>
   group_by(cnty_name) |>
-  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / hosp_23)) |>
+  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / stgh_rptng_exp_23)) |>
   arrange(desc(ph_exp)
 )
 ```
@@ -428,9 +430,9 @@ AHRF2025_MI |>
 
 ```{r}
 AHRF2025_IL |>
-  select(cnty_name,stgh_reprtd_fac_exp_thou_23, hosp_23) |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_23, stgh_rptng_exp_23) |>
   group_by(cnty_name) |>
-  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / hosp_23)) |>
+  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / stgh_rptng_exp_23)) |>
   arrange(desc(ph_exp)
 )
 ```
@@ -441,7 +443,7 @@ AHRF2025_IL |>
 1014027286 - 984818286
 ```
 
-# 6/1 data work
+# 6/1 data work: state and nation level
 
 ## 2025 AHRF: short term general hospital analysis continued
 
@@ -470,9 +472,9 @@ stgh_23_exp_by_state <-
 
 ```{r}
 AHRF2025 |>
-  select(st_name_abbrev, stgh_23) |>
+  select(st_name_abbrev, stgh_rptng_exp_23) |>
   group_by(st_name_abbrev) |>
-  summarise(stgh_23_by_state = (sum(stgh_23))) |>
+  summarise(stgh_23_by_state = (sum(stgh_rptng_exp_23))) |>
   arrange(desc(stgh_23_by_state))
 ```
 
@@ -481,9 +483,9 @@ AHRF2025 |>
 ```{r}
 stgh_23_by_state <- 
   AHRF2025 |>
-  select(st_name_abbrev, stgh_23) |>
+  select(st_name_abbrev, stgh_rptng_exp_23) |>
   group_by(st_name_abbrev) |>
-  summarise(stgh_23_by_state = (sum(stgh_23))) |>
+  summarise(stgh_23_by_state = (sum(stgh_rptng_exp_23))) |>
   arrange(desc(stgh_23_by_state)
   )
 ```
@@ -495,12 +497,13 @@ stgh_23 <-
 merge(x = stgh_23_exp_by_state, y = stgh_23_by_state, by = "st_name_abbrev", all = TRUE)
 ```
 
-### Total short term general hospital expenditures by state, per hospital in the state
+### Total short term general hospital expenditures by state, per hospital in the state (don't need to run again because data frame was saved with new headers)
 
 ```{r}
-stgh_23 |>
-  mutate(stgh_23_exp_by_state_ph = (stgh_23_by_state.x / stgh_23_by_state.y)) |>
-  arrange(desc(stgh_23_exp_by_state_ph))
+#stgh_23 |>
+  #mutate(stgh_23_exp_by_state_ph = (stgh_23_by_state.x / stgh_23_by_state.y)) |>
+  #arrange(desc(stgh_23_exp_by_state_ph))
+  #)
 ```
 
 ### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
@@ -544,3 +547,190 @@ summary(stgh_23$stgh_23_exp_by_state_ph)
 ```{r}
 342074250 - 291256410
 ```
+
+# 6/2 data work
+
+## Join Michigan data by county for map
+
+```{r}
+full_join(
+  x,
+  y,
+  by = NULL,
+  copy = FALSE,
+  suffix = c(".x", ".y"),
+  ...,
+  keep = NULL,
+  na_matches = c("na", "never"),
+  multiple = "all",
+  relationship = NULL
+)
+```
+
+
+## Short term non general and long term hospitals
+
+## 2025 AHRF data: short term general hospitals
+
+```{r}
+AHRF2025_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_23) |>
+  group_by(cnty_name) |>
+  arrange(desc(stgh_reprtd_fac_exp_thou_23)
+)
+```
+
+## Per capita
+
+```{r}
+AHRF2025_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_23, popn_est_23) |>
+  group_by(cnty_name) |>
+  summarise(pc_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / popn_est_23)) |>
+  arrange(desc(pc_exp)
+)
+```
+
+## Per hospital in the county
+
+```{r}
+AHRF2025_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_23, stgh_rptng_exp_23) |>
+  group_by(cnty_name) |>
+  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / stgh_rptng_exp_23)) |>
+  arrange(desc(ph_exp)
+)
+```
+
+## Quick IL comparison
+
+### Per hospital in each county
+
+```{r}
+AHRF2025_IL |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_23, stgh_rptng_exp_23) |>
+  group_by(cnty_name) |>
+  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / stgh_rptng_exp_23)) |>
+  arrange(desc(ph_exp)
+)
+```
+
+### Washtenaw expenditure change math
+
+```{r}
+1014027286 - 984818286
+```
+
+## 2025 AHRF: short term non general hospitals and long term hospital analysis continued
+
+### Total short term non general hospitals and long term hospital expenditures by state (state nation data set does not have any expenditure data)
+
+```{r}
+AHRF2025 |>
+  select(st_name_abbrev, stnglth_reprtd_fac_exp_thou_23) |>
+  group_by(st_name_abbrev) |>
+  summarise(stnglth_23_exp_by_state = (sum((stnglth_reprtd_fac_exp_thou_23 * 1000)))) |>
+  arrange(desc(stnglth_23_exp_by_state)
+  )
+```
+
+### Save the by state expenditures to use in other operations
+```{r}
+stnglth_23_exp_by_state <- 
+  AHRF2025 |>
+  select(st_name_abbrev, stnglth_reprtd_fac_exp_thou_23) |>
+  group_by(st_name_abbrev) |>
+  summarise(stnglth_23_by_state = (sum((stnglth_reprtd_fac_exp_thou_23 * 1000)))
+  )
+```
+
+### View the short term general hosptials by state
+
+```{r}
+AHRF2025 |>
+  select(st_name_abbrev, stnglth_rptng_exp_23) |>
+  group_by(st_name_abbrev) |>
+  summarise(stgh_23_by_state = (sum(stnglth_rptng_exp_23))) |>
+  arrange(desc(stnglth_23_by_state))
+```
+
+### Save the short term general hospitals by state to use in other operations
+
+```{r}
+stnglth_23_by_state <- 
+  AHRF2025 |>
+  select(st_name_abbrev, stnglth_rptng_exp_23) |>
+  group_by(st_name_abbrev) |>
+  summarise(stgh_23_by_state = (sum(stnglth_rptng_exp_23))) |>
+  arrange(desc(stgh_23_by_state)
+  )
+```
+
+### Joining the two new data frames
+
+```{r}
+stnglth_23 <-
+merge(x = stgh_23_exp_by_state, y = stgh_23_by_state, by = "st_name_abbrev", all = TRUE)
+```
+
+### Total short term general hospital expenditures by state, per hospital in the state
+
+```{r}
+stnglth_23 |>
+  mutate(stgh_23_exp_by_state_ph = (stgh_23_by_state.x / stgh_23_by_state.y)) |>
+  arrange(desc(stgh_23_exp_by_state_ph)
+  )
+```
+
+### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
+
+```{r}
+
+stnglth_23 <-
+  stgh_23 |>
+    rename(
+    stgh_23_exp_by_state = stgh_23_by_state.x,
+    stgh_23_by_state = stgh_23_by_state.y
+    )
+
+stgh_23_exp_by_state_ph <-
+  stgh_23 |>
+  select(stgh_23_exp_by_state, stgh_23_by_state) |>
+  mutate(stgh_23_exp_by_state_ph = stgh_23_exp_by_state / stgh_23_by_state) |>
+  arrange(desc(stgh_23_exp_by_state_ph))
+```
+
+### Now stgh_23_exp_by_state_ph has all the variables. Save that into the stgh_23 data frame
+
+```{r}
+stgh_23 <- stgh_23_exp_by_state_ph
+```
+
+## Create national expenditure comparison
+
+### General summary
+
+```{r}
+summary(stgh_23$stgh_23_exp_by_state_ph)
+```
+
+## Datawrapper
+
+
+
+### Load libraries and API key
+
+```{r}
+library(DatawRappr)
+library(tidyverse)
+datawrapper_auth(api_key =  "qWGtNy2YSjg6j2gfzgCSQ3iYFeeciWYTJTuWyVfTfWqWI7jbNHs9HOcmYIOsc6X2", overwrite=TRUE)
+```
+
+### Call in data and display head
+
+my_chart <- dw_create_chart()
+
+  rename(
+    State = st_name_abbrev
+    Revenue, short term general hospitals = stgh_23_by_state.x
+    Total short term general hospitals = stgh_23_by_state.y
