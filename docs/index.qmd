@@ -21,11 +21,15 @@ Michigan hospital systems are getting bigger, but have patients paid a price for
 300,000 residents [nearly](https://www.detroitnews.com/story/business/2026/05/27/blue-cross-michigan-medicine-reach-deal/90274740007/) lost their access to the state's premier health system thanks to an insurance dispute [in June](https://www.detroitnews.com/story/business/2026/05/06/blue-cross-tells-250000-michigan-medicine-patients-find-new-doctors/89960599007/), healthcare costs [continue to soar](https://pmc.ncbi.nlm.nih.gov/articles/PMC12920308/) and a $2.2 billion hospital construction project just reached [20 stories tall last month](https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#): it's time explain the juxtaposition between shiny buildings and growing systems with patient struggles.
 
 ## Six things (5W and H) you learned about this story 
-Who - hospitals, insurance companies and patients 
+Who - hospitals, insurance companies and patients
+
 What - mergers making systems larger, hospital expenditures growing
+
 When - decades of growing costs and consolidation 
+
 Where - Michigan and its counties, plus comparisons to the U.S.
-Why - Michigan has high healthcare spending compared to the nation, but Michiganers still need to know how consolidation has actually affected their finances and health, beyond what the pressers from healthcare companies and daily news can tell them. Additionally, the Detroit News has identified a gap in its data coverage of healthcare, in addition to a gap in its business of healthcare coverage, which is usually covered on an as-needed basis
+
+Why - Michigan has high healthcare spending compared to the nation, but Michiganders still need to know how consolidation has actually affected their finances and health, beyond what the pressers from healthcare companies and daily news can tell them. Additionally, the Detroit News has identified a gap in its data coverage of healthcare, in addition to a gap in its business of healthcare coverage, which is usually covered on an as-needed basis
 
 ## Key data analysis points (to be updated as training continues)
 Michigan is ranked No. 14 in the nation, excluding CT (to be addressed later), for per hospital short term general hospital expenditures by state.
@@ -47,6 +51,7 @@ Founders of Michigan's New Day Foundation for Families **Michael Spehn and Gina 
 
 ## Data you will be using to inform the story: 
 Trends in hospital expenditures and other healthcare data from:
+
 [Health Resources and Services Administration Area Health Resource Files](https://data.hrsa.gov/data/download)
 
 [Wayne County healthcare consolidation data](https://detroitdata.org/dataset/market-saturation-utilization)
