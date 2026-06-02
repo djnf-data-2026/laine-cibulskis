@@ -1,174 +1,507 @@
 ---
-title: "Hosting a GitHub Page"
-author: "Rob Wells"
-date: "5-29-2026"
+title: "The Costs of Michigan Healthcare Consolidation"
+author: "Laine Cibulskis"
+date: "6-6-2026"
 format:
   html:
     theme: cosmo
 ---
+# 6/1: The Memo, First Draft
 
-# Hosting a GitHub Page - R Cheat Sheet
+## Slug
+The Costs of Michigan Healthcare Consolidation
 
-This exercise will allow you to create a basic web page which will be required for the Investigate Your Community final project option.
+## Hypothesis/possible headline
+Patients pay the price as Michigan healthcare systems consolidate
 
-For this exercise, you will create a page with your one paragraph story idea. You will then host it on your GitHub page.
+## In two sentences, what is this story about? 
+Michigan hospital systems are getting bigger, but have patients paid a price for consolidation? This story will explore the shrinking number of players in Michigan healthcare in conjunction with data on the business of healthcare: hospital expenditures, insurance reimbursements and patient costs.
+
+## In one sentence, why tell this story NOW? 
+300,000 residents [nearly](https://www.detroitnews.com/story/business/2026/05/27/blue-cross-michigan-medicine-reach-deal/90274740007/) lost their access to the state's premier health system thanks to an insurance dispute [in June](https://www.detroitnews.com/story/business/2026/05/06/blue-cross-tells-250000-michigan-medicine-patients-find-new-doctors/89960599007/), healthcare costs [continue to soar](https://pmc.ncbi.nlm.nih.gov/articles/PMC12920308/) and a $2.2 billion hospital construction project just reached [20 stories tall last month](https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#): it's time explain the juxtaposition between shiny buildings and growing systems with patient struggles.
+
+## Six things (5W and H) you learned about this story 
+Who - hospitals, insurance companies and patients 
+What - mergers making systems larger, hospital expenditures growing
+When - decades of growing costs and consolidation 
+Where - Michigan and its counties, plus comparisons to the U.S.
+Why - Michigan has high healthcare spending compared to the nation, but Michiganers still need to know how consolidation has actually affected their finances and health, beyond what the pressers from healthcare companies and daily news can tell them. Additionally, the Detroit News has identified a gap in its data coverage of healthcare, in addition to a gap in its business of healthcare coverage, which is usually covered on an as-needed basis.
+
+## Key data analysis points (to be updated as training continues)
+
+Michigan is ranked No. 14 in the nation, excluding CT (to be addressed later), for per hospital short term general hospital expenditures by state.
+
+$342,074,250 is Michigan's per hospital value--exactly the third quartile. Meaning 3/4 of the U.S. states (again, minus CT), have lower per hospital expenditures for short term general hospitals.
+
+**Each** short term general hospital in Michigan spends about $50 million more than the nation's average. 
+
+## Three people I can interview for this story are
+
+**Thomas Buchmueller**, University of Michigan health economist
+**Bill Farmer**, healthcare advocate who co-founded the Michigan For Single Payer Healthcare grassroots organization with **Eli Rubin**
+**Carl St. Amour**, Michigan Medicine's Director of Revenue, Reporting, and Payment Strategies
+**Mathhew Cox**, Chief Financial Officer at Corewell Health
+Founders of Michigan's New Day Foundation for Families **Michael Spehn and Gina Kell Spehn** may be able to connect me with patients receiving high-cost specialty care. New Day focuses on working with hospitals to reach patients nearing financial breaking points, especially when it comes to cancer treatment. Many board members have had personal experiences with cancer and costs as well
+
+## Data you will be using to inform the story: 
+Trends in hospital expenditures and other healthcare data from:
+[Health Resources and Services Administration Area Health Resource Files](https://data.hrsa.gov/data/download)
+[Wayne County healthcare consolidation data](https://detroitdata.org/dataset/market-saturation-utilization)
+[Hospital-level expenditure data](https://tool.nashp.org/)
+
+## What are the visual possibilities? 
+County-by county data from the Area Health Resource Files could be used to create a gradient map with a dropdown menu to show different variables for each Michigan county. There could be a scroller for change over time in different metrics such as hospital expenditures and patient outcomes.
+
+A locator map could show detailed information about Detroit healthcare consolidation (imagine a map with points color coded by offices owned by differnet entities); another locator map could also locations of hospitals throughout the state with key expenditure points.
+
+A collaboration with a photographer could result in a patient photo story to add a human element.
+
+How did you find this story? Summarize any previous coverage. 
+
+Last week, Blue Cross Blue Shield of Michigan finally reached a settlement with the University of Michigan Health (Michigan Medicine). The contract renegotiation between the two systems, which allows patients under the insurer to receive care at Michigan Medicine, had nearly failed, threatening 300,000 residents with a loss of care from one of the state's most reputable health systems. As in many industries, consolidation has taken over healthcare. A 2022 Michigan health care merger created a combined 22-hospital system, Corewell Health, with claims of improving patient care. In 2023, Michigan Medicine acquired another health system as well. Still, insurance companies blame hospitals for rising costs, and insurance companies blame hospitals. This April, Michigan Medicine sang praise for the results of the 2023 merger. 
+
+But a [May KFF](https://www.kff.org/health-costs/hospital-prices-have-risen-much-faster-for-private-insurance-than-medicare-since-2019/) study showed hospital prices are rising much faster for private insurance than Medicare since 2019. Another [KFF briefing from 2024](https://www.kff.org/health-costs/ten-things-to-know-about-consolidation-in-health-care-provider-markets/) explains that a large body of evidence point to healthcare conslidiation increasing costs, but that the verdict on patient outcomes is less straightforward.
+
+Michigan Medicine [claims](https://prod.crainsdetroit.com/health-care/whats-behind-blue-cross-michigan-medicine-contract-dispute) it should be rewarded with better contracts thanks to its quality of care and focus on specialty medicine. But how has consolidation really worked out for patients in Michigan, from their health to their pocketbooks? Especially as Detroit's hospital buildings get shinier at taller, as with Henry Ford Hospital's in-progress $2.2 billion, 20-story [expansion]((https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#)?
+
+## What other information do you need to gather? 
+* Academic input on the nuances of healthcare market consolidation as it relates specifically to Michigan
+* Corporate and patient input
+* Insurance input (private, Medicare/Medicaid)
+* Continued exploration of data
+
+## Who do you need to contact? 
+Kim North Shine, senior public relations representative at the University of Michigan who specializes in public health as one of her topic areas, may be able to help me get in touch with both academic and healthcare sources. Connecting with the advocacy groups mentioned above will also help kickstart the reporting side of the story.
+
+# 5/31: The Idea
+
+Last week, Blue Cross Blue Shield of Michigan finally reached a settlement with the University of Michigan Health (Michigan Medicine). The contract renegotiation between the two systems, which allows patients under the insurer to receive care at Michigan Medicine, had nearly failed, threatening 300,000 residents with a loss of care from one of the state's most reputable health systems. As in many industries, consolidation has taken over healthcare. A 2022 Michigan health care merger created a combined 22-hospital system, Corewell Health, with claims of improving patient care. In 2023, Michigan Medicine acquired another health system as well. Still, insurance companies blame hospitals for rising costs, and insurance companies blame hospitals. This April, Michigan Medicine sang praise for the results of the 2023 merger. 
+
+But a May KFF study showed hospital prices are rising much faster for private insurance than Medicare since 2019. Michigan Medicine claims it should be rewarded with better contracts thanks to its quality of care and focus on specialty medicine. But how has consolidation really worked out for patients, from their health to their pocketbooks? Especially as Detroit's hospital buildings get shinier (see Henry Ford Hospital's recent $2.2 billion expansion). 
+
+Enter: Health Resources and Services Administration data. The HRSA's Area Health Resource files provide a wealth of information on hospitals by county, state and for the entire nation. An initial look reveals that in just one year, hospital expenditures per non-general and long term hospital in Washtenaw County (includes Ann Arbor, where Michigan Health is based) grew nearly $30 million to reach over $1 billion per hospital as of the most recent data available from 2023 (we have a data lag here according to the documentation). Why is that so much larger than Illinois' largest county for the same measure, at about $600 million? How quickly have these expenditures risen, county-by-county? Is Michigan rising faster than other states, and how do increases show in areas with newly-merged hospitals? Have the mergers good for expenditures? And patients, such as with care quality metrics also in the data?
+
+# Data analysis for the Detroit News
+
+Examine hospital expenditures over time by county, the effects of consolidation
+
+### Load packages - do this once
+
+```{r}
+#install.packages("tidyverse")
+#install.packages("janitor")
+#install.packages("rio")
+#install.packages("googledrive")
+#install.packages("readxl")
+```
+
+### Load libraries, do this every time
+
+```{r}
+#| include: false
+library(tidyverse)
+library(janitor)
+library(rio)
+library(googledrive)
+library(readxl)
+library(dplyr)
+```
+
+# Loading data AHRFSN data for 2024 and 2025
+
+```{r}
+#| include: false
+ahrfsn2025 <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/ahrfsn2025.csv")
+
+ahrfsn2024 <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/ahrfsn2024.csv")
+
+#glimpse(ahrfsn2025)
+
+```
+
+# Loading AHRF 2025 and 2024 files
+
+```{r}
+
+AHRF2025_MI <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/AHRF2025_MI.csv")
 
 
-## Styled Text
+AHRF2024_MI <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/AHRF2024_MI.csv")
 
-At the core, QMD files are text files, and they allow you to use a very lightweight "markup" language to style text, similar to html, but much less fussy. 
+```
 
-Outside of the codeblocks (the gray sections where we write code), we can style any text using standard markdown styling. 
+# Data Wrangling Notes from Rob
 
-This is a nice guide to styling text with markdown: [Markdown guide ](https://quarto.org/docs/authoring/markdown-basics.html)
+You don't need to run this code below -- I kept it to show you how I loaded the AHRF2025 file from a Google Drive link and then created the filtered Michigan files
 
-We can create headings similar to html's h1 to h6 with hashtags.  
+```{r}
+#| eval: false
+#| include: false
+googledrive::drive_auth() #you may need to authorize your browser
 
-##### This is an h5
+# Here's the file: https://drive.google.com/file/d/1K8DzTY5yTNI0EeIUpadeCrE552tcxRsj/view?usp=sharing
 
-We can create links, like this: [google](https://google.com)
+drive_download(
+  as_id("1K8DzTY5yTNI0EeIUpadeCrE552tcxRsj"),  # copied from the file link
+  path = "../data/AHRF2025.csv", #a random data path - you can select any folder you want
+  overwrite = TRUE
+)
+AHRF2025 <- read_csv("../data/AHRF2025.csv")|> 
+  clean_names()
 
-We can **bold** or *italic* text. 
+AHRF2025_MI <- AHRF2025 |> 
+  filter(st_name_abbrev == "MI")
 
-We can create bulleted lists.  
+#write_csv(AHRF2025_MI, "../data/AHRF2025_MI.csv" )
 
-* bullet one
-* bullet two
-* bullet three
+```
 
-## Code blocks
+# Load AHRF2024 file
 
-We can also add special code inside of code blocks -- the gray sections where we write code -- that control how they render in our html document.  These output options let us do things like:
+Same thing as above
 
-* Show or hide the code when we render our html document  (echo: true or false)
-* Prevent the code from actually running when we render our html document (eval: true or false)
-* Hide warnings from outputing when we render our html document (warning: true or false)
+```{r}
+#| eval: false
+#| include: false
+#https://drive.google.com/file/d/1GgVgzo7DSv1pn8BjCuhygmILEjGT04Ja/view?usp=sharing
+#googledrive::drive_auth()
+#drive_download(
+  #as_id("1GgVgzo7DSv1pn8BjCuhygmILEjGT04Ja"),  # from the share link
+  #path = "./data/AHRF2024.csv",
+  #overwrite = TRUE
+#)
+#AHRF2024 <- read_csv("./data/AHRF2024.csv")|> 
+  #clean_names()
 
-There's a [full guide here](https://quarto.org/docs/computations/execution-options.html#output-options).
+#AHRF2024_MI <- AHRF2024 |> 
+  #filter(st_name_abbrev == "MI")
 
-The code below, for example, will output the text inside the print statement when rendered to html, but the actual code -- the print() function -- will be hidden.
+#write_csv(AHRF2024_MI, "./data/AHRF2024_MI.csv" )
 
-## Create your website
+```
 
-In place of these instructions, you will paste your project one paragraph story idea into this document and any code you've developed so far.
+# 5/31: Inital Analysis for Memo
 
-You will need to load libraries and data because rendering a page requires a full R session to execute on the code.
+## Create Illinois files for comparison, 2025
 
-First, create H1 headers 
+```{r}
+#| eval: false
+#| include: false
+#library(googledrive)
+#googledrive::drive_auth() #you may need to authorize your browser
 
-**For example:** 
+# Here's the file: https://drive.google.com/file/d/1K8DzTY5yTNI0EeIUpadeCrE552tcxRsj/view?usp=sharing
+#googledrive::drive_auth()
+#drive_download(
+  #as_id("1K8DzTY5yTNI0EeIUpadeCrE552tcxRsj"),  # copied from the file link
+  #path = "C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025.csv", #a random data path - you can select any folder you want
+  #overwrite = TRUE
+)
+#AHRF2025 <- read_csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025.csv")|> 
+  #clean_names()
 
-# Income and Vacancies of Baltimore Neighborhoods 2020
+#AHRF2025_IL <- AHRF2025 |> 
+  #filter(st_name_abbrev == "IL")
 
-## Looking at wealth inequality in Charm City
+#write_csv(AHRF2025_IL, "C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025_IL.csv" )
 
-```{r eval=FALSE, include=TRUE}
+```
 
-# You will write your code in chunks but not execute the data. Use {r eval=FALSE, include=TRUE} in the header so the page will render without running the actual code.
-income_vacancy %>% 
-  ggplot(aes(x = community)) +
-  geom_point(aes(y=income_2020), color = "#64D197", stroke=5) +
-  geom_point(aes(y=vacant_2020*1000), stroke=5, color = "#FB8AE3") +
-  scale_y_continuous(
-    name = "2020 Income (Green)", limits=c(0, 62000), labels=scales::dollar_format(),
-    sec.axis = sec_axis(~./60000, name="2020 Percent Vacancies (Red)", labels = scales::percent))+
-  #scale_y_continuous(labels = scales::percent) +
-  labs(
-    title = "Income and Vacancies of Baltimore Neighborhoods 2020",
-    x = "Community",
-    caption = "source: BNIA Data - By: Parker Leipzig and Rob Wells"
+## Create Illinois files for comparison, 2024
+
+```{r}
+#| eval: false
+#| include: false
+#https://drive.google.com/file/d/1GgVgzo7DSv1pn8BjCuhygmILEjGT04Ja/view?usp=sharing
+#googledrive::drive_auth()
+#drive_download(
+  #as_id("1GgVgzo7DSv1pn8BjCuhygmILEjGT04Ja"),  # from the share link
+  #path = "C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2024.csv",
+  #overwrite = TRUE
+#)
+#AHRF2024 <- read_csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2024.csv")|> 
+  clean_names()
+
+#AHRF2024_IL <- AHRF2024 |> 
+  filter(st_name_abbrev == "IL")
+
+#write_csv(AHRF2024_IL, "C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2024_IL.csv" )
+
+
+```
+
+## Load AHRF files for Illinois and all other counties in the nation
+
+```{r}
+AHRF2024_IL <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/AHRF2024_IL.csv")
+
+AHRF2025_IL <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/AHRF2025_IL.csv")
+
+AHRF2024 <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/AHRF2024.csv")|> 
+  clean_names()
+
+AHRF2025 <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/AHRF2025.csv")|> 
+  clean_names()
+```
+
+## Starting to pull documentation for variables
+
+```{r}
+AHRF2024documentation <- read_excel("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/documentation/AHRF 2023-2024 User Tech/AHRF 2023-2024 User Tech/AHRF 2023-2024 Technical DocumentationCSV_Feb2025.xlsx")
+# Expenditures
+AHRF2024documentation[c(3310, 3311, 3312, 3313, 3080, 3081, 3082, 3083, 3084, 3316, 3317, 3318, 3319, 3320, 3321, 3367, 3368, 2379), ]
+
+```
+
+## 2024 AHRF data: short term non-general and long term hospital expenditures by county
+##### The AHRF 2024-2025 User Guide explains that short term non-general hospitals provide specialized care, and the majority of their patients stay for fewer than 30 days. Long term hospitals may provide either non specialized or specialized care, and the majority of their patients stay for 30 or more days.
+
+```{r}
+AHRF2024_MI |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_22) |>
+  group_by(cnty_name) |>
+  arrange(desc(stnglth_reprtd_fac_exp_thou_22)
+)
+```
+
+### Per capita
+
+```{r}
+AHRF2024_MI |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_22, popn_est_22) |>
+  group_by(cnty_name) |>
+  summarise(pc_exp = ((stnglth_reprtd_fac_exp_thou_22 * 1000)/ popn_est_22)) |>
+  arrange(desc(pc_exp)
+)
+```
+
+### Per hospital in the county
+
+```{r}
+AHRF2024_MI |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_22, hosp_22) |>
+  group_by(cnty_name) |>
+  summarise(ph_exp = ((stnglth_reprtd_fac_exp_thou_22 * 1000) / hosp_22)) |>
+  arrange(desc(ph_exp)
+)
+```
+
+## 2024 AHRF data: short term general hospitals
+##### The The AHRF 2024-2025 User Guide explains that short term general hospitals provide non specialized care, and the majority of their patients stay for fewer than 30 days.
+
+```{r}
+AHRF2024_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_22) |>
+  group_by(cnty_name) |>
+  arrange(desc(stgh_reprtd_fac_exp_thou_22)
+)
+```
+
+### Per capita
+
+```{r}
+AHRF2024_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_22, popn_est_22) |>
+  group_by(cnty_name) |>
+  summarise(pc_exp = ((stgh_reprtd_fac_exp_thou_22 * 1000) / popn_est_22)) |>
+  arrange(desc(pc_exp)
+)
+```
+
+### Per hospital in the county
+
+```{r}
+AHRF2024_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_22, hosp_22) |>
+  group_by(cnty_name) |>
+  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_22 * 1000) / hosp_22)) |>
+  arrange(desc(ph_exp)
+)
+```
+
+## 2025 AHRF data: short term non-general and long term hospital expenditures by county
+
+```{r}
+AHRF2025_MI |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_22) |>
+  group_by(cnty_name) |>
+  arrange(desc(stnglth_reprtd_fac_exp_thou_22)
+)
+```
+
+### Per capita
+
+```{r}
+AHRF2025_MI |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_23, popn_est_23) |>
+  group_by(cnty_name) |>
+  summarise(pc_exp = ((stnglth_reprtd_fac_exp_thou_23 * 1000)/ popn_est_23)) |>
+  arrange(desc(pc_exp)
+)
+```
+
+### Per hosptial in the county
+
+```{r}
+AHRF2025_MI |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_23, hosp_23) |>
+  group_by(cnty_name) |>
+  summarise(ph_exp = ((stnglth_reprtd_fac_exp_thou_23 * 1000) / hosp_23)) |>
+  arrange(desc(ph_exp)
+)
+```
+
+## 2025 AHRF data: short term general hospitals
+
+```{r}
+AHRF2025_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_23) |>
+  group_by(cnty_name) |>
+  arrange(desc(stgh_reprtd_fac_exp_thou_23)
+)
+```
+
+## Per capita
+
+```{r}
+AHRF2025_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_23, popn_est_23) |>
+  group_by(cnty_name) |>
+  summarise(pc_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / popn_est_23)) |>
+  arrange(desc(pc_exp)
+)
+```
+
+## Per hospital in the county
+
+```{r}
+AHRF2025_MI |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_23, hosp_23) |>
+  group_by(cnty_name) |>
+  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / hosp_23)) |>
+  arrange(desc(ph_exp)
+)
+```
+
+## Quick IL comparison
+
+### Per hospital in each county
+
+```{r}
+AHRF2025_IL |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_23, hosp_23) |>
+  group_by(cnty_name) |>
+  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / hosp_23)) |>
+  arrange(desc(ph_exp)
+)
+```
+
+### Washtenaw expenditure change math
+
+```{r}
+1014027286 - 984818286
+```
+
+# 6/1 data work
+
+## 2025 AHRF: short term general hospital analysis continued
+
+### Total short term general hospital expenditures by state (state nation data set does not have any expenditure data)
+
+```{r}
+AHRF2025 |>
+  select(st_name_abbrev, stgh_reprtd_fac_exp_thou_23) |>
+  group_by(st_name_abbrev) |>
+  summarise(stgh_23_exp_by_state = (sum((stgh_reprtd_fac_exp_thou_23 * 1000)))) |>
+  arrange(desc(stgh_23_exp_by_state)
   )
 ```
 
-
-## Set up for hosting  
-
- * Create a new folder in your repository called "docs" (if one isn't there already)
- * Rename this document as "index.qmd"
- * Move "index.qmd" into the "docs" folder
-      
-
-## Render this document as an html page       
- 
- * Make sure this document is named "index.qmd" and is in the "docs" folder
- * Click Render button. It will create an html version of this page, called "index.html" 
- * Use GitHub Desktop to push your files to your your github repository on the web. 
- * Access the URL from your Github repository. 
-
-## Host html on GitHub    
-
- * Go to your github repository on the web, such as https://github.com/djnf-data-2026/laine-cibulskis
- * Click on Settings on the top right. 
- * Scroll down to the Pages section of Settings. 
- * Change the Branch to /docs and click save.
-  
-  
-#### To see your file hosted:  
-
-* Back to your GitHub repo on the web: such as https://github.com/djnf-data-2026/casey-mann
-* Click on Settings, then Pages
-* Under GitHub Pages, you should see "Your site is live at https://djnf-data-2026.github.io/casey-mann/"
-* Click that URL
-* If it works, email it to robwells@umd.edu
-      
-
-## REVEL IN YOUR NERD POWERS  
-
-# Part 2: Embedding Images  
-
-* create a folder in your repository's main branch, call it images
-
-* find any .jpeg, .jpg or .png file and insert it into that folder.
-
-* In a QMD file, display the image as follows:
-
-#![CAPTION FOR YOUR PHOTO](images/your_link_here.png)
-
-#![CHATTER FOR YOUR chart](images/xl-refresher-grid_SHEETS.png)
-
-
-A more advanced technique controlling the width and height
-
-#![Read the Screen](images/xl-refresher-SHEETS_screen.png){width="100%"}
-
-
-### Embedding code
-
-From a **Datawrapper Map**
-
-<iframe title="Small Business Reporting, Spring 2024" aria-label="Map" id="datawrapper-chart-z4bny" src="https://datawrapper.dwcdn.net/z4bny/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="500" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
-</script>
-
-
-## Embedding video
-
-### Deep Nerd Video
-
-
-::: {#first_steps}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TNP_unReOpw?si=CQC3cG49TShkoJOG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-:::
-
-::: {#second_steps}
-### A great lecture on structural racism in journalism
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DIDHbEZYFSc?si=a-KNzlQgoGjXD6VV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-:::
-
-**Now replace these two videos with something you selected.**
-
-The embed code is in the video share feature
-
-## Instructions to embed a gif
-```{r text_to_columns.gif, out.width="100%", echo=FALSE}
-### Embed a GIF
-#First, download a GIF (extension will be .gif) and load it into "images" folder
-#if (knitr::is_html_output()) knitr::include_graphics("images/text_to_columns.gif")  
-
+### Save the by state expenditures to use in other operations
+```{r}
+stgh_23_exp_by_state <- 
+  AHRF2025 |>
+  select(st_name_abbrev, stgh_reprtd_fac_exp_thou_23) |>
+  group_by(st_name_abbrev) |>
+  summarise(stgh_23_by_state = (sum((stgh_reprtd_fac_exp_thou_23 * 1000)))
+  )
 ```
 
+### View the short term general hosptials by state
 
-This is a very basic starter but it will get you to the finish line on Saturday.
-Good luck!
+```{r}
+AHRF2025 |>
+  select(st_name_abbrev, stgh_23) |>
+  group_by(st_name_abbrev) |>
+  summarise(stgh_23_by_state = (sum(stgh_23))) |>
+  arrange(desc(stgh_23_by_state))
+```
 
---30--
+### Save the short term general hospitals by state to use in other operations
+
+```{r}
+stgh_23_by_state <- 
+  AHRF2025 |>
+  select(st_name_abbrev, stgh_23) |>
+  group_by(st_name_abbrev) |>
+  summarise(stgh_23_by_state = (sum(stgh_23))) |>
+  arrange(desc(stgh_23_by_state)
+  )
+```
+
+### Joining the two new data frames
+
+```{r}
+stgh_23 <-
+merge(x = stgh_23_exp_by_state, y = stgh_23_by_state, by = "st_name_abbrev", all = TRUE)
+```
+
+### Total short term general hospital expenditures by state, per hospital in the state
+
+```{r}
+stgh_23 |>
+  mutate(stgh_23_exp_by_state_ph = (stgh_23_by_state.x / stgh_23_by_state.y)) |>
+  arrange(desc(stgh_23_exp_by_state_ph))
+```
+
+### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
+
+```{r}
+
+stgh_23 <-
+  stgh_23 |>
+    rename(
+    stgh_23_exp_by_state = stgh_23_by_state.x,
+    stgh_23_by_state = stgh_23_by_state.y
+    )
+
+stgh_23_exp_by_state_ph <-
+  stgh_23 |>
+  select(stgh_23_exp_by_state, stgh_23_by_state) |>
+  mutate(stgh_23_exp_by_state_ph = stgh_23_exp_by_state / stgh_23_by_state) |>
+  arrange(desc(stgh_23_exp_by_state_ph))
+```
+
+### Now stgh_23_exp_by_state_ph has all the variables. Save that into the stgh_23 data frame
+
+```{r}
+stgh_23 <- stgh_23_exp_by_state_ph
+```
+
+## Create national expenditure comparison
+
+### General summary
+
+```{r}
+summary(stgh_23$stgh_23_exp_by_state_ph)
+```
+
+### Michigan is ranked No. 14 in the nation, excluding CT (to be addressed later), for per hospital short term general hospital expenditures by state.
+
+### $342,074,250 is Michigan's per hospital value--exactly the third quartile. Meaning 3/4 of the U.S. states (again, minus CT), have lower per hospital expenditures for short term general hospitals.
+
+### Michigan difference from mean calculation
+
+```{r}
+342074250 - 291256410
+```

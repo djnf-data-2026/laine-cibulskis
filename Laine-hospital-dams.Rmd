@@ -16,12 +16,12 @@ Medicare since 2019. Michigan Medicine claims it should be rewarded with better
 contracts thanks to its quality of care and focus on specialty medicine. But how
 has consolidation really worked out for patients, from their health to their
 pocketbooks? Especially as Detroit's hospital buildings get shinier (see Henry
-Ford Hospital's recent \$2.2 billion expansion). Enter: Health Resources and
+Ford Hospital's recent $2.2 billion expansion). Enter: Health Resources and
 Services Administration data. The HRSA's Area Health Resource files provide a
 wealth of information on hospitals by county, state and for the entire nation.
 An initial look reveals that in just one (fiscal) year, hospital expenditures
 per non-general/long term hospital in Washtenaw County (where Ann Arbor
-is/Michigan Health is based) grew nearly 30 million to reach over \$1 billion
+is/Michigan Health is based) grew nearly $30 million to reach over $1 billion
 per hospital as of the most recent data available from 2023 (we have a data lag
 here according to the documentation). Why is that so much larger than Illinois'
 largest county for the same measure, at about \$600 million? How quickly have
@@ -348,7 +348,7 @@ AHRF2025_IL |>
 
 #6/1 data work
 
-# Total short term general hospital expenditures by state (state nation dataset does not have any expenditure data)
+Total short term general hospital expenditures by state (state nation dataset does not have any expenditure data)
 
 ```{r}
 AHRF2025 |>
@@ -359,7 +359,7 @@ AHRF2025 |>
   )
 ```
 
-# Save the by state expenditures to use in other operations
+Save the by state expenditures to use in other operations
 ```{r}
 stgh_23_exp_by_state <- 
   AHRF2025 |>
@@ -369,7 +369,7 @@ stgh_23_exp_by_state <-
   )
 ```
 
-# View the short term general hosptials by state
+View the short term general hosptials by state
 
 ```{r}
 AHRF2025 |>
@@ -380,7 +380,7 @@ AHRF2025 |>
 ```
 
 
-# Save the short term general hospitals by state to use in other operations
+Save the short term general hospitals by state to use in other operations
 
 ```{r}
 stgh_23_by_state <- 
@@ -392,7 +392,7 @@ stgh_23_by_state <-
   )
 ```
 
-#Joining the two new dataframes
+Joining the two new dataframes
 
 ```{r}
 stgh_23 <-
