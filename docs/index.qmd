@@ -7,17 +7,6 @@ format:
     theme: cosmo
 ---
 
-Plan for second memo:
-- Narrow pitch: focus on connecting hospital finances to patients
-- Contextualize every table with context on why it matters:
-- what the data mean
-- why the frames were chosen (i.e. why Illinois)
-- rename columns to be easily understandable
-- merging some tables may make it easier to see, plus hiding some extra dense code:
-- like merging the two hospital analyses into one chart
-- why do rising/high hospital expenditures affect Michiganders?
-- add some additional data analysis about insurance disparities and patient outcomes/care
-
 #Patients pay the price as Michigan healthcare systems consolidate
 
 Michigan hospital systems are getting bigger, but have patients paid a price for consolidation? This story will focus on the shrinking number of players in Michigan healthcare and how it has affected access to specialty care throughout the state.
@@ -35,7 +24,7 @@ Where - Michigan and its counties, plus comparisons to the U.S.
 
 Why - Only 17 of Michigan's 83 counties reported having hospitals providing specialty care. They're very populated counties, but the spending disparity is clear, especially as more investment is brought to Detroit. Michiganders need to know how consolidation has actually affected their access to healthcare, beyond what the pressers from healthcare companies and daily news can tell them. Additionally, the Detroit News has identified a gap in its data coverage of healthcare, in addition to a gap in its business of healthcare coverage, which is usually covered on an as-needed basis
 
-## Key data analysis points, as noted in the maps below 
+## Key data analysis points, as noted in the maps below. Fully summary stats are calculated below
 
 <iframe title="Just 17 Michigan counties report providing specialty hospital care in Michigan" aria-label="Choropleth map" id="datawrapper-chart-egpf6" src="https://datawrapper.dwcdn.net/egpf6/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
 
@@ -50,43 +39,6 @@ The story cannot claim causaility, but it can show just how concentrated hosptia
 
 # Business context: Blue Cross Blue Shield of Michigan
 According to BCBS of Michgian's financial statements, published on their website, premium revenue increased by over $1 billion from 2024 to 2025. However, financial weakness shows in a consistent operating loss for the , which was at a $975 million loss in 2025. The company ensures over 300,000 Michiganders.
-
-# Additional summary statistics
-
-```{r}
-# generalhosp, nation
-generalhosp23 |>
-  summary(generalhosp23$"Expenditures per Hospital", na.rm = TRUE)
-```
-
-```{r}
-# generalhosp, MI
-generalhosp23_MI |>
-  summary(generalhosp23_MI$"Expenditures per Hospital", na.rm = TRUE)
-```
-
-```{r}
-# generalhosp, IL
-generalhosp23_IL |>
-  summary(generalhosp23_IL$"Expenditures per Hospital", na.rm = TRUE)
-```
-```{r}
-# extracare, nation
-extracare23 |>
-  summary(extracare23$"Expenditures per Hospital", na.rm = TRUE)
-```
-
-```{r}
-# extracare, MI, 
-extracare23_MI |>
-  summary(extracare23_MI$"Expenditures per Hospital")
-```
-
-```{r}
-# extracare, IL
-extracare23_IL |>
-  summary(extracare23_IL$"Expenditures per Hospital")
-```
 
 ## Three people I can interview for this story are
 **Thomas Buchmueller**, University of Michigan health economist
@@ -168,9 +120,9 @@ library(dplyr)
 ## Read the files
 
 ```{r}
-AHFR2025 <- read.csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025.csv")
-AHFR2025_MI <- read.csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025_MI.csv")
-AHFR25_IL <- read.csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025_IL.csv")
+AHRF2025 <- read.csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025.csv")
+AHRF2025_MI <- read.csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025_MI.csv")
+AHRF2025_IL <- read.csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025_IL.csv")
 ```
 
 ## Documentation
@@ -440,10 +392,42 @@ summary(extracare23_MI$"Expenditures per Hospital")
 # extracare, IL
 summary(extracare23_IL$"Expenditures per Hospital")
 ```
+# Additional summary statistics
 
-### Michigan is ranked No. 14 in the nation, excluding CT (to be addressed later), for per hospital short term general hospital expenditures by state.
+```{r}
+# generalhosp, nation
+generalhosp23 |>
+  summary(generalhosp23$"Expenditures per Hospital", na.rm = TRUE)
+```
 
-### $342,074,250 is Michigan's per hospital value--exactly the third quartile. Meaning 3/4 of the U.S. states (again, minus CT), have lower per hospital expenditures for short term general hospitals.
+```{r}
+# generalhosp, MI
+generalhosp23_MI |>
+  summary(generalhosp23_MI$"Expenditures per Hospital", na.rm = TRUE)
+```
+
+```{r}
+# generalhosp, IL
+generalhosp23_IL |>
+  summary(generalhosp23_IL$"Expenditures per Hospital", na.rm = TRUE)
+```
+```{r}
+# extracare, nation
+extracare23 |>
+  summary(extracare23$"Expenditures per Hospital", na.rm = TRUE)
+```
+
+```{r}
+# extracare, MI, 
+extracare23_MI |>
+  summary(extracare23_MI$"Expenditures per Hospital")
+```
+
+```{r}
+# extracare, IL
+extracare23_IL |>
+  summary(extracare23_IL$"Expenditures per Hospital")
+```
 
 # Uploading data to Datawrapper for charts
 
