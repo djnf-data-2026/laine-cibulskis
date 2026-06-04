@@ -7,7 +7,7 @@ format:
     theme: cosmo
 ---
 
-#Patients pay the price as Michigan healthcare systems consolidate
+# Patients pay the price as Michigan healthcare systems consolidate
 
 Michigan hospital systems are getting bigger, but have patients paid a price for consolidation? This story will focus on the shrinking number of players in Michigan healthcare and how it has affected access to specialty care throughout the state.
 
