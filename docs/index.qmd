@@ -18,27 +18,10 @@ Plan for second memo:
 - why do rising/high hospital expenditures affect Michiganders?
 - add some additional data analysis about insurance disparities and patient outcomes/care
 
-Intersting additional variables:
-Row 2499 preventable hospital stays rate:
-"Hospitalization for ambulatory care-sensitive conditions, diagnoses usually treatable in outpatient services, suggests that the quality of care provided in the outpatient setting was not accessible. The measure may also represent a tendency to overuse emergency room and urgent care as a main source of care."
-medcr_ffs_prev_hosp_rate_22
-medcr_ffs_prev_hosp_rate_21
-hosp_beds_23
-hosp_beds_22
-stgh_hosp_beds_23
-stgh_hosp_beds_22
-stngh_hosp_beds_23
-stngh_hosp_beds_22
-lth_hosp_beds_23
-lth_hosp_beds_22
+#Patients pay the price as Michigan healthcare systems consolidate
 
-## Hypothesis/possible headline
-Patients pay the price as Michigan healthcare systems consolidate
+Michigan hospital systems are getting bigger, but have patients paid a price for consolidation? This story will focus on the shrinking number of players in Michigan healthcare and how it has affected access to specialty care throughout the state.
 
-## In two sentences, what is this story about? 
-Michigan hospital systems are getting bigger, but have patients paid a price for consolidation? This story will explore the shrinking number of players in Michigan healthcare in conjunction with data on the business of healthcare: hospital expenditures, insurance reimbursements and patient costs.
-
-## In one sentence, why tell this story NOW?
 300,000 residents [nearly](https://www.detroitnews.com/story/business/2026/05/27/blue-cross-michigan-medicine-reach-deal/90274740007/) lost their access to the state's premier health system thanks to an insurance dispute [in June](https://www.detroitnews.com/story/business/2026/05/06/blue-cross-tells-250000-michigan-medicine-patients-find-new-doctors/89960599007/), healthcare costs [continue to soar](https://pmc.ncbi.nlm.nih.gov/articles/PMC12920308/) and a $2.2 billion hospital construction project just reached [20 stories tall last month](https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#): it's time explain the juxtaposition between shiny buildings and growing systems with patient struggles.
 
 ## Six things (5W and H) you learned about this story 
@@ -50,14 +33,60 @@ When - decades of growing costs and consolidation
 
 Where - Michigan and its counties, plus comparisons to the U.S.
 
-Why - Michigan has high healthcare spending compared to the nation, but Michiganders still need to know how consolidation has actually affected their finances and health, beyond what the pressers from healthcare companies and daily news can tell them. Additionally, the Detroit News has identified a gap in its data coverage of healthcare, in addition to a gap in its business of healthcare coverage, which is usually covered on an as-needed basis
+Why - Only 17 of Michigan's 83 counties reported having hospitals providing specialty care. They're very populated counties, but the spending disparity is clear, especially as more investment is brought to Detroit. Michiganders need to know how consolidation has actually affected their access to healthcare, beyond what the pressers from healthcare companies and daily news can tell them. Additionally, the Detroit News has identified a gap in its data coverage of healthcare, in addition to a gap in its business of healthcare coverage, which is usually covered on an as-needed basis
 
-## Key data analysis points (to be updated as training continues)
-Michigan is ranked No. 14 in the nation, excluding CT (to be addressed later), for per hospital short term general hospital expenditures by state.
+## Key data analysis points, as noted in the maps below 
 
-$342,074,250 is Michigan's per hospital value--exactly the third quartile. Meaning 3/4 of the U.S. states (again, minus CT), have lower per hospital expenditures for short term general hospitals.
+<iframe title="Just 17 Michigan counties report providing specialty hospital care in Michigan" aria-label="Choropleth map" id="datawrapper-chart-egpf6" src="https://datawrapper.dwcdn.net/egpf6/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
 
-**Each** short term general hospital in Michigan spends about $50 million more than the nation's average. 
+<iframe title="Kent, Washtenaw County general hospitals spend the most per institution" aria-label="Choropleth map" id="datawrapper-chart-7Sg7a" src="https://datawrapper.dwcdn.net/7Sg7a/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+
+<iframe title="Michigan specialty hospital expenditures, per institution, fall near nation's average" aria-label="Choropleth map" id="datawrapper-chart-NgOTf" src="https://datawrapper.dwcdn.net/NgOTf/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+
+# Contextualizing the increase and possible holes
+The final story would included data over time for all speciality hospitals by county, not just those reporting expenditures. Additionally, individual-hospital level data, that was noted above, will be used to pinpoint areas with mergers and hosptial closures.
+
+The story cannot claim causaility, but it can show just how concentrated hosptial spending is in just a few counties, and how that has changed over time as consilidation has increased. Incorporating the individual-hospital level data will help.
+
+# Business context: Blue Cross Blue Shield of Michigan
+According to BCBS of Michgian's financial statements, published on their website, premium revenue increased by over $1 billion from 2024 to 2025. However, financial weakness shows in a consistent operating loss for the , which was at a $975 million loss in 2025. The company ensures over 300,000 Michiganders.
+
+# Additional summary statistics
+
+```{r}
+# generalhosp, nation
+generalhosp23 |>
+  summary(generalhosp23$"Expenditures per Hospital", na.rm = TRUE)
+```
+
+```{r}
+# generalhosp, MI
+generalhosp23_MI |>
+  summary(generalhosp23_MI$"Expenditures per Hospital", na.rm = TRUE)
+```
+
+```{r}
+# generalhosp, IL
+generalhosp23_IL |>
+  summary(generalhosp23_IL$"Expenditures per Hospital", na.rm = TRUE)
+```
+```{r}
+# extracare, nation
+extracare23 |>
+  summary(extracare23$"Expenditures per Hospital", na.rm = TRUE)
+```
+
+```{r}
+# extracare, MI, 
+extracare23_MI |>
+  summary(extracare23_MI$"Expenditures per Hospital")
+```
+
+```{r}
+# extracare, IL
+extracare23_IL |>
+  summary(extracare23_IL$"Expenditures per Hospital")
+```
 
 ## Three people I can interview for this story are
 **Thomas Buchmueller**, University of Michigan health economist
@@ -160,7 +189,8 @@ AHRF2025documentation[c(3313, 3314, 3315, 3316, 3319, 3320, 3321, 3322), ]
 generalhosp23_MI <- AHRF2025_MI |>
   select(cnty_name,stgh_reprtd_fac_exp_thou_23, stgh_rptng_exp_23) |>
   rename(County = cnty_name, Hospitals = stgh_rptng_exp_23, Expenditures = stgh_reprtd_fac_exp_thou_23) |>
-  mutate("Expenditures per Hospital" = ((Expenditures * 1000) / Hospitals)) |>
+  mutate(Expenditures = Expenditures*1000) |>
+  mutate("Expenditures per Hospital" = (Expenditures / Hospitals)) |>
   mutate_all(~replace(., is.nan(.), 0)) |>
   arrange(desc("Expenditures per Hospital")
 )
@@ -173,7 +203,8 @@ generalhosp23_MI <- AHRF2025_MI |>
 extracare23_MI <- AHRF2025_MI |>
   select(cnty_name,stnglth_reprtd_fac_exp_thou_23, stnglth_rptng_exp_23) |>
   rename(County = cnty_name, Hospitals = stnglth_rptng_exp_23, Expenditures = stnglth_reprtd_fac_exp_thou_23) |>
-  mutate("Expenditures per Hospital" = ((Expenditures * 1000) / Hospitals)) |>
+  mutate(Expenditures = Expenditures*1000) |>
+  mutate("Expenditures per Hospital" = (Expenditures / Hospitals)) |>
   mutate_all(~replace(., is.nan(.), 0)) |>
   arrange(desc("Expenditures per Hospital")
 )
@@ -187,19 +218,21 @@ extracare23_MI <- AHRF2025_MI |>
 generalhosp23_IL <- AHRF2025_IL |>
   select(cnty_name,stgh_reprtd_fac_exp_thou_23, stgh_rptng_exp_23) |>
   rename(County = cnty_name, Hospitals = stgh_rptng_exp_23, Expenditures = stgh_reprtd_fac_exp_thou_23) |>
-  mutate("Expenditures per Hospital" = ((Expenditures * 1000) / Hospitals)) |>
+  mutate(Expenditures = Expenditures*1000) |>
+  mutate("Expenditures per Hospital" = (Expenditures / Hospitals)) |>
   mutate_all(~replace(., is.nan(.), 0)) |>
   arrange(desc("Expenditures per Hospital")
 )
 ```
 
-### 2025 AHRF data: average expenditures per short-term non-general and long term (extracare) hospitals in Michigan counties
+### 2025 AHRF data: average expenditures per short-term non-general and long term (extracare) hospitals in Illinois counties
 
 ```{r}
 extracare23_IL <- AHRF2025_IL |>
   select(cnty_name,stnglth_reprtd_fac_exp_thou_23, stnglth_rptng_exp_23) |>
   rename(County = cnty_name, Hospitals = stnglth_rptng_exp_23, Expenditures = stnglth_reprtd_fac_exp_thou_23) |>
-  mutate("Expenditures per Hospital" = ((Expenditures * 1000) / Hospitals)) |>
+  mutate(Expenditures = Expenditures*1000) |>
+  mutate("Expenditures per Hospital" = ( Expenditures / Hospitals)) |>
   mutate_all(~replace(., is.nan(.), 0)) |>
   arrange(desc("Expenditures per Hospital")
 )
@@ -407,17 +440,14 @@ summary(extracare23_MI$"Expenditures per Hospital")
 # extracare, IL
 summary(extracare23_IL$"Expenditures per Hospital")
 ```
+
 ### Michigan is ranked No. 14 in the nation, excluding CT (to be addressed later), for per hospital short term general hospital expenditures by state.
 
 ### $342,074,250 is Michigan's per hospital value--exactly the third quartile. Meaning 3/4 of the U.S. states (again, minus CT), have lower per hospital expenditures for short term general hospitals.
 
-# Creating Charts
+# Uploading data to Datawrapper for charts
 
-## Michigan by county
-
-### Join Michigan data by county for map
-
-### Load libraries and API key
+## Load libraries and API key
 
 ```{r}
 library(DatawRappr)
@@ -425,9 +455,27 @@ library(tidyverse)
 datawrapper_auth(api_key =  "qWGtNy2YSjg6j2gfzgCSQ3iYFeeciWYTJTuWyVfTfWqWI7jbNHs9HOcmYIOsc6X2", overwrite=TRUE)
 ```
 
-### Call in data and display head
+## Michigan by county
 
-my_chart <- dw_create_chart()
+```{r}
+generalhosp23_MI_chart <- dw_create_chart()
+dw_data_to_chart(generalhosp23_MI, generalhosp23_MI_chart)
+```
+```{r}
+extracare23_MI_chart <- dw_create_chart()
+dw_data_to_chart(extracare23_MI, extracare23_MI_chart)
+```
+## Nation
+
+```{r}
+generalhosp23_chart <- dw_create_chart()
+dw_data_to_chart(generalhosp23, generalhosp23_chart)
+```
+
+```{r}
+extracare23_chart <- dw_create_chart()
+dw_data_to_chart(extracare23, extracare23_chart)
+```
 
   rename(
     State = st_name_abbrev
