@@ -13,18 +13,9 @@ Michigan hospital systems are getting bigger, but have patients paid a price for
 
 300,000 residents [nearly](https://www.detroitnews.com/story/business/2026/05/27/blue-cross-michigan-medicine-reach-deal/90274740007/) lost their access to the state's premier health system thanks to an insurance dispute [in June](https://www.detroitnews.com/story/business/2026/05/06/blue-cross-tells-250000-michigan-medicine-patients-find-new-doctors/89960599007/), healthcare costs [continue to soar](https://pmc.ncbi.nlm.nih.gov/articles/PMC12920308/) and a $2.2 billion hospital construction project just reached [20 stories tall last month](https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#): it's time explain the juxtaposition between shiny buildings and growing systems with patient struggles.
 
-## Six things (5W and H) you learned about this story 
-Who - hospitals, insurance companies and patients
+Only 17 of Michigan's 83 counties reported having hospitals providing specialty care. They're very populated counties, but the spending disparity is clear, especially as more investment is brought to Detroit. Michiganders need to know how consolidation has actually affected their access to healthcare, beyond what the pressers from healthcare companies and daily news can tell them. Additionally, the Detroit News has identified a gap in its data coverage of healthcare, in addition to a gap in its business of healthcare coverage, which is usually covered on an as-needed basis
 
-What - mergers making systems larger, hospital expenditures growing
-
-When - decades of growing costs and consolidation 
-
-Where - Michigan and its counties, plus comparisons to the U.S.
-
-Why - Only 17 of Michigan's 83 counties reported having hospitals providing specialty care. They're very populated counties, but the spending disparity is clear, especially as more investment is brought to Detroit. Michiganders need to know how consolidation has actually affected their access to healthcare, beyond what the pressers from healthcare companies and daily news can tell them. Additionally, the Detroit News has identified a gap in its data coverage of healthcare, in addition to a gap in its business of healthcare coverage, which is usually covered on an as-needed basis
-
-## Key data analysis points, as noted in the maps below. Fully summary stats are calculated below
+## Key data analysis points, as noted in the maps below. Full summary stats are calculated below, near the end of the code
 
 <iframe title="Just 17 Michigan counties report providing specialty hospital care in Michigan" aria-label="Choropleth map" id="datawrapper-chart-egpf6" src="https://datawrapper.dwcdn.net/egpf6/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
 
@@ -32,17 +23,17 @@ Why - Only 17 of Michigan's 83 counties reported having hospitals providing spec
 
 <iframe title="Michigan specialty hospital expenditures, per institution, fall near nation's average" aria-label="Choropleth map" id="datawrapper-chart-NgOTf" src="https://datawrapper.dwcdn.net/NgOTf/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
 
-# Contextualizing the increase and possible holes
+## Contextualizing the increase and possible holes
 The final story would included data over time for all specialty hospitals by county, not just those reporting expenditures. Additionally, individual-hospital level data, that was noted above, will be used to pinpoint areas with mergers and hosptial closures.
 
 The story cannot claim causality, but it can show just how concentrated hospital spending is in just a few counties, and how that has changed over time as consolidation has increased. Incorporating the individual-hospital level data will help.
 
 How common is it for states to have specialty care concentrated in just a few areas? What about the differences in states by county-level highs? Is it right to connect this expenditure data to patient outcome
 
-# Business context: Blue Cross Blue Shield of Michigan
+## Business context: Blue Cross Blue Shield of Michigan
 According to BCBS of Michgian's financial statements, published on their website, premium revenue increased by over $1 billion from 2024 to 2025. However, financial weakness shows in a consistent operating loss for the , which was at a $975 million loss in 2025. The company ensures over 300,000 Michiganders.
 
-## Three people I can interview for this story are
+## Potential sources
 **Thomas Buchmueller**, University of Michigan health economist
 
 **Bill Farmer**, healthcare advocate who co-founded the Michigan For Single Payer Healthcare grassroots organization with **Eli Rubin**
@@ -53,7 +44,7 @@ According to BCBS of Michgian's financial statements, published on their website
 
 Founders of Michigan's New Day Foundation for Families **Michael Spehn and Gina Kell Spehn** may be able to connect me with patients receiving high-cost specialty care. New Day focuses on working with hospitals to reach patients nearing financial breaking points, especially when it comes to cancer treatment. Many board members have had personal experiences with cancer and costs as well
 
-## Data you will be using to inform the story: 
+## Data sources
 Trends in hospital expenditures and other healthcare data from:
 
 [Health Resources and Services Administration Area Health Resource Files](https://data.hrsa.gov/data/download)
@@ -62,27 +53,27 @@ Trends in hospital expenditures and other healthcare data from:
 
 [Hospital-level expenditure data](https://tool.nashp.org/)
 
-## What are the visual possibilities?
+# More visual possibilities
 County-by county data from the Area Health Resource Files could be used to create a gradient map with a dropdown menu to show different variables for each Michigan county. There could be a scroller for change over time in different metrics such as hospital expenditures and patient outcomes.
 
 A locator map could show detailed information about Detroit healthcare consolidation (imagine a map with points color coded by offices owned by differnet entities); another locator map could also locations of hospitals throughout the state with key expenditure points.
 
 A collaboration with a photographer could result in a patient photo story to add a human element.
 
-## How did you find this story? Summarize any previous coverage. 
+## Previous coverage 
 Last week, Blue Cross Blue Shield of Michigan finally reached a settlement with the University of Michigan Health (Michigan Medicine). The contract renegotiation between the two systems, which allows patients under the insurer to receive care at Michigan Medicine, had nearly failed, threatening 300,000 residents with a loss of care from one of the state's most reputable health systems. As in many industries, consolidation has taken over healthcare. A 2022 Michigan health care merger created a combined 22-hospital system, Corewell Health, with claims of improving patient care. In 2023, Michigan Medicine acquired another health system as well. Still, insurance companies blame hospitals for rising costs, and insurance companies blame hospitals. This April, Michigan Medicine sang praise for the results of the 2023 merger. 
 
 But a [May KFF](https://www.kff.org/health-costs/hospital-prices-have-risen-much-faster-for-private-insurance-than-medicare-since-2019/) study showed hospital prices are rising much faster for private insurance than Medicare since 2019. Another [KFF briefing from 2024](https://www.kff.org/health-costs/ten-things-to-know-about-consolidation-in-health-care-provider-markets/) explains that a large body of evidence point to healthcare conslidiation increasing costs, but that the verdict on patient outcomes is less straightforward.
 
 Michigan Medicine [claims](https://prod.crainsdetroit.com/health-care/whats-behind-blue-cross-michigan-medicine-contract-dispute) it should be rewarded with better contracts thanks to its quality of care and focus on specialty medicine. But how has consolidation really worked out for patients in Michigan, from their health to their pocketbooks? Especially as Detroit's hospital buildings get shinier at taller, as with Henry Ford Hospital's in-progress $2.2 billion, 20-story [expansion]((https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#)?
 
-## What other information do you need to gather? 
+## Further reporting needs
 * Academic input on the nuances of healthcare market consolidation as it relates specifically to Michigan
 * Corporate and patient input
 * Insurance input (private, Medicare/Medicaid)
 * Continued exploration of data
 
-## Who do you need to contact? 
+## First reporting steps
 Kim North Shine, senior public relations representative at the University of Michigan who specializes in public health as one of her topic areas, may be able to help me get in touch with both academic and healthcare sources. Connecting with the advocacy groups mentioned above will also help kick start the reporting side of the story.
 
 # Data analysis: hospital expenditures in 2025
