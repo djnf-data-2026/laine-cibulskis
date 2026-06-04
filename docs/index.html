@@ -142,8 +142,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="contextualizing-the-increase-and-possible-holes" class="level1">
 <h1>Contextualizing the increase and possible holes</h1>
-<p>The final story would included data over time for all speciality hospitals by county, not just those reporting expenditures. Additionally, individual-hospital level data, that was noted above, will be used to pinpoint areas with mergers and hosptial closures.</p>
-<p>The story cannot claim causaility, but it can show just how concentrated hosptial spending is in just a few counties, and how that has changed over time as consilidation has increased. Incorporating the individual-hospital level data will help.</p>
+<p>The final story would included data over time for all specialty hospitals by county, not just those reporting expenditures. Additionally, individual-hospital level data, that was noted above, will be used to pinpoint areas with mergers and hosptial closures.</p>
+<p>The story cannot claim causality, but it can show just how concentrated hospital spending is in just a few counties, and how that has changed over time as consolidation has increased. Incorporating the individual-hospital level data will help.</p>
+<p>How common is it for states to have specialty care concentrated in just a few areas? What about the differences in states by county-level highs? Is it right to connect this expenditure data to patient outcome</p>
 </section>
 <section id="business-context-blue-cross-blue-shield-of-michigan" class="level1">
 <h1>Business context: Blue Cross Blue Shield of Michigan</h1>
@@ -188,12 +189,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="who-do-you-need-to-contact">Who do you need to contact?</h2>
 <p>Kim North Shine, senior public relations representative at the University of Michigan who specializes in public health as one of her topic areas, may be able to help me get in touch with both academic and healthcare sources. Connecting with the advocacy groups mentioned above will also help kick start the reporting side of the story.</p>
 </section>
-</section>
-<section id="the-idea" class="level1">
-<h1>5/31: The Idea</h1>
-<p>Last week, Blue Cross Blue Shield of Michigan finally reached a settlement with the University of Michigan Health (Michigan Medicine). The contract renegotiation between the two systems, which allows patients under the insurer to receive care at Michigan Medicine, had nearly failed, threatening 300,000 residents with a loss of care from one of the state’s most reputable health systems. As in many industries, consolidation has taken over healthcare. A 2022 Michigan health care merger created a combined 22-hospital system, Corewell Health, with claims of improving patient care. In 2023, Michigan Medicine acquired another health system as well. Still, insurance companies blame hospitals for rising costs, and insurance companies blame hospitals. This April, Michigan Medicine sang praise for the results of the 2023 merger.</p>
-<p>But a May KFF study showed hospital prices are rising much faster for private insurance than Medicare since 2019. Michigan Medicine claims it should be rewarded with better contracts thanks to its quality of care and focus on specialty medicine. But how has consolidation really worked out for patients, from their health to their pocketbooks? Especially as Detroit’s hospital buildings get shinier (see Henry Ford Hospital’s recent $2.2 billion expansion).</p>
-<p>Enter: Health Resources and Services Administration data. The HRSA’s Area Health Resource files provide a wealth of information on hospitals by county, state and for the entire nation. An initial look reveals that in just one year, hospital expenditures per non-general and long term hospital in Washtenaw County (includes Ann Arbor, where Michigan Health is based) grew nearly $30 million to reach over $1 billion per hospital as of the most recent data available from 2023 (we have a data lag here according to the documentation). Why is that so much larger than Illinois’ largest county for the same measure, at about $600 million? How quickly have these expenditures risen, county-by-county? Is Michigan rising faster than other states, and how do increases show in areas with newly-merged hospitals? Have the mergers good for expenditures? And patients, such as with care quality metrics also in the data?</p>
 </section>
 <section id="data-analysis-hospital-expenditures-in-2025" class="level1">
 <h1>Data analysis: hospital expenditures in 2025</h1>
@@ -866,21 +861,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>generalhosp23_MI_chart <span class="ot">&lt;-</span> <span class="fu">dw_create_chart</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>New chart's id: s3TmZ</code></pre>
+<pre><code>New chart's id: ud9Ql</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dw_data_to_chart</span>(generalhosp23_MI, generalhosp23_MI_chart)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Data in s3TmZ successfully updated.</code></pre>
+<pre><code>Data in ud9Ql successfully updated.</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>extracare23_MI_chart <span class="ot">&lt;-</span> <span class="fu">dw_create_chart</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>New chart's id: OueQ1</code></pre>
+<pre><code>New chart's id: 5lqIa</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dw_data_to_chart</span>(extracare23_MI, extracare23_MI_chart)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Data in OueQ1 successfully updated.</code></pre>
+<pre><code>Data in 5lqIa successfully updated.</code></pre>
 </div>
 </div>
 </section>
@@ -889,24 +884,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>generalhosp23_chart <span class="ot">&lt;-</span> <span class="fu">dw_create_chart</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>New chart's id: Pbj4F</code></pre>
+<pre><code>New chart's id: IKn6x</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dw_data_to_chart</span>(generalhosp23, generalhosp23_chart)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Data in Pbj4F successfully updated.</code></pre>
+<pre><code>Data in IKn6x successfully updated.</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>extracare23_chart <span class="ot">&lt;-</span> <span class="fu">dw_create_chart</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>New chart's id: yZizw</code></pre>
+<pre><code>New chart's id: wZvdp</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dw_data_to_chart</span>(extracare23, extracare23_chart)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Data in yZizw successfully updated.</code></pre>
+<pre><code>Data in wZvdp successfully updated.</code></pre>
 </div>
 </div>
-<p>rename( State = st_name_abbrev Revenue, short term general hospitals = stgh_23_by_state.x Total short term general hospitals = stgh_23_by_state.y</p>
 </section>
 </section>
 
