@@ -333,108 +333,89 @@ extracare23 <-
   arrange(desc("Expenditures per Hospital"))
 ```
 
+# Summary statistics (for counties that have at least one hospital)
+*My intuition was to exclude counties with zero hospitals in the summary statistics because it is a per county variable. Expenditures per hospital per county. If I'm calculating summary statistics and counties with zero hospitals are included, I would be including non-participants. Before I did this, comparing summary statistics for MI v. the nation didn't made too much sense (I have kept those calculations below and we can chat about them later, because for summary statistics on, say, hospitals by county, I believe keeping the zero in would make more sense.).* 
 
 ```{r}
-stnglth23_exp_by_state <- 
-  AHRF2025 |>
-  select(st_name_abbrev, stnglth_reprtd_fac_exp_thou_23) |>
-  group_by(st_name_abbrev) |>
-  mutate(stnglth_23_by_state = (sum((stnglth_reprtd_fac_exp_thou_23 * 1000)))) |>
-  mutate(stnglth_23_by_state = (sum(stnglth_rptng_exp_23)
-  )
-```
-
-### Create short term general hospitals by state
-
-```{r}
-stnglth_23_by_state <- 
-  AHRF2025 |>
-  select(st_name_abbrev, stnglth_rptng_exp_23) |>
-  group_by(st_name_abbrev) |>
-  
-  )
-```
-
-### Joining the two new data frames
-
-```{r}
-stnglth23 <-
-  stnglth_23_by_state |>
-  select(st_name_abbrev, stnglth_rptng_exp_23, stnglth_23_by_state)
-merge(x = stnglth_rptng_exp_23, y = stnglth_23_by_state, by = "st_name_abbrev", .keep_all=TRUE)
-```
-
-### Total short term general hospital expenditures by state, per hospital in the state (don't need to run again because data frame was saved with new headers)
-
-```{r}
-stnglth_23 |>
-  mutate(stnglth_23_exp_by_state_ph = (stnglth_23_by_state.x / stnglth_23_by_state.y)) |>
-  arrange(desc(stnglth_23_exp_by_state_ph)
-  )
-```
-
-### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
-
-```{r}
-# Renaming
-stnglth_23 <-
-  stnglth_23 |>
-    rename(
-    Expenditures = stnglth_23_by_state.x,
-    Hospitals = stnglth_23_by_state.y,
-    State = st_name_abbrev
-    )
-
+# generalhosp, nation
+generalhosp23 |>
+  filter(Hospitals != 0) |>
+  summary(generalhosp23$"Expenditures per Hospital", na.rm = TRUE)
 ```
 
 ```{r}
-extracare23 <-
-  stgh_23 |>
-  select(State, Hospitals, Expenditures) |>
-  mutate("Expenditures per Hospital" = Expenditures / Hospitals) |>
-  arrange(desc("Expenditures per Hospital"))
+# generalhosp, MI
+generalhosp23_MI |>
+  filter(Hospitals != 0) |>
+  summary(generalhosp23_MI$"Expenditures per Hospital", na.rm = TRUE)
 ```
-
-### General summary
 
 ```{r}
-summary(shortterm23$"Expenditures per Hospital")
+# generalhosp, IL
+generalhosp23_IL |>
+  filter(Hospitals != 0) |>
+  summary(generalhosp23_IL$"Expenditures per Hospital", na.rm = TRUE)
 ```
 
+```{r}
+# extracare, nation
+extracare23 |>
+  filter(Hospitals != 0) |>
+  summary(extracare23$"Expenditures per Hospital", na.rm = TRUE)
+```
+```{r}
+# extracare, MI, 
+extracare23_MI |>
+  filter(Hospitals != 0) |>
+  summary(extracare23_MI$"Expenditures per Hospital")
+```
+
+```{r}
+# extracare, IL
+extracare23_MI |>
+  filter(Hospitals != 0) |>
+  summary(extracare23_IL$"Expenditures per Hospital")
+```
+
+```{r}
+# generalhosp, nation
+summary(generalhosp23$"Expenditures per Hospital", na.rm = TRUE)
+```
+
+```{r}
+# generalhosp, MI
+summary(generalhosp23_MI$"Expenditures per Hospital", na.rm = TRUE)
+```
+
+```{r}
+# generalhosp, IL
+summary(generalhosp23_IL$"Expenditures per Hospital", na.rm = TRUE)
+```
+
+```{r}
+# extracare, nation
+summary(extracare23$"Expenditures per Hospital")
+```
+
+```{r}
+# extracare, MI
+summary(extracare23_MI$"Expenditures per Hospital")
+```
+
+
+```{r}
+# extracare, IL
+summary(extracare23_IL$"Expenditures per Hospital")
+```
 ### Michigan is ranked No. 14 in the nation, excluding CT (to be addressed later), for per hospital short term general hospital expenditures by state.
 
 ### $342,074,250 is Michigan's per hospital value--exactly the third quartile. Meaning 3/4 of the U.S. states (again, minus CT), have lower per hospital expenditures for short term general hospitals.
-
-### Michigan difference from mean calculation
-
-```{r}
-342074250 - 291256410
-```
-
-## Short-term non-general and long-term hospitals
-
-
 
 # Creating Charts
 
 ## Michigan by county
 
 ### Join Michigan data by county for map
-
-```{r}
-full_join(
-  x, stgh_exp_ph
-  y, 
-  by = NULL,
-  copy = FALSE,
-  suffix = c(".x", ".y"),
-  ...,
-  keep = NULL,
-  na_matches = c("na", "never"),
-  multiple = "all",
-  relationship = NULL
-)
-```
 
 ### Load libraries and API key
 
