@@ -6,7 +6,6 @@ format:
   html:
     theme: cosmo
 ---
-# 6/3: The Memo, Second Draft
 
 Plan for second memo:
 - Narrow pitch: focus on connecting hospital finances to patients
@@ -32,15 +31,6 @@ stngh_hosp_beds_23
 stngh_hosp_beds_22
 lth_hosp_beds_23
 lth_hosp_beds_22
-
-## Datawrapper Embed test
-
-<iframe title="Unemployment trends across the U.S. in 2024." aria-label="Choropleth map" id="datawrapper-chart-gmHRV" src="https://datawrapper.dwcdn.net/gmHRV/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
-
-# 6/1: The Memo, First Draft
-
-## Slug
-The Costs of Michigan Healthcare Consolidation
 
 ## Hypothesis/possible headline
 Patients pay the price as Michigan healthcare systems consolidate
@@ -120,11 +110,11 @@ But a May KFF study showed hospital prices are rising much faster for private in
 
 Enter: Health Resources and Services Administration data. The HRSA's Area Health Resource files provide a wealth of information on hospitals by county, state and for the entire nation. An initial look reveals that in just one year, hospital expenditures per non-general and long term hospital in Washtenaw County (includes Ann Arbor, where Michigan Health is based) grew nearly $30 million to reach over $1 billion per hospital as of the most recent data available from 2023 (we have a data lag here according to the documentation). Why is that so much larger than Illinois' largest county for the same measure, at about $600 million? How quickly have these expenditures risen, county-by-county? Is Michigan rising faster than other states, and how do increases show in areas with newly-merged hospitals? Have the mergers good for expenditures? And patients, such as with care quality metrics also in the data?
 
-# Data analysis for the Detroit News
+# Data analysis: hospital expenditures in 2025
 
-Examine hospital expenditures over time by county, the effects of consolidation
+# Setup
 
-### Load packages - do this once
+## Packages
 
 ```{r}
 #install.packages("tidyverse")
@@ -134,7 +124,7 @@ Examine hospital expenditures over time by county, the effects of consolidation
 #install.packages("readxl")
 ```
 
-### Load libraries, do this every time
+## Libraries
 
 ```{r}
 #| include: false
@@ -146,319 +136,80 @@ library(readxl)
 library(dplyr)
 ```
 
-# Loading data AHRFSN data for 2024 and 2025
+## Read the files
 
 ```{r}
-#| include: false
-ahrfsn2025 <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/ahrfsn2025.csv")
-
-ahrfsn2024 <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/ahrfsn2024.csv")
-
-#glimpse(ahrfsn2025)
-
+AHFR2025 <- read.csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025.csv")
+AHFR2025_MI <- read.csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025_MI.csv")
+AHFR25_IL <- read.csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025_IL.csv")
 ```
 
-# Loading AHRF 2025 and 2024 files
+## Documentation
 
 ```{r}
-
-AHRF2025_MI <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/AHRF2025_MI.csv")
-
-
-AHRF2024_MI <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/AHRF2024_MI.csv")
-
-```
-
-# Data Wrangling Notes from Rob
-
-You don't need to run this code below -- I kept it to show you how I loaded the AHRF2025 file from a Google Drive link and then created the filtered Michigan files
-
-```{r}
-#| eval: false
-#| include: false
-googledrive::drive_auth() #you may need to authorize your browser
-
-# Here's the file: https://drive.google.com/file/d/1K8DzTY5yTNI0EeIUpadeCrE552tcxRsj/view?usp=sharing
-
-drive_download(
-  as_id("1K8DzTY5yTNI0EeIUpadeCrE552tcxRsj"),  # copied from the file link
-  path = "../data/AHRF2025.csv", #a random data path - you can select any folder you want
-  overwrite = TRUE
-)
-AHRF2025 <- read_csv("../data/AHRF2025.csv")|> 
-  clean_names()
-
-AHRF2025_MI <- AHRF2025 |> 
-  filter(st_name_abbrev == "MI")
-
-#write_csv(AHRF2025_MI, "../data/AHRF2025_MI.csv" )
-
-```
-
-# Load AHRF2024 file
-
-Same thing as above
-
-```{r}
-#| eval: false
-#| include: false
-#https://drive.google.com/file/d/1GgVgzo7DSv1pn8BjCuhygmILEjGT04Ja/view?usp=sharing
-#googledrive::drive_auth()
-#drive_download(
-  #as_id("1GgVgzo7DSv1pn8BjCuhygmILEjGT04Ja"),  # from the share link
-  #path = "./data/AHRF2024.csv",
-  #overwrite = TRUE
-#)
-#AHRF2024 <- read_csv("./data/AHRF2024.csv")|> 
-  #clean_names()
-
-#AHRF2024_MI <- AHRF2024 |> 
-  #filter(st_name_abbrev == "MI")
-
-#write_csv(AHRF2024_MI, "./data/AHRF2024_MI.csv" )
-
-```
-
-# 5/31: Inital Analysis for Memo
-
-## Create Illinois files for comparison, 2025
-
-```{r}
-#| eval: false
-#| include: false
-#library(googledrive)
-#googledrive::drive_auth() #you may need to authorize your browser
-
-# Here's the file: https://drive.google.com/file/d/1K8DzTY5yTNI0EeIUpadeCrE552tcxRsj/view?usp=sharing
-#googledrive::drive_auth()
-#drive_download(
-  #as_id("1K8DzTY5yTNI0EeIUpadeCrE552tcxRsj"),  # copied from the file link
-  #path = "C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025.csv", #a random data path - you can select any folder you want
-  #overwrite = TRUE
-)
-#AHRF2025 <- read_csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025.csv")|> 
-  #clean_names()
-
-#AHRF2025_IL <- AHRF2025 |> 
-  #filter(st_name_abbrev == "IL")
-
-#write_csv(AHRF2025_IL, "C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2025_IL.csv" )
-
-```
-
-## Create Illinois files for comparison, 2024
-
-```{r}
-#| eval: false
-#| include: false
-#https://drive.google.com/file/d/1GgVgzo7DSv1pn8BjCuhygmILEjGT04Ja/view?usp=sharing
-#googledrive::drive_auth()
-#drive_download(
-  #as_id("1GgVgzo7DSv1pn8BjCuhygmILEjGT04Ja"),  # from the share link
-  #path = "C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2024.csv",
-  #overwrite = TRUE
-#)
-#AHRF2024 <- read_csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2024.csv")|> 
-  clean_names()
-
-#AHRF2024_IL <- AHRF2024 |> 
-  filter(st_name_abbrev == "IL")
-
-#write_csv(AHRF2024_IL, "C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/data/AHRF2024_IL.csv" )
-
-
-```
-
-## Load AHRF files for Illinois and all other counties in the nation
-
-```{r}
-AHRF2024_IL <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/AHRF2024_IL.csv")
-
-AHRF2025_IL <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/AHRF2025_IL.csv")
-
-AHRF2024 <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/AHRF2024.csv")|> 
-  clean_names()
-
-AHRF2025 <- read_csv("https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/refs/heads/main/data/AHRF2025.csv")|> 
-  clean_names()
-```
-
-## Starting to pull documentation for variables
-
-```{r}
-AHRF2024documentation <- read_excel("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/documentation/AHRF 2023-2024 User Tech/AHRF 2023-2024 User Tech/AHRF 2023-2024 Technical DocumentationCSV_Feb2025.xlsx")
+AHRF2025documentation <- read_excel("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/documentation/AHRF_USER_TECH_2024-2025/Technical Documentation/AHRF 2024-2025 Technical Documentation.xlsx")
 # Expenditures
-AHRF2024documentation[c(3310, 3311, 3312, 3313, 3080, 3081, 3082, 3083, 3084, 3316, 3317, 3318, 3319, 3320, 3321, 3367, 3368, 2379), ]
+AHRF2025documentation[c(3313, 3314, 3315, 3316, 3319, 3320, 3321, 3322), ]
 
 ```
+# County-level Michigan analysis
 
-## 2024 AHRF data: short term non-general and long term hospital expenditures by county
-##### The AHRF 2024-2025 User Guide explains that short term non-general hospitals provide specialized care, and the majority of their patients stay for fewer than 30 days. Long term hospitals may provide either non specialized or specialized care, and the majority of their patients stay for 30 or more days.
-
-```{r}
-AHRF2024_MI |>
-  select(cnty_name,stnglth_reprtd_fac_exp_thou_22) |>
-  group_by(cnty_name) |>
-  arrange(desc(stnglth_reprtd_fac_exp_thou_22)
-)
-```
-
-### Per capita
+### 2025 AHRF data: average expenditures per short-term general (generalhosp) hospital in Michigan counties
 
 ```{r}
-AHRF2024_MI |>
-  select(cnty_name,stnglth_reprtd_fac_exp_thou_22, popn_est_22) |>
-  group_by(cnty_name) |>
-  summarise(pc_exp = ((stnglth_reprtd_fac_exp_thou_22 * 1000)/ popn_est_22)) |>
-  arrange(desc(pc_exp)
-)
-```
-
-### Per hospital in the county
-
-```{r}
-stnglth_exp_ph_22_MIc <- AHRF2024_MI |>
-  select(cnty_name,stnglth_reprtd_fac_exp_thou_22, stnglth_rptng_exp_22) |>
-  group_by(cnty_name) |>
-  summarise(stnglth_exp_ph_22_MIc = ((stnglth_reprtd_fac_exp_thou_22 * 1000) / stnglth_rptng_exp_22)) |>
-  arrange(desc(stnglth_exp_ph_22_MIc)
-)
-```
-
-## 2024 AHRF data: short term general hospitals
-##### The The AHRF 2024-2025 User Guide explains that short term general hospitals provide non specialized care, and the majority of their patients stay for fewer than 30 days.
-
-```{r}
-AHRF2024_MI |>
-  select(cnty_name,stgh_reprtd_fac_exp_thou_22) |>
-  group_by(cnty_name) |>
-  arrange(desc(stgh_reprtd_fac_exp_thou_22)
-)
-```
-
-### Per capita
-
-```{r}
-AHRF2024_MI |>
-  select(cnty_name,stgh_reprtd_fac_exp_thou_22, popn_est_22) |>
-  group_by(cnty_name) |>
-  summarise(pc_exp = ((stgh_reprtd_fac_exp_thou_22 * 1000) / popn_est_22)) |>
-  arrange(desc(pc_exp)
-)
-```
-
-### Per hospital in the county
-
-```{r}
-stgh_exp_ph_22_MIc <- AHRF2024_MI |>
-  select(cnty_name,stgh_reprtd_fac_exp_thou_22, stgh_rptng_exp_22
-) |>
-  group_by(cnty_name) |>
-  summarise(stgh_exp_ph_22_MIc = ((stgh_reprtd_fac_exp_thou_22 * 1000) / stgh_rptng_exp_22
-)) |>
-  arrange(desc(stgh_exp_ph_22_MIc)
-)
-```
-
-## 2025 AHRF data: short term non-general and long term hospital expenditures by county
-
-```{r}
-AHRF2025_MI |>
-  select(cnty_name,stnglth_reprtd_fac_exp_thou_22) |>
-  group_by(cnty_name) |>
-  arrange(desc(stnglth_reprtd_fac_exp_thou_22)
-)
-```
-
-### Per capita
-
-```{r}
-AHRF2025_MI |>
-  select(cnty_name,stnglth_reprtd_fac_exp_thou_23, popn_est_23) |>
-  group_by(cnty_name) |>
-  summarise(pc_exp = ((stnglth_reprtd_fac_exp_thou_23 * 1000)/ popn_est_23)) |>
-  arrange(desc(pc_exp)
-)
-```
-
-### Per hosptial in the county
-
-```{r}
-AHRF2025_MI |>
-  select(cnty_name,stnglth_reprtd_fac_exp_thou_23, stgh_rptng_exp_23) |>
-  group_by(cnty_name) |>
-  summarise(ph_exp = ((stnglth_reprtd_fac_exp_thou_23 * 1000) / stgh_rptng_exp_23)) |>
-  arrange(desc(ph_exp)
-)
-```
-
-## 2025 AHRF data: short term general hospitals
-
-```{r}
-AHRF2025_MI |>
-  select(cnty_name,stgh_reprtd_fac_exp_thou_23) |>
-  group_by(cnty_name) |>
-  arrange(desc(stgh_reprtd_fac_exp_thou_23)
-)
-```
-
-## Per capita
-
-```{r}
-AHRF2025_MI |>
-  select(cnty_name,stgh_reprtd_fac_exp_thou_23, popn_est_23) |>
-  group_by(cnty_name) |>
-  summarise(pc_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / popn_est_23)) |>
-  arrange(desc(pc_exp)
-)
-```
-
-## Per hospital in the county
-
-```{r}
-AHRF2025_MI |>
+generalhosp23_MI <- AHRF2025_MI |>
   select(cnty_name,stgh_reprtd_fac_exp_thou_23, stgh_rptng_exp_23) |>
-  group_by(cnty_name) |>
-  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / stgh_rptng_exp_23)) |>
-  arrange(desc(ph_exp)
+  rename(County = cnty_name, Hospitals = stgh_rptng_exp_23, Expenditures = stgh_reprtd_fac_exp_thou_23) |>
+  mutate("Expenditures per Hospital" = ((Expenditures * 1000) / Hospitals)) |>
+  mutate_all(~replace(., is.nan(.), 0)) |>
+  arrange(desc("Expenditures per Hospital")
+)
+```
+
+### 2025 AHRF data: average expenditures per short-term non-general and long term (extracare) hospitals in Michigan counties
+*The AHRF 2024-2025 User Guide explains that short term non-general hospitals provide specialized care, and the majority of their patients stay for fewer than 30 days. Long term hospitals may provide either non specialized or specialized care, and the majority of their patients stay for 30 or more days.*
+
+```{r}
+extracare23_MI <- AHRF2025_MI |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_23, stnglth_rptng_exp_23) |>
+  rename(County = cnty_name, Hospitals = stnglth_rptng_exp_23, Expenditures = stnglth_reprtd_fac_exp_thou_23) |>
+  mutate("Expenditures per Hospital" = ((Expenditures * 1000) / Hospitals)) |>
+  mutate_all(~replace(., is.nan(.), 0)) |>
+  arrange(desc("Expenditures per Hospital")
 )
 ```
 
 ## Quick IL comparison
 
-### Per hospital in each county
+### 2025 AHRF data: average expenditures per short-term general (generalhosp) hospital in Illinois counties
 
 ```{r}
-AHRF2025_IL |>
+generalhosp23_IL <- AHRF2025_IL |>
   select(cnty_name,stgh_reprtd_fac_exp_thou_23, stgh_rptng_exp_23) |>
-  group_by(cnty_name) |>
-  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / stgh_rptng_exp_23)) |>
-  arrange(desc(ph_exp)
+  rename(County = cnty_name, Hospitals = stgh_rptng_exp_23, Expenditures = stgh_reprtd_fac_exp_thou_23) |>
+  mutate("Expenditures per Hospital" = ((Expenditures * 1000) / Hospitals)) |>
+  mutate_all(~replace(., is.nan(.), 0)) |>
+  arrange(desc("Expenditures per Hospital")
 )
 ```
 
-### Washtenaw expenditure change math
+### 2025 AHRF data: average expenditures per short-term non-general and long term (extracare) hospitals in Michigan counties
 
 ```{r}
-1014027286 - 984818286
+extracare23_IL <- AHRF2025_IL |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_23, stnglth_rptng_exp_23) |>
+  rename(County = cnty_name, Hospitals = stnglth_rptng_exp_23, Expenditures = stnglth_reprtd_fac_exp_thou_23) |>
+  mutate("Expenditures per Hospital" = ((Expenditures * 1000) / Hospitals)) |>
+  mutate_all(~replace(., is.nan(.), 0)) |>
+  arrange(desc("Expenditures per Hospital")
+)
 ```
 
-# 6/1 data work: state and nation level
+# National comparison by state
 
-## 2025 AHRF: short term general hospital analysis continued
+## Short-term general hospitals
 
-### Total short term general hospital expenditures by state (state nation data set does not have any expenditure data)
-
-```{r}
-AHRF2025 |>
-  select(st_name_abbrev, stgh_reprtd_fac_exp_thou_23) |>
-  group_by(st_name_abbrev) |>
-  summarise(stgh_23_exp_by_state = (sum((stgh_reprtd_fac_exp_thou_23 * 1000)))) |>
-  arrange(desc(stgh_23_exp_by_state)
-  )
-```
-
-### Save the by state expenditures to use in other operations
+### Total short-term general hospital expenditures by state
 ```{r}
 stgh_23_exp_by_state <- 
   AHRF2025 |>
@@ -468,17 +219,7 @@ stgh_23_exp_by_state <-
   )
 ```
 
-### View the short term general hosptials by state
-
-```{r}
-AHRF2025 |>
-  select(st_name_abbrev, stgh_rptng_exp_23) |>
-  group_by(st_name_abbrev) |>
-  summarise(stgh_23_by_state = (sum(stgh_rptng_exp_23))) |>
-  arrange(desc(stgh_23_by_state))
-```
-
-### Save the short term general hospitals by state to use in other operations
+### Number of short-term general hospitals by state
 
 ```{r}
 stgh_23_by_state <- 
@@ -494,48 +235,170 @@ stgh_23_by_state <-
 
 ```{r}
 stgh_23 <-
-merge(x = stgh_23_exp_by_state, y = stgh_23_by_state, by = "st_name_abbrev", all = TRUE)
+merge(x = stgh_23_exp_by_state, y = stgh_23_by_state, by = "st_name_abbrev", .keep_all=TRUE)
 ```
 
-### Total short term general hospital expenditures by state, per hospital in the state (don't need to run again because data frame was saved with new headers)
+### Total short-term general hospital expenditures by state, per hospital in the state
 
 ```{r}
-#stgh_23 |>
-  #mutate(stgh_23_exp_by_state_ph = (stgh_23_by_state.x / stgh_23_by_state.y)) |>
-  #arrange(desc(stgh_23_exp_by_state_ph))
-  #)
+stgh_23 |>
+  mutate(stgh_23_exp_by_state_ph = (stgh_23_by_state.x / stgh_23_by_state.y)) |>
+  arrange(desc(stgh_23_exp_by_state_ph)
+  )
 ```
 
 ### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
 
 ```{r}
-
+# Renaming
 stgh_23 <-
   stgh_23 |>
     rename(
-    stgh_23_exp_by_state = stgh_23_by_state.x,
-    stgh_23_by_state = stgh_23_by_state.y
+    Expenditures = stgh_23_by_state.x,
+    Hospitals = stgh_23_by_state.y,
+    State = st_name_abbrev
     )
 
-stgh_23_exp_by_state_ph <-
-  stgh_23 |>
-  select(stgh_23_exp_by_state, stgh_23_by_state) |>
-  mutate(stgh_23_exp_by_state_ph = stgh_23_exp_by_state / stgh_23_by_state) |>
-  arrange(desc(stgh_23_exp_by_state_ph))
 ```
-
-### Now stgh_23_exp_by_state_ph has all the variables. Save that into the stgh_23 data frame
 
 ```{r}
-stgh_23 <- stgh_23_exp_by_state_ph
+generalhosp23 <-
+  stgh_23 |>
+  select(State, Hospitals, Expenditures) |>
+  mutate("Expenditures per Hospital" = Expenditures / Hospitals) |>
+  arrange(desc("Expenditures per Hospital"))
 ```
 
-## Create national expenditure comparison
+# National comparison by state
+
+## Short-term non-general and long-term hospitals
+
+### Total short-term non-general and long-term hospital expenditures by state
+```{r}
+stnglth_23_exp_by_state <- 
+  AHRF2025 |>
+  select(st_name_abbrev, stnglth_reprtd_fac_exp_thou_23) |>
+  group_by(st_name_abbrev) |>
+  summarise(stnglth_23_by_state = (sum((stnglth_reprtd_fac_exp_thou_23 * 1000)))
+  )
+```
+
+### Number of short-term non-general and long-term hospitals by state
+
+```{r}
+stnglth_23_by_state <- 
+  AHRF2025 |>
+  select(st_name_abbrev, stnglth_rptng_exp_23) |>
+  group_by(st_name_abbrev) |>
+  summarise(stnglth_23_by_state = (sum(stnglth_rptng_exp_23))) |>
+  arrange(desc(stnglth_23_by_state)
+  )
+```
+
+### Joining the two new data frames
+
+```{r}
+stnglth_23 <-
+merge(x = stnglth_23_exp_by_state, y = stnglth_23_by_state, by = "st_name_abbrev", .keep_all=TRUE)
+```
+
+### Total short-term general hospital expenditures by state, per hospital in the state
+
+```{r}
+stnglth_23 |>
+  mutate(stnglth_23_exp_by_state_ph = (stnglth_23_by_state.x / stnglth_23_by_state.y)) |>
+  arrange(desc(stnglth_23_exp_by_state_ph)
+  )
+```
+
+### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
+
+```{r}
+# Renaming
+stnglth_23 <-
+  stnglth_23 |>
+    rename(
+    Expenditures = stnglth_23_by_state.x,
+    Hospitals = stnglth_23_by_state.y,
+    State = st_name_abbrev
+    )
+
+```
+
+```{r}
+extracare23 <-
+  stnglth_23 |>
+  select(State, Hospitals, Expenditures) |>
+  mutate("Expenditures per Hospital" = Expenditures / Hospitals) |>
+  arrange(desc("Expenditures per Hospital"))
+```
+
+
+```{r}
+stnglth23_exp_by_state <- 
+  AHRF2025 |>
+  select(st_name_abbrev, stnglth_reprtd_fac_exp_thou_23) |>
+  group_by(st_name_abbrev) |>
+  mutate(stnglth_23_by_state = (sum((stnglth_reprtd_fac_exp_thou_23 * 1000)))) |>
+  mutate(stnglth_23_by_state = (sum(stnglth_rptng_exp_23)
+  )
+```
+
+### Create short term general hospitals by state
+
+```{r}
+stnglth_23_by_state <- 
+  AHRF2025 |>
+  select(st_name_abbrev, stnglth_rptng_exp_23) |>
+  group_by(st_name_abbrev) |>
+  
+  )
+```
+
+### Joining the two new data frames
+
+```{r}
+stnglth23 <-
+  stnglth_23_by_state |>
+  select(st_name_abbrev, stnglth_rptng_exp_23, stnglth_23_by_state)
+merge(x = stnglth_rptng_exp_23, y = stnglth_23_by_state, by = "st_name_abbrev", .keep_all=TRUE)
+```
+
+### Total short term general hospital expenditures by state, per hospital in the state (don't need to run again because data frame was saved with new headers)
+
+```{r}
+stnglth_23 |>
+  mutate(stnglth_23_exp_by_state_ph = (stnglth_23_by_state.x / stnglth_23_by_state.y)) |>
+  arrange(desc(stnglth_23_exp_by_state_ph)
+  )
+```
+
+### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
+
+```{r}
+# Renaming
+stnglth_23 <-
+  stnglth_23 |>
+    rename(
+    Expenditures = stnglth_23_by_state.x,
+    Hospitals = stnglth_23_by_state.y,
+    State = st_name_abbrev
+    )
+
+```
+
+```{r}
+extracare23 <-
+  stgh_23 |>
+  select(State, Hospitals, Expenditures) |>
+  mutate("Expenditures per Hospital" = Expenditures / Hospitals) |>
+  arrange(desc("Expenditures per Hospital"))
+```
 
 ### General summary
 
 ```{r}
-summary(stgh_23$stgh_23_exp_by_state_ph)
+summary(shortterm23$"Expenditures per Hospital")
 ```
 
 ### Michigan is ranked No. 14 in the nation, excluding CT (to be addressed later), for per hospital short term general hospital expenditures by state.
@@ -548,14 +411,20 @@ summary(stgh_23$stgh_23_exp_by_state_ph)
 342074250 - 291256410
 ```
 
-# 6/2 data work
+## Short-term non-general and long-term hospitals
 
-## Join Michigan data by county for map
+
+
+# Creating Charts
+
+## Michigan by county
+
+### Join Michigan data by county for map
 
 ```{r}
 full_join(
-  x,
-  y,
+  x, stgh_exp_ph
+  y, 
   by = NULL,
   copy = FALSE,
   suffix = c(".x", ".y"),
@@ -566,157 +435,6 @@ full_join(
   relationship = NULL
 )
 ```
-
-
-## Short term non general and long term hospitals
-
-## 2025 AHRF data: short term general hospitals
-
-```{r}
-AHRF2025_MI |>
-  select(cnty_name,stgh_reprtd_fac_exp_thou_23) |>
-  group_by(cnty_name) |>
-  arrange(desc(stgh_reprtd_fac_exp_thou_23)
-)
-```
-
-## Per capita
-
-```{r}
-AHRF2025_MI |>
-  select(cnty_name,stgh_reprtd_fac_exp_thou_23, popn_est_23) |>
-  group_by(cnty_name) |>
-  summarise(pc_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / popn_est_23)) |>
-  arrange(desc(pc_exp)
-)
-```
-
-## Per hospital in the county
-
-```{r}
-AHRF2025_MI |>
-  select(cnty_name,stgh_reprtd_fac_exp_thou_23, stgh_rptng_exp_23) |>
-  group_by(cnty_name) |>
-  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / stgh_rptng_exp_23)) |>
-  arrange(desc(ph_exp)
-)
-```
-
-## Quick IL comparison
-
-### Per hospital in each county
-
-```{r}
-AHRF2025_IL |>
-  select(cnty_name,stgh_reprtd_fac_exp_thou_23, stgh_rptng_exp_23) |>
-  group_by(cnty_name) |>
-  summarise(ph_exp = ((stgh_reprtd_fac_exp_thou_23 * 1000) / stgh_rptng_exp_23)) |>
-  arrange(desc(ph_exp)
-)
-```
-
-### Washtenaw expenditure change math
-
-```{r}
-1014027286 - 984818286
-```
-
-## 2025 AHRF: short term non general hospitals and long term hospital analysis continued
-
-### Total short term non general hospitals and long term hospital expenditures by state (state nation data set does not have any expenditure data)
-
-```{r}
-AHRF2025 |>
-  select(st_name_abbrev, stnglth_reprtd_fac_exp_thou_23) |>
-  group_by(st_name_abbrev) |>
-  summarise(stnglth_23_exp_by_state = (sum((stnglth_reprtd_fac_exp_thou_23 * 1000)))) |>
-  arrange(desc(stnglth_23_exp_by_state)
-  )
-```
-
-### Save the by state expenditures to use in other operations
-```{r}
-stnglth_23_exp_by_state <- 
-  AHRF2025 |>
-  select(st_name_abbrev, stnglth_reprtd_fac_exp_thou_23) |>
-  group_by(st_name_abbrev) |>
-  summarise(stnglth_23_by_state = (sum((stnglth_reprtd_fac_exp_thou_23 * 1000)))
-  )
-```
-
-### View the short term general hosptials by state
-
-```{r}
-AHRF2025 |>
-  select(st_name_abbrev, stnglth_rptng_exp_23) |>
-  group_by(st_name_abbrev) |>
-  summarise(stgh_23_by_state = (sum(stnglth_rptng_exp_23))) |>
-  arrange(desc(stnglth_23_by_state))
-```
-
-### Save the short term general hospitals by state to use in other operations
-
-```{r}
-stnglth_23_by_state <- 
-  AHRF2025 |>
-  select(st_name_abbrev, stnglth_rptng_exp_23) |>
-  group_by(st_name_abbrev) |>
-  summarise(stgh_23_by_state = (sum(stnglth_rptng_exp_23))) |>
-  arrange(desc(stgh_23_by_state)
-  )
-```
-
-### Joining the two new data frames
-
-```{r}
-stnglth_23 <-
-merge(x = stgh_23_exp_by_state, y = stgh_23_by_state, by = "st_name_abbrev", all = TRUE)
-```
-
-### Total short term general hospital expenditures by state, per hospital in the state
-
-```{r}
-stnglth_23 |>
-  mutate(stgh_23_exp_by_state_ph = (stgh_23_by_state.x / stgh_23_by_state.y)) |>
-  arrange(desc(stgh_23_exp_by_state_ph)
-  )
-```
-
-### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
-
-```{r}
-
-stnglth_23 <-
-  stgh_23 |>
-    rename(
-    stgh_23_exp_by_state = stgh_23_by_state.x,
-    stgh_23_by_state = stgh_23_by_state.y
-    )
-
-stgh_23_exp_by_state_ph <-
-  stgh_23 |>
-  select(stgh_23_exp_by_state, stgh_23_by_state) |>
-  mutate(stgh_23_exp_by_state_ph = stgh_23_exp_by_state / stgh_23_by_state) |>
-  arrange(desc(stgh_23_exp_by_state_ph))
-```
-
-### Now stgh_23_exp_by_state_ph has all the variables. Save that into the stgh_23 data frame
-
-```{r}
-stgh_23 <- stgh_23_exp_by_state_ph
-```
-
-## Create national expenditure comparison
-
-### General summary
-
-```{r}
-summary(stgh_23$stgh_23_exp_by_state_ph)
-```
-
-## Datawrapper
-
-
 
 ### Load libraries and API key
 
