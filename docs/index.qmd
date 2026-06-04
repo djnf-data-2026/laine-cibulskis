@@ -29,7 +29,7 @@ The final story would included data over time for all specialty hospitals by cou
 
 The story cannot claim causality, but it can show just how concentrated hospital spending is in just a few counties, and how that has changed over time as consolidation has increased. Incorporating the individual-hospital level data will help.
 
-How common is it for states to have specialty care concentrated in just a few areas? What about the differences in states by county-level highs? Is it right to connect this expenditure data to patient outcome
+How common is it for states to have specialty care concentrated in just a few areas? What about the differences in states by county-level highs? What is the best way to connect this expenditure data with patient outcome or healthcare access data?
 
 ## Business context: Blue Cross Blue Shield of Michigan
 According to BCBS of Michgian's financial statements, published on their website, premium revenue increased by over $1 billion from 2024 to 2025. However, financial weakness shows in a consistent operating loss for the , which was at a $975 million loss in 2025. The company ensures over 300,000 Michiganders.
@@ -66,7 +66,7 @@ Last week, Blue Cross Blue Shield of Michigan finally reached a settlement with 
 
 But a [May KFF](https://www.kff.org/health-costs/hospital-prices-have-risen-much-faster-for-private-insurance-than-medicare-since-2019/) study showed hospital prices are rising much faster for private insurance than Medicare since 2019. Another [KFF briefing from 2024](https://www.kff.org/health-costs/ten-things-to-know-about-consolidation-in-health-care-provider-markets/) explains that a large body of evidence point to healthcare conslidiation increasing costs, but that the verdict on patient outcomes is less straightforward.
 
-Michigan Medicine [claims](https://prod.crainsdetroit.com/health-care/whats-behind-blue-cross-michigan-medicine-contract-dispute) it should be rewarded with better contracts thanks to its quality of care and focus on specialty medicine. But how has consolidation really worked out for patients in Michigan, from their health to their pocketbooks? Especially as Detroit's hospital buildings get shinier at taller, as with Henry Ford Hospital's in-progress $2.2 billion, 20-story [expansion]((https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#)?
+Michigan Medicine [claims](https://prod.crainsdetroit.com/health-care/whats-behind-blue-cross-michigan-medicine-contract-dispute) it should be rewarded with better contracts thanks to its quality of care and focus on specialty medicine. But how has consolidation really worked out for patients in Michigan, from their health to their pocketbooks? Especially as Detroit's hospital buildings get shinier at taller, as with Henry Ford Hospital's in-progress $2.2 billion, 20-story [expansion](https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#)?
 
 ## Further reporting needs
 * Academic input on the nuances of healthcare market consolidation as it relates specifically to Michigan
