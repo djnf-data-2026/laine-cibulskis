@@ -32,7 +32,7 @@ The story cannot claim causality, but it can show just how concentrated hospital
 How common is it for states to have specialty care concentrated in just a few areas? What about the differences in states by county-level highs? What is the best way to connect this expenditure data with patient outcome or healthcare access data?
 
 ## Business context: Blue Cross Blue Shield of Michigan
-According to BCBS of Michgian's financial statements, published on their website, premium revenue increased by over $1 billion from 2024 to 2025. However, financial weakness shows in a consistent operating loss for the , which was at a $975 million loss in 2025. The company ensures over 300,000 Michiganders.
+According to BCBS of Michgian's financial statements, published on their website, premium revenue increased by over $1 billion from 2024 to 2025. However, financial weakness shows in a consistent operating loss for the , which was at a $975 million loss in 2025. The company ensures over 4 million Michiganders.
 
 ## Potential sources
 **Thomas Buchmueller**, University of Michigan health economist
@@ -62,7 +62,7 @@ A locator map could show detailed information about Detroit healthcare consolida
 A collaboration with a photographer could result in a patient photo story to add a human element.
 
 ## Previous coverage 
-Last week, Blue Cross Blue Shield of Michigan finally reached a settlement with the University of Michigan Health (Michigan Medicine). The contract renegotiation between the two systems, which allows patients under the insurer to receive care at Michigan Medicine, had nearly failed, threatening 300,000 residents with a loss of care from one of the state's most reputable health systems. As in many industries, consolidation has taken over healthcare. A 2022 Michigan health care merger created a combined 22-hospital system, Corewell Health, with claims of improving patient care. In 2023, Michigan Medicine acquired another health system as well. Still, insurance companies blame hospitals for rising costs, and insurance companies blame hospitals. This April, Michigan Medicine sang praise for the results of the 2023 merger. 
+Last week, Blue Cross Blue Shield of Michigan finally reached a settlement with the University of Michigan Health (Michigan Medicine). The contract renegotiation between the two systems, which allows patients under the insurer to receive care at Michigan Medicine, had nearly failed, threatening 300,000 Detriot residents with a loss of care from one of the state's most reputable health systems. As in many industries, consolidation has taken over healthcare. A 2022 Michigan health care merger created a combined 22-hospital system, Corewell Health, with claims of improving patient care. In 2023, Michigan Medicine acquired another health system as well. Still, insurance companies blame hospitals for rising costs, and insurance companies blame hospitals. This April, Michigan Medicine sang praise for the results of the 2023 merger. 
 
 But a [May KFF](https://www.kff.org/health-costs/hospital-prices-have-risen-much-faster-for-private-insurance-than-medicare-since-2019/) study showed hospital prices are rising much faster for private insurance than Medicare since 2019. Another [KFF briefing from 2024](https://www.kff.org/health-costs/ten-things-to-know-about-consolidation-in-health-care-provider-markets/) explains that a large body of evidence point to healthcare conslidiation increasing costs, but that the verdict on patient outcomes is less straightforward.
 
