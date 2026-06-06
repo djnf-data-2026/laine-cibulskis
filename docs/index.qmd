@@ -29,7 +29,7 @@ Michigan hospital systems are getting bigger, but have patients paid a price for
 
 Thanks to an insurance dispute, [nearly](https://www.detroitnews.com/story/business/2026/05/27/blue-cross-michigan-medicine-reach-deal/90274740007/) 300,000 patients lost their access to the state's premier health system thanks to an insurance dispute [in June](https://www.detroitnews.com/story/business/2026/05/06/blue-cross-tells-250000-michigan-medicine-patients-find-new-doctors/89960599007/), healthcare costs [continue to soar](https://pmc.ncbi.nlm.nih.gov/articles/PMC12920308/) and a \$2.2 billion hospital construction project just reached [20 stories tall last month](https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#): it's time explain the juxtaposition between shiny buildings and growing systems with patient struggles.
 
-**this suggests a problem** - **that actually could be a lot of specialty care** \*\*don't know just rephrase\*\* Only 16 of Michigan's 83 counties reported having hospitals providing specialty care. One key note for Michigan: that care is concentrated in the south of the state, as opposed to states with more equally distributed healthcare centers like Illinois, which has a similar overall population (Chicago and UIUC in southern Illinois are two major health centers). They're very populated Michigan counties, but the spending disparity is clear, especially as more investment is brought to Detroit. **this is suggesting consolidation denied advanced healthcare to the upper part of the state but we havent established any consolidation up to this point** Michiganders need to know how consolidation has actually affected their access to healthcare, beyond what the pressers from healthcare companies and daily news can tell them. Additionally, the Detroit News has identified a gap in its data coverage of healthcare, in addition to a gap in its business of healthcare coverage, which is usually covered on an as-needed basis.
+Only Michigan's specialty care is concentrated in the populus Southwest area of the state: 16 of Michigan's 83 counties reported having hospitals providing specialty care. One key note for Michigan: that care is concentrated in the south of the state, as opposed to states with more equally distributed healthcare centers like Illinois, which has a similar overall population (Chicago and UIUC in southern Illinois are two major health centers). They're very populated Michigan counties, but the spending disparity is clear, especially as more investment is brought to Detroit. **this is suggesting consolidation denied advanced healthcare to the upper part of the state but we havent established any consolidation up to this point** Michiganders need to know how consolidation has actually affected their access to healthcare, beyond what the pressers from healthcare companies and daily news can tell them. Additionally, the Detroit News has identified a gap in its data coverage of healthcare, in addition to a gap in its business of healthcare coverage, which is usually covered on an as-needed basis.
 
 ## Key data analysis points, noted in the maps below
 
@@ -185,6 +185,7 @@ AHRF2024_MI <- read.csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulsk
 | **Expenditures per Hospital** | Annual hospital expenditures divided by the hospital count and separated by hospital type. |
 | **Preventable Hospital Stays Rate** | The hospital discharge rate for ambulatory care-sensitive conditions per 100,000 FFS Medicare enrollees ages 18 and older. This measure is age-adjusted. |
 | **Corewell County** | These counties have a Corewell hospital, sourced from Corewell's hospital locations [page](https://careers.corewellhealth.org/us/en/hospital-locations) |
+| **South County** | This distinction covers the thumb, southern Michigan and southeast county designations, per Michigan State University's [distinctions](https://www.canr.msu.edu/difficult_conversations/national-and-statewide-resources/michigan-regional-resources/index). Counties are given a "0" if they fall in the upper peninsula, northern Michigan, west Michigan or central Michigan designations |
 :::
 
 ## Documentation
@@ -208,13 +209,21 @@ AHRF2025documentation[c(2498, 3313, 3314, 3315, 3316, 3319, 3320, 3321, 3322), ]
 
 # County-level Michigan analysis
 
-## General hospitals in Michigan counties
-
 ```{r}
 # Create list of counties with a Corewell hospital
 
-"merged_county" <- c("Mecosta", "Wayne", "Oakland", "Newaygo", "Kent", "Montcalm", "Barry", "Mason", "Berrien", "Osceola", "Ottawa")
+merged_county <- c("Mecosta", "Wayne", "Oakland", "Newaygo", "Kent", "Montcalm", "Barry", "Mason", "Berrien", "Osceola", "Ottawa")
 ```
+
+
+```{r}
+# Create list of counties: south v. north
+north_county <-  c("Alger", "Baraga", "Chippewa", "Delta", "Dickinson", "Gogebic", "Houghton", "Iron", "Keweenaw", "Luce", "Mackinac", "Marquette", "Menominee", "Ontonagon", "Schoolcraft", "Alcona", "Alpena", "Arenac", "Benzie", "Charlevoix", "Cheboygan", "Crawford", "Emmet", "Grand Traverse", "Iosco", "Kalkaska", "Leelanau", "Manistee", "Montmorency", "Ogemaw", "Oscoda", "Otsego", "Presque Isle", "Roscommon", "Allegan", "Barry", "Kent", "Lake", "Mason", "Muskegon", "Newaygo", "Oceana", "Ottawa", "Clare", "Clinton", "Eaton", "Gladwin", "Gratiot", "Ingham", "Ionia", "Isabella", "Mecosta", "Missaukee", "Montcalm", "Osceola", "Wexford")
+```
+
+## General hospitals in Michigan counties
+
+
 
 ### 2023
 
@@ -458,21 +467,130 @@ ec_MI |>
   )
 ```
 
-## Preventable stays
+## Analyzing north v. south counties
+
+### General hospitals
+
+```{r}
+# Join
+gh_MI <- gh_MI |>
+  mutate("North County" = case_when(
+  County %in% north_county ~ 1,
+  TRUE  ~ 0
+  ))
+```
+
 ```{r}
 gh_MI |>
-  select(County,hosp_gh23, hosp_gh22, hosp_gh21, exp_per_hosp_gh23, exp_per_hosp_gh22, exp_per_hosp_gh21, prevstays_pct_change21_22, "Corewell County") |>
+  select(hosp_gh23, hosp_gh22, hosp_gh21, exp_per_hosp_gh23, exp_per_hosp_gh22, exp_per_hosp_gh21, "North County", exp_per_hosp_pct_change21_22, exp_per_hosp_pct_change22_23, exp_per_hosp_pct_change21_23) |>
+  filter(hosp_gh21 != 0 & hosp_gh22 != 0) |>
+    summarize(
+    avg_pct_change21_22 = mean(exp_per_hosp_pct_change21_22, na.rm = TRUE),
+    min_change         = min(exp_per_hosp_pct_change21_22, na.rm = TRUE),
+    max_change         = max(exp_per_hosp_pct_change21_22, na.rm = TRUE),
+    county_count       = n(),
+    .by = 'North County'
+  )
+```
+
+```{r}
+gh_MI |>
+  select(hosp_gh23, hosp_gh22, hosp_gh21, exp_per_hosp_gh23, exp_per_hosp_gh22, exp_per_hosp_gh21, "North County", exp_per_hosp_pct_change21_22, exp_per_hosp_pct_change22_23, exp_per_hosp_pct_change21_23) |>
+  filter(hosp_gh23 != 0 & hosp_gh22 != 0) |>
+    summarize(
+    avg_pct_change22_23 = mean(exp_per_hosp_pct_change22_23, na.rm = TRUE),
+    min_change         = min(exp_per_hosp_pct_change22_23, na.rm = TRUE),
+    max_change         = max(exp_per_hosp_pct_change22_23, na.rm = TRUE),
+    county_count       = n(),
+    .by = 'North County'
+  )
+```
+
+```{r}
+gh_MI |>
+  select(hosp_gh23, hosp_gh22, hosp_gh21, exp_per_hosp_gh23, exp_per_hosp_gh22, exp_per_hosp_gh21, "North County", exp_per_hosp_pct_change21_22, exp_per_hosp_pct_change22_23, exp_per_hosp_pct_change21_23) |>
+  filter(hosp_gh23 != 0 & hosp_gh21 != 0) |>
+    summarize(
+    avg_pct_change21_23 = mean(exp_per_hosp_pct_change21_23, na.rm = TRUE),
+    min_change         = min(exp_per_hosp_pct_change21_23, na.rm = TRUE),
+    max_change         = max(exp_per_hosp_pct_change21_23, na.rm = TRUE),
+    county_count       = n(),
+    .by = 'North County'
+  )
+```
+
+### Extra care hospitals
+
+```{r}
+# Join
+ec_MI <- ec_MI |>
+  mutate("North County" = case_when(
+  County %in% north_county ~ 1,
+  TRUE                      ~ 0
+  ))
+
+ec_MI <- ec_MI |>
+  select(County, hosp_ec23, hosp_ec22, hosp_ec21, exp_per_hosp_ec23, exp_per_hosp_ec22, exp_per_hosp_ec21, "North County") |>
+  mutate(exp_per_hosp_pct_change21_22 = ((exp_per_hosp_ec22 - exp_per_hosp_ec21) / (exp_per_hosp_ec21)) * 100) |>
+  mutate(exp_per_hosp_pct_change22_23 = ((exp_per_hosp_ec23 - exp_per_hosp_ec22) / (exp_per_hosp_ec22)) * 100) |>
+  mutate(exp_per_hosp_pct_change21_23 = ((exp_per_hosp_ec23 - exp_per_hosp_ec21) / (exp_per_hosp_ec21)) * 100)
+```
+
+```{r}
+ec_MI |>
+  select(hosp_ec23, hosp_ec22, hosp_ec21, exp_per_hosp_ec23, exp_per_hosp_ec22, exp_per_hosp_ec21, "North County", exp_per_hosp_pct_change21_22, exp_per_hosp_pct_change22_23, exp_per_hosp_pct_change21_23) |>
+  filter(hosp_ec21 != 0 & hosp_ec22 != 0) |>
+    summarize(
+    avg_pct_change21_22 = mean(exp_per_hosp_pct_change21_22, na.rm = TRUE),
+    min_change         = min(exp_per_hosp_pct_change21_22, na.rm = TRUE),
+    max_change         = max(exp_per_hosp_pct_change21_22, na.rm = TRUE),
+    county_count       = n(),
+    .by = 'North County'
+  )
+```
+
+```{r}
+ec_MI |>
+  select(hosp_ec23, hosp_ec22, hosp_ec21, exp_per_hosp_ec23, exp_per_hosp_ec22, exp_per_hosp_ec21, "North County", exp_per_hosp_pct_change21_22, exp_per_hosp_pct_change22_23, exp_per_hosp_pct_change21_23) |>
+  filter(hosp_ec23 != 0 & hosp_ec22 != 0) |>
+    summarize(
+    avg_pct_change22_23 = mean(exp_per_hosp_pct_change22_23, na.rm = TRUE),
+    min_change         = min(exp_per_hosp_pct_change22_23, na.rm = TRUE),
+    max_change         = max(exp_per_hosp_pct_change22_23, na.rm = TRUE),
+    county_count       = n(),
+    .by = 'North County'
+  )
+```
+
+```{r}
+ec_MI |>
+  select(hosp_ec23, hosp_ec22, hosp_ec21, exp_per_hosp_ec23, exp_per_hosp_ec22, exp_per_hosp_ec21, "North County", exp_per_hosp_pct_change21_22, exp_per_hosp_pct_change22_23, exp_per_hosp_pct_change21_23) |>
+  filter(hosp_ec23 != 0 & hosp_ec21 != 0) |>
+    summarize(
+    avg_pct_change21_23 = mean(exp_per_hosp_pct_change21_23, na.rm = TRUE),
+    min_change         = min(exp_per_hosp_pct_change21_23, na.rm = TRUE),
+    max_change         = max(exp_per_hosp_pct_change21_23, na.rm = TRUE),
+    county_count       = n(),
+    .by = 'North County'
+  )
+```
+
+
+#### Preventable stays
+```{r}
+gh_MI |>
+  select(County,hosp_gh23, hosp_gh22, hosp_gh21, exp_per_hosp_gh23, exp_per_hosp_gh22, exp_per_hosp_gh21, prevstays_pct_change21_22, "North County") |>
   filter(hosp_gh22 != 0 & hosp_gh21 != 0 & hosp_gh23 != 0) |>
     summarize(
     avg_pct_change21_22 = mean(prevstays_pct_change21_22, na.rm = TRUE),
     min_change         = min(prevstays_pct_change21_22, na.rm = TRUE),
     max_change         = max(prevstays_pct_change21_22, na.rm = TRUE),
     county_count       = n(),
-    .by = 'Corewell County'
+    .by = 'North County'
   )
 ```
 
-## Quick IL comparison
+#### Quick IL comparison
 
 #### 2025, general hospitals in Illinois counties
 
@@ -500,11 +618,11 @@ extracare23_IL <- AHRF2025_IL |>
 )
 ```
 
-## National comparison by state
+### National comparison by state
 
-## Short-term general hospitals
+#### Short-term general hospitals
 
-### Total short-term general hospital expenditures by state
+##### Total short-term general hospital expenditures by state
 
 ```{r}
 stgh_23_exp_by_state <- 
@@ -515,7 +633,7 @@ stgh_23_exp_by_state <-
   )
 ```
 
-### Number of short-term general hospitals by state
+##### Number of short-term general hospitals by state
 
 ```{r}
 stgh_23_by_state <- 
@@ -527,14 +645,14 @@ stgh_23_by_state <-
   )
 ```
 
-### Joining the two new data frames
+##### Joining the two new data frames
 
 ```{r}
 stgh_23 <-
 merge(x = stgh_23_exp_by_state, y = stgh_23_by_state, by = "st_name_abbrev", .keep_all=TRUE)
 ```
 
-### Total short-term general hospital expenditures by state, per hospital in the state
+##### Total short-term general hospital expenditures by state, per hospital in the state
 
 ```{r}
 stgh_23 |>
@@ -543,7 +661,7 @@ stgh_23 |>
   )
 ```
 
-### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
+##### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
 
 ```{r}
 # Renaming
@@ -565,11 +683,11 @@ generalhosp23 <-
   arrange(desc("Expenditures per Hospital"))
 ```
 
-# National comparison by state
+### National comparison by state
 
-## Short-term non-general and long-term hospitals
+#### Short-term non-general and long-term hospitals
 
-### Total short-term non-general and long-term hospital expenditures by state
+##### Total short-term non-general and long-term hospital expenditures by state
 
 ```{r}
 stnglth_23_exp_by_state <- 
@@ -580,7 +698,7 @@ stnglth_23_exp_by_state <-
   )
 ```
 
-### Number of short-term non-general and long-term hospitals by state
+##### Number of short-term non-general and long-term hospitals by state
 
 ```{r}
 stnglth_23_by_state <- 
@@ -592,14 +710,14 @@ stnglth_23_by_state <-
   )
 ```
 
-### Joining the two new data frames
+##### Joining the two new data frames
 
 ```{r}
 stnglth_23 <-
 merge(x = stnglth_23_exp_by_state, y = stnglth_23_by_state, by = "st_name_abbrev", .keep_all=TRUE)
 ```
 
-### Total short-term general hospital expenditures by state, per hospital in the state
+##### Total short-term general hospital expenditures by state, per hospital in the state
 
 ```{r}
 stnglth_23 |>
@@ -608,7 +726,7 @@ stnglth_23 |>
   )
 ```
 
-### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
+##### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
 
 ```{r}
 # Renaming
@@ -630,9 +748,9 @@ extracare23 <-
   arrange(desc("Expenditures per Hospital"))
 ```
 
-# Summary statistics (for counties that have at least one hospital)
+## Summary statistics (for counties that have at least one hospital)
 
-*My intuition was to exclude counties with zero hospitals in the summary statistics because it is a per county variable. Expenditures per hospital per county. If I'm calculating summary statistics and counties with zero hospitals are included, I would be including non-participants. Before I did this, comparing summary statistics for MI v. the nation didn't made too much sense (I have kept those calculations below and we can chat about them later, because for summary statistics on, say, hospitals by county, I believe keeping the zero in would make more sense.).*
+*My intuition was to exclude counties with zero hospitals in the summary statistics because it is a per county variable. Expenditures per hospital per county. If I'm calculating summary statistics and counties with zero hospitals are included, I would be including non-participants.*
 
 ```{r}
 # generalhosp, nation
@@ -676,47 +794,9 @@ extracare23_MI |>
   summary(extracare23_IL$"Expenditures per Hospital")
 ```
 
-# Additional summary statistics
+## Uploading data to Datawrapper for charts
 
-```{r}
-# generalhosp, nation
-generalhosp23 |>
-  summary(generalhosp23$"Expenditures per Hospital", na.rm = TRUE)
-```
-
-```{r}
-# generalhosp, MI
-generalhosp23_MI |>
-  summary(generalhosp23_MI$"Expenditures per Hospital", na.rm = TRUE)
-```
-
-```{r}
-# generalhosp, IL
-generalhosp23_IL |>
-  summary(generalhosp23_IL$"Expenditures per Hospital", na.rm = TRUE)
-```
-
-```{r}
-# extracare, nation
-extracare23 |>
-  summary(extracare23$"Expenditures per Hospital", na.rm = TRUE)
-```
-
-```{r}
-# extracare, MI, 
-extracare23_MI |>
-  summary(extracare23_MI$"Expenditures per Hospital")
-```
-
-```{r}
-# extracare, IL
-extracare23_IL |>
-  summary(extracare23_IL$"Expenditures per Hospital")
-```
-
-# Uploading data to Datawrapper for charts
-
-## Load libraries and API key
+### Load libraries and API key
 
 ```{r}
 library(DatawRappr)
@@ -724,7 +804,7 @@ library(tidyverse)
 datawrapper_auth(api_key =  "qWGtNy2YSjg6j2gfzgCSQ3iYFeeciWYTJTuWyVfTfWqWI7jbNHs9HOcmYIOsc6X2", overwrite=TRUE)
 ```
 
-## Michigan by county
+### Michigan by county
 
 ```{r}
 generalhosp23_MI_chart <- dw_create_chart()
@@ -736,7 +816,7 @@ extracare23_MI_chart <- dw_create_chart()
 dw_data_to_chart(extracare23_MI, extracare23_MI_chart)
 ```
 
-## Nation
+### Nation
 
 ```{r}
 generalhosp23_chart <- dw_create_chart()
@@ -747,7 +827,3 @@ dw_data_to_chart(generalhosp23, generalhosp23_chart)
 extracare23_chart <- dw_create_chart()
 dw_data_to_chart(extracare23, extracare23_chart)
 ```
-
-::::::::
-
-:::::::
