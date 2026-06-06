@@ -16,13 +16,19 @@ author:
     url: https://www.linkedin.com/in/laine-cibulskis/
 ---
 
----
+------------------------------------------------------------------------
 
 # Patients pay the price as Michigan healthcare systems consolidate
 
+::: {#fig-comparison layout-ncol="2"}
+\[![A rendering of Henry Ford Hospital's \$2.2 billion expansion in Detroit, which the health system calls "Destination: Grand" (Henry Ford Health).](https://imgproxy.divecdn.com/BF6AEavgNwvDYYT0xpugrooepom4orcRB62rIxtnUjA/g:ce/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9SZW5kZXJpbmdfRGVzdGluYXRpb25fR3JhbmRfMDMuanBn.webp?raw=true)
+
+\[![CJ Smith rests in a hospital bed at the Ascension Providence Hospital in Southfield during a sickle cell crisis in 2024. Outlier Media called the disease a "poster child for medical inequity," and reported on the inability for Black adult patients to recieve proper care. Ascension controls over \$39 billion in assets and 90 hopsitals across the U.S. The [state allotted](https://www.michigan.gov/mdhhs/-/media/Project/Websites/mdhhs/Public-Health-Genomics/HEMQIP/2026-Strategic-Plan-to-Address-Sickle-Cell-Disease-Across-the-Lifespan.pdf) $5 billion to sickle cell treatment, which supported Henry Ford Hospital's new sickle cell clinic. It opened in 2024 serving 180 people at the time, according to [Outlier Media](https://outliermedia.org/sickle-cell-care-future-better-tests-detroit/). Sickle cell disease is [estimated](https://www.michigan.gov/whitmer/news/proclamations/2025/06/19/june-19-2025-sickle-cell-awareness-day) to impact 4,000 Michiganders. (Cydni Elledge/Outlier Media]](https://i0.wp.com/outliermedia.org/wp-content/uploads/2024/09/0905_Out_SickleBasicCare_20240523CydniElledgeCJHospital002AboveView.jpg?raw=true)
+:::
+
 Michigan hospital systems are getting bigger, but have patients paid a price for consolidation? This story will focus on the shrinking number of players in Michigan healthcare and how it has affected access to specialty care throughout the state.
 
-Thanks to an insurance dispute, [nearly](https://www.detroitnews.com/story/business/2026/05/27/blue-cross-michigan-medicine-reach-deal/90274740007/) patients lost their access to the state's premier health system thanks to an insurance dispute [in June](https://www.detroitnews.com/story/business/2026/05/06/blue-cross-tells-250000-michigan-medicine-patients-find-new-doctors/89960599007/), healthcare costs [continue to soar](https://pmc.ncbi.nlm.nih.gov/articles/PMC12920308/) and a \$2.2 billion hospital construction project just reached [20 stories tall last month](https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#): it's time explain the juxtaposition between shiny buildings and growing systems with patient struggles.
+Thanks to an insurance dispute, [nearly](https://www.detroitnews.com/story/business/2026/05/27/blue-cross-michigan-medicine-reach-deal/90274740007/) 300,000 patients lost their access to the state's premier health system thanks to an insurance dispute [in June](https://www.detroitnews.com/story/business/2026/05/06/blue-cross-tells-250000-michigan-medicine-patients-find-new-doctors/89960599007/), healthcare costs [continue to soar](https://pmc.ncbi.nlm.nih.gov/articles/PMC12920308/) and a \$2.2 billion hospital construction project just reached [20 stories tall last month](https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#): it's time explain the juxtaposition between shiny buildings and growing systems with patient struggles.
 
 **this suggests a problem** - **that actually could be a lot of specialty care** \*\*don't know just rephrase\*\* Only 16 of Michigan's 83 counties reported having hospitals providing specialty care. One key note for Michigan: that care is concentrated in the south of the state, as opposed to states with more equally distributed healthcare centers like Illinois, which has a similar overall population (Chicago and UIUC in southern Illinois are two major health centers). They're very populated Michigan counties, but the spending disparity is clear, especially as more investment is brought to Detroit. **this is suggesting consolidation denied advanced healthcare to the upper part of the state but we havent established any consolidation up to this point** Michiganders need to know how consolidation has actually affected their access to healthcare, beyond what the pressers from healthcare companies and daily news can tell them. Additionally, the Detroit News has identified a gap in its data coverage of healthcare, in addition to a gap in its business of healthcare coverage, which is usually covered on an as-needed basis.
 
@@ -166,7 +172,7 @@ AHRF2024_MI <- read.csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulsk
 ## Data Dictionary
 
 | Column name | Definition |
-|-------------------|-----------------------------------------------------|
+|------------------------|-----------------------------------------------|
 | **General Hospital** | Includes only short-term general hosptials. |
 | **Extra Care** | Includes short-term non-general and long-term hospitals. |
 | **Hospitals** | The total count of either general hospitals or extra care hospitals, depending on the frame of analysis. |
@@ -198,9 +204,8 @@ AHRF2025documentation[c(3313, 3314, 3315, 3316, 3319, 3320, 3321, 3322), ]
 ```{r}
 # Create list of counties with a Corewell hospital
 
-"merged_county" <- c("Mecosta", "Wayne", "Oakland", "Newaygo", "Kent", "Montcalm", "Barry", "Mason", "Berrien", "Osceola", "Ottawa", "Cass", "Van Buren", "Allegan")
+"merged_county" <- c("Mecosta", "Wayne", "Oakland", "Newaygo", "Kent", "Montcalm", "Barry", "Mason", "Berrien", "Osceola", "Ottawa")
 ```
-
 
 ### 2023
 
@@ -324,6 +329,7 @@ ec21_MI <- extracare21_MI |>
   rename(hosp_ec21 = Hospitals, exp_ec21 = Expenditures, exp_per_hosp_ec21 = "Expenditures per Hospital")
 
 ```
+
 ## Analyzing Corewell v. non-Corewell change over time
 
 ### General hospitals
@@ -345,7 +351,6 @@ gh_MI <- gh_MI |>
   mutate(exp_per_hosp_pct_change21_23 = ((exp_per_hosp_gh23 - exp_per_hosp_gh21) / (exp_per_hosp_gh21)) * 100)
 ```
 
-
 ```{r}
 gh_MI |>
   select(hosp_gh23, hosp_gh22, hosp_gh21, exp_per_hosp_gh23, exp_per_hosp_gh22, exp_per_hosp_gh21, "Corewell County", exp_per_hosp_pct_change21_22, exp_per_hosp_pct_change22_23, exp_per_hosp_pct_change21_23) |>
@@ -359,7 +364,6 @@ gh_MI |>
   )
 ```
 
-
 ```{r}
 gh_MI |>
   select(hosp_gh23, hosp_gh22, hosp_gh21, exp_per_hosp_gh23, exp_per_hosp_gh22, exp_per_hosp_gh21, "Corewell County", exp_per_hosp_pct_change21_22, exp_per_hosp_pct_change22_23, exp_per_hosp_pct_change21_23) |>
@@ -372,7 +376,6 @@ gh_MI |>
     .by = 'Corewell County'
   )
 ```
-
 
 ```{r}
 gh_MI |>
@@ -406,7 +409,6 @@ ec_MI <- ec_MI |>
   mutate(exp_per_hosp_pct_change21_23 = ((exp_per_hosp_ec23 - exp_per_hosp_ec21) / (exp_per_hosp_ec21)) * 100)
 ```
 
-
 ```{r}
 ec_MI |>
   select(hosp_ec23, hosp_ec22, hosp_ec21, exp_per_hosp_ec23, exp_per_hosp_ec22, exp_per_hosp_ec21, "Corewell County", exp_per_hosp_pct_change21_22, exp_per_hosp_pct_change22_23, exp_per_hosp_pct_change21_23) |>
@@ -420,7 +422,6 @@ ec_MI |>
   )
 ```
 
-
 ```{r}
 ec_MI |>
   select(hosp_ec23, hosp_ec22, hosp_ec21, exp_per_hosp_ec23, exp_per_hosp_ec22, exp_per_hosp_ec21, "Corewell County", exp_per_hosp_pct_change21_22, exp_per_hosp_pct_change22_23, exp_per_hosp_pct_change21_23) |>
@@ -433,7 +434,6 @@ ec_MI |>
     .by = 'Corewell County'
   )
 ```
-
 
 ```{r}
 ec_MI |>

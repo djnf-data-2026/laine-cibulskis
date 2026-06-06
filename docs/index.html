@@ -204,7 +204,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2026-06-05 15:01</p>
+      <p class="date">2026-06-05 22:28</p>
     </div>
   </div>
   
@@ -219,8 +219,22 @@ window.Quarto = {
 <hr>
 <section id="patients-pay-the-price-as-michigan-healthcare-systems-consolidate" class="level1">
 <h1>Patients pay the price as Michigan healthcare systems consolidate</h1>
+<div id="fig-comparison" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>[<img src="https://imgproxy.divecdn.com/BF6AEavgNwvDYYT0xpugrooepom4orcRB62rIxtnUjA/g:ce/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9SZW5kZXJpbmdfRGVzdGluYXRpb25fR3JhbmRfMDMuanBn.webp?raw=true" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: [<img src="https://i0.wp.com/outliermedia.org/wp-content/uploads/2024/09/0905_Out_SickleBasicCare_20240523CydniElledgeCJHospital002AboveView.jpg?raw=true" class="img-fluid figure-img" alt="CJ Smith rests in a hospital bed at the Ascension Providence Hospital in Southfield during a sickle cell crisis in 2024. Outlier Media called the disease a “poster child for medical inequity,” and reported on the inability for Black adult patients to recieve proper care. Ascension controls over $39 billion in assets and 90 hopsitals across the U.S. (Cydni Elledge/Outlier Media)">
+</figcaption>
+</figure>
+</div>
 <p>Michigan hospital systems are getting bigger, but have patients paid a price for consolidation? This story will focus on the shrinking number of players in Michigan healthcare and how it has affected access to specialty care throughout the state.</p>
-<p>Thanks to an insurance dispute, <a href="https://www.detroitnews.com/story/business/2026/05/27/blue-cross-michigan-medicine-reach-deal/90274740007/">nearly</a> patients lost their access to the state’s premier health system thanks to an insurance dispute <a href="https://www.detroitnews.com/story/business/2026/05/06/blue-cross-tells-250000-michigan-medicine-patients-find-new-doctors/89960599007/">in June</a>, healthcare costs <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12920308/">continue to soar</a> and a $2.2 billion hospital construction project just reached <a href="https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#">20 stories tall last month</a>: it’s time explain the juxtaposition between shiny buildings and growing systems with patient struggles.</p>
+<p>Thanks to an insurance dispute, <a href="https://www.detroitnews.com/story/business/2026/05/27/blue-cross-michigan-medicine-reach-deal/90274740007/">nearly</a> 300,000 patients lost their access to the state’s premier health system thanks to an insurance dispute <a href="https://www.detroitnews.com/story/business/2026/05/06/blue-cross-tells-250000-michigan-medicine-patients-find-new-doctors/89960599007/">in June</a>, healthcare costs <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12920308/">continue to soar</a> and a $2.2 billion hospital construction project just reached <a href="https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#">20 stories tall last month</a>: it’s time explain the juxtaposition between shiny buildings and growing systems with patient struggles.</p>
 <p><strong>this suggests a problem</strong> - <strong>that actually could be a lot of specialty care</strong> **don’t know just rephrase** Only 16 of Michigan’s 83 counties reported having hospitals providing specialty care. One key note for Michigan: that care is concentrated in the south of the state, as opposed to states with more equally distributed healthcare centers like Illinois, which has a similar overall population (Chicago and UIUC in southern Illinois are two major health centers). They’re very populated Michigan counties, but the spending disparity is clear, especially as more investment is brought to Detroit. <strong>this is suggesting consolidation denied advanced healthcare to the upper part of the state but we havent established any consolidation up to this point</strong> Michiganders need to know how consolidation has actually affected their access to healthcare, beyond what the pressers from healthcare companies and daily news can tell them. Additionally, the Detroit News has identified a gap in its data coverage of healthcare, in addition to a gap in its business of healthcare coverage, which is usually covered on an as-needed basis.</p>
 <section id="key-data-analysis-points-noted-in-the-maps-below" class="level2">
 <h2 class="anchored" data-anchor-id="key-data-analysis-points-noted-in-the-maps-below">Key data analysis points, noted in the maps below</h2>
@@ -432,7 +446,7 @@ window.Quarto = {
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create list of counties with a Corewell hospital</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">"merged_county"</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mecosta"</span>, <span class="st">"Wayne"</span>, <span class="st">"Oakland"</span>, <span class="st">"Newaygo"</span>, <span class="st">"Kent"</span>, <span class="st">"Montcalm"</span>, <span class="st">"Barry"</span>, <span class="st">"Mason"</span>, <span class="st">"Berrien"</span>, <span class="st">"Osceola"</span>, <span class="st">"Ottawa"</span>, <span class="st">"Cass"</span>, <span class="st">"Van Buren"</span>, <span class="st">"Allegan"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">"merged_county"</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mecosta"</span>, <span class="st">"Wayne"</span>, <span class="st">"Oakland"</span>, <span class="st">"Newaygo"</span>, <span class="st">"Kent"</span>, <span class="st">"Montcalm"</span>, <span class="st">"Barry"</span>, <span class="st">"Mason"</span>, <span class="st">"Berrien"</span>, <span class="st">"Osceola"</span>, <span class="st">"Ottawa"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="section" class="level3">
 <h3 class="anchored" data-anchor-id="section">2023</h3>
@@ -587,8 +601,8 @@ window.Quarto = {
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Corewell County avg_pct_change21_22 min_change max_change county_count
-1               0            8.010866 -17.795840  79.350772           57
-2               1            1.105625  -7.874267   6.422626           14</code></pre>
+1               0            7.496616 -17.795840  79.350772           60
+2               1            2.027376  -5.123334   6.422626           11</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -604,8 +618,8 @@ window.Quarto = {
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Corewell County avg_pct_change22_23 min_change max_change county_count
-1               0            4.295427  -28.88471   70.12779           56
-2               1            4.707430  -11.85248   14.56828           14</code></pre>
+1               0            3.839092 -28.884714   70.12779           59
+2               1            7.267413   3.195739   14.56828           11</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -621,8 +635,8 @@ window.Quarto = {
 <span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Corewell County avg_pct_change21_23 min_change max_change county_count
-1               0           12.923676  -18.47972   98.44086           56
-2               1            5.967468  -14.80065   14.58112           14</code></pre>
+1               0            11.92579 -18.479720   98.44086           59
+2               1             9.42260  -2.091323   14.58112           11</code></pre>
 </div>
 </div>
 </section>
