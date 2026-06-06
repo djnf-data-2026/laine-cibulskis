@@ -807,8 +807,6 @@ generalhosp23 <-
   arrange(desc("Expenditures per Hospital"))
 ```
 
-## National comparison by state
-
 ### Short-term non-general and long-term hospitals
 
 #### Total short-term non-general and long-term hospital expenditures by state
