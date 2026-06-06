@@ -180,12 +180,12 @@ AHRF2024_MI <- read.csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulsk
 
 | Column name | Definition |
 |---------------------------|---------------------------------------------|
-| **General Hospital** | Includes only short-term general hospitals. |
-| **Extra Care** | Includes short-term non-general and long-term hospitals. |
-| **Hospitals** | The total count of either general hospitals or extra care hospitals, depending on the frame of analysis. |
-| **Expenditures** | Annual hospital expenditures, separated by hospital type. |
-| **Expenditures per Hospital** | Annual hospital expenditures divided by the hospital count and separated by hospital type. |
-| **Preventable Hospital Stays Rate** | The hospital discharge rate for ambulatory care-sensitive conditions per 100,000 FFS Medicare enrollees ages 18 and older. This measure is age-adjusted. |
+| **General Hospital** | Includes only short-term general hospitals |
+| **Extra Care** | Includes short-term non-general and long-term hospitals |
+| **Hospitals** | The total count of either general hospitals or extra care hospitals, depending on the frame of analysis |
+| **Expenditures** | Annual hospital expenditures, separated by hospital type |
+| **Expenditures per Hospital** | Annual hospital expenditures divided by the hospital count and separated by hospital type |
+| **Preventable Hospital Stays Rate** | The hospital discharge rate for ambulatory care-sensitive conditions per 100,000 FFS Medicare enrollees ages 18 and older. This measure is age-adjusted |
 | **Corewell County** | These counties have a Corewell hospital, sourced from Corewell's hospital locations [page](https://careers.corewellhealth.org/us/en/hospital-locations) |
 | **South County** | This distinction covers the thumb, southern Michigan and southeast county designations, per Michigan State University's [distinctions](https://www.canr.msu.edu/difficult_conversations/national-and-statewide-resources/michigan-regional-resources/index). Counties are given a "0" if they fall in the upper peninsula, northern Michigan, west Michigan or central Michigan designations |
 :::
