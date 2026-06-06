@@ -23,29 +23,37 @@ author:
 
 ![CJ Smith rests at the Ascension Providence Hospital in Southfield during a sickle cell crisis in 2024 (Cydni Elledge/Outlier Media).](https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis//main/docs/images/patient.png)
 
+::: callout-note
 *Outlier Media called the disease a "poster child for medical inequity," and reported on the inability for Black adult patients to receive proper care. Ascension controls over \$39 billion in assets and 90 hospitals across the U.S. The [state allotted](https://www.michigan.gov/mdhhs/-/media/Project/Websites/mdhhs/Public-Health-Genomics/HEMQIP/2026-Strategic-Plan-to-Address-Sickle-Cell-Disease-Across-the-Lifespan.pdf) \$5 billion to sickle cell treatment, which supported Henry Ford Hospital's new sickle cell clinic. It opened in 2024 serving 180 people at the time, according to [Outlier Media](https://outliermedia.org/sickle-cell-care-future-better-tests-detroit/). Sickle cell disease is [estimated](https://www.michigan.gov/whitmer/news/proclamations/2025/06/19/june-19-2025-sickle-cell-awareness-day) to impact 4,000 Michiganders.*
+:::
 
-Michigan hospital systems are getting bigger, but have patients paid a price for consolidation? This story will focus on the shrinking number of players in Michigan healthcare and how it has affected access to specialty care throughout the state.
+Michigan hospital systems are getting bigger, but have patients paid a price for consolidation? This story will focus on the shrinking number of players in Michigan healthcare and how it has affected access to specialty care throughout the state. One example: a 2022 Michigan health care merger created a combined 22-hospital system, Corewell Health, with claims of improving patient care. 
+
+This analysis focuses on the before and after affects of the Corewell merger on counties affected by the merger (those that have Corewell hospitals). Another distinction was also made to test health disparities between northern and southern Michigan.
+
+Last week, Blue Cross Blue Shield of Michigan finally reached a settlement with the University of Michigan Health (Michigan Medicine). The contract renegotiation between the two systems, which allows patients under the insurer to receive care at Michigan Medicine, had nearly failed, threatening 300,000 Detriot residents with a loss of care from one of the state's most reputable health systems. As in many industries, consolidation has taken over healthcare.
+
+In 2023, Michigan Medicine acquired another health system as well. Still, insurance companies blame hospitals for rising costs, and insurance companies blame hospitals. This April, Michigan Medicine sang praise for the results of the 2023 merger.
+
+But a [May KFF](https://www.kff.org/health-costs/hospital-prices-have-risen-much-faster-for-private-insurance-than-medicare-since-2019/) study showed hospital prices are rising much faster for private insurance than Medicare since 2019. Another [KFF briefing from 2024](https://www.kff.org/health-costs/ten-things-to-know-about-consolidation-in-health-care-provider-markets/) explains that a large body of evidence point to healthcare conslidiation increasing costs, but that the verdict on patient outcomes is less straightforward.
+
+Michigan Medicine [claims](https://prod.crainsdetroit.com/health-care/whats-behind-blue-cross-michigan-medicine-contract-dispute) it should be rewarded with better contracts thanks to its quality of care and focus on specialty medicine. But how has consolidation really worked out for patients in Michigan, from their health to their pocketbooks? Especially as Detroit's hospital buildings get shinier at taller, as with Henry Ford Hospital's in-progress \$2.2 billion, 20-story [expansion](https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#)?
 
 Thanks to an insurance dispute, [nearly](https://www.detroitnews.com/story/business/2026/05/27/blue-cross-michigan-medicine-reach-deal/90274740007/) 300,000 patients lost their access to the state's premier health system thanks to an insurance dispute [in June](https://www.detroitnews.com/story/business/2026/05/06/blue-cross-tells-250000-michigan-medicine-patients-find-new-doctors/89960599007/), healthcare costs [continue to soar](https://pmc.ncbi.nlm.nih.gov/articles/PMC12920308/) and a \$2.2 billion hospital construction project just reached [20 stories tall last month](https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#): it's time explain the juxtaposition between shiny buildings and growing systems with patient struggles.
 
-Only Michigan's specialty care is concentrated in the populus Southwest area of the state: 16 of Michigan's 83 counties reported having hospitals providing specialty care. One key note for Michigan: that care is concentrated in the south of the state, as opposed to states with more equally distributed healthcare centers like Illinois, which has a similar overall population (Chicago and UIUC in southern Illinois are two major health centers). They're very populated Michigan counties, but the spending disparity is clear, especially as more investment is brought to Detroit. **this is suggesting consolidation denied advanced healthcare to the upper part of the state but we havent established any consolidation up to this point** Michiganders need to know how consolidation has actually affected their access to healthcare, beyond what the pressers from healthcare companies and daily news can tell them. Additionally, the Detroit News has identified a gap in its data coverage of healthcare, in addition to a gap in its business of healthcare coverage, which is usually covered on an as-needed basis.
+<iframe title="Counties with a Corewell hospital associated with millions more in expenditures" aria-label="Table" id="datawrapper-chart-lWtgy" src="https://datawrapper.dwcdn.net/lWtgy/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1584" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
 
-## Key data analysis points, noted in the maps below
+Only Michigan's specialty care is concentrated in the populous Southwest area of the state: 16 of Michigan's 83 counties reported having hospitals providing specialty care. One key note for Michigan: that care is concentrated in the south of the state, as opposed to states with more equally distributed healthcare centers like Illinois, which has a similar overall population (Chicago and UIUC in southern Illinois are two major health centers). They're very populated Michigan counties, but the spending disparity is clear, especially as more investment is brought to Detroit.
 
-**good but let's reduce the size of the maps to 75% of so** **and label the numbers in the tooltips and format them in dollars. the spending is what? annual expenditures per hospital?**
+<iframe title="Average per specialty hospital costs increased steeper in counties with a Corewell hospital" aria-label="Table" id="datawrapper-chart-UaaZO" src="https://datawrapper.dwcdn.net/UaaZO/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="618" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
 
-*Full summary stats are calculated below, near the end of the code*
+Michiganders need to know how consolidation has actually affected their access to healthcare, beyond what the pressers from healthcare companies and daily news can tell them. Additionally, the Detroit News has identified a gap in its data coverage of healthcare, in addition to a gap in its business of healthcare coverage, which is usually covered on an as-needed basis.
 
-<iframe title="Just 16 Michigan counties report providing specialty hospital care in Michigan" aria-label="Choropleth map" id="datawrapper-chart-egpf6" src="https://datawrapper.dwcdn.net/egpf6/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height data-external="1">
+<iframe title="Counties with Corewell Health hospitals, South counties, saw increases in preventable hospital visits" aria-label="Table" id="datawrapper-chart-FKsBM" src="https://datawrapper.dwcdn.net/FKsBM/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="340" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
 
-</iframe>
+### Maps
 
-```{=html}
-<script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
-```
-
-<iframe title="Kent, Washtenaw County general hospitals spend the most per institution" aria-label="Choropleth map" id="datawrapper-chart-7Sg7a" src="https://datawrapper.dwcdn.net/7Sg7a/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height data-external="1">
+<iframe title="Just 16 Michigan counties report providing specialty hospital care in Michigan" aria-label="Choropleth map" id="datawrapper-chart-egpf6" src="https://datawrapper.dwcdn.net/egpf6/8/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="731" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
 
 </iframe>
 
@@ -53,7 +61,7 @@ Only Michigan's specialty care is concentrated in the populus Southwest area of 
 <script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
 ```
 
-<iframe title="Michigan specialty hospital expenditures, per institution, fall near nation&#39;s average" aria-label="Choropleth map" id="datawrapper-chart-NgOTf" src="https://datawrapper.dwcdn.net/NgOTf/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height data-external="1">
+<iframe title="Kent, Washtenaw County general hospitals spend the most per institution" aria-label="Choropleth map" id="datawrapper-chart-7Sg7a" src="https://datawrapper.dwcdn.net/7Sg7a/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="697" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
 
 </iframe>
 
@@ -61,21 +69,27 @@ Only Michigan's specialty care is concentrated in the populus Southwest area of 
 <script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
 ```
 
-## Contextualizing the increase and possible holes
+<iframe title="Michigan specialty hospital expenditures, per institution, fall near nation's average" aria-label="Choropleth map" id="datawrapper-chart-NgOTf" src="https://datawrapper.dwcdn.net/NgOTf/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="568" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
 
-The final story would included data over time for all specialty hospitals by county, not just those reporting expenditures. Additionally, individual-hospital level data, that was noted above, will be used to pinpoint areas with mergers and hosptial closures.
+</iframe>
 
-**Can we provide some details about hospital system closures/consolidations? This is being referenced but i dont see any examples or details yet**
+```{=html}
+<script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+```
 
-The story cannot claim causality, but it can show just how concentrated hospital spending is in just a few counties, and how that has changed over time as consolidation has increased. Incorporating the individual-hospital level data will help.
-
-How common is it for states to have specialty care concentrated in just a few areas? What about the differences in states by county-level highs? What is the best way to connect this expenditure data with patient outcome or healthcare access data? And what will tracking hospital locations and expenditures over time show when considering larger merger dates?
-
-## Business context: Blue Cross Blue Shield of Michigan
+### Business context: Blue Cross Blue Shield of Michigan
 
 According to BCBS of Michigan's financial statements, published on their website, premium revenue increased by over \$1 billion from 2024 to 2025. However, financial weakness shows in a consistent operating loss, which was at a \$975 million loss in 2025. The company insures over 4 million Michiganders.
 
-## Potential sources
+### Contextualizing the increase and possible holes
+
+The final story would included data over time for all specialty hospitals by county, not just those reporting expenditures. Additionally, individual-hospital level data, that was noted above, will be used to pinpoint areas with mergers and hosptial closures.
+
+The story cannot claim causality, but it can show just how concentrated hospital spending is in just a few counties, and how that has changed over time as consolidation has increased. Incorporating the individual-hospital level data will help.
+
+How common is it for other states to have specialty care concentrated in just a few areas? What about the differences in states by county-level highs? What is the best way to connect this expenditure data with patient cost data? And what will tracking hospital locations and expenditures over a longer time period show when considering larger merger dates?
+
+### Potential sources
 
 **Thomas Buchmueller**, University of Michigan health economist
 
@@ -87,17 +101,17 @@ According to BCBS of Michigan's financial statements, published on their website
 
 Founders of Michigan's New Day Foundation for Families **Michael Spehn and Gina Kell Spehn** may be able to connect me with patients receiving high-cost specialty care. New Day focuses on working with hospitals to reach patients nearing financial breaking points, especially when it comes to cancer treatment. Many board members have had personal experiences with cancer and costs as well
 
-## Data sources
+### Data sources
 
 Trends in hospital expenditures and other healthcare data from:
 
 [Health Resources and Services Administration Area Health Resource Files](https://data.hrsa.gov/data/download)
 
-[Wayne County healthcare consolidation data](https://detroitdata.org/dataset/market-saturation-utilization)
+[For future analysis: Wayne County healthcare consolidation data](https://detroitdata.org/dataset/market-saturation-utilization)
 
-[Hospital-level expenditure data](https://tool.nashp.org/)
+[For future analysis: Hospital-level expenditure data](https://tool.nashp.org/)
 
-## More visual possibilities
+### More visual possibilities
 
 County-by county data from the Area Health Resource Files could be used to create a gradient map with a dropdown menu to show different variables for each Michigan county. There could be a scroll for change over time in different metrics such as hospital expenditures and patient outcomes.
 
@@ -105,34 +119,22 @@ A locator map could show detailed information about Detroit healthcare consolida
 
 A collaboration with a photographer could result in a patient photo story to add a human element.
 
-## Previous coverage
-
-Last week, Blue Cross Blue Shield of Michigan finally reached a settlement with the University of Michigan Health (Michigan Medicine). The contract renegotiation between the two systems, which allows patients under the insurer to receive care at Michigan Medicine, had nearly failed, threatening 300,000 Detriot residents with a loss of care from one of the state's most reputable health systems. As in many industries, consolidation has taken over healthcare. **\*\*is there any way to measure quality of care, access or affordability before and after these mergers?\*\*** **A 2022 Michigan health care merger created a combined 22-hospital system, Corewell Health, with claims of improving patient care. In 2023, Michigan Medicine acquired another health system as well.** Still, insurance companies blame hospitals for rising costs, and insurance companies blame hospitals. This April, Michigan Medicine sang praise for the results of the 2023 merger.
-
-But a [May KFF](https://www.kff.org/health-costs/hospital-prices-have-risen-much-faster-for-private-insurance-than-medicare-since-2019/) study showed hospital prices are rising much faster for private insurance than Medicare since 2019. Another [KFF briefing from 2024](https://www.kff.org/health-costs/ten-things-to-know-about-consolidation-in-health-care-provider-markets/) explains that a large body of evidence point to healthcare conslidiation increasing costs, but that the verdict on patient outcomes is less straightforward.
-
-Michigan Medicine [claims](https://prod.crainsdetroit.com/health-care/whats-behind-blue-cross-michigan-medicine-contract-dispute) it should be rewarded with better contracts thanks to its quality of care and focus on specialty medicine. But how has consolidation really worked out for patients in Michigan, from their health to their pocketbooks? Especially as Detroit's hospital buildings get shinier at taller, as with Henry Ford Hospital's in-progress \$2.2 billion, 20-story [expansion](https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#)?
-
-## The Corewell Merger
-
-TK
-
-## Further reporting needs
+### Further reporting needs
 
 - Academic input on the nuances of healthcare market consolidation as it relates specifically to Michigan
 - Corporate and patient input
 - Insurance input (private, Medicare/Medicaid)
-- Continued exploration of data
+- Continued exploration of data (direct patient costs, changes for particular hospital locations)
 
-## First reporting steps
+### First reporting steps
 
 Kim North Shine, senior public relations representative at the University of Michigan who specializes in public health as one of her topic areas, may be able to help me get in touch with both academic and healthcare sources. Connecting with the advocacy groups mentioned above will also help kick start the reporting side of the story.
 
-## Delivery expectations
+### Delivery expectations
 
 Mid-July, about halfway though the internship, would be an ideal delivery given the need for further data analysis and the amount of reporting needed to contextualize the data.
 
-# Data analysis
+## Data analysis
 
 ```{r}
 #| code-fold: true
@@ -192,7 +194,7 @@ AHRF2024_MI <- read.csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulsk
 
 ```{r}
 #| code-fold: true
-#| code-summary: "Documentation"
+#| code-summary: "2024 Documentation"
 
 AHRF2024documentation <- read_excel("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/documentation/AHRF 2023-2024 User Tech/AHRF 2023-2024 User Tech/AHRF 2023-2024 Technical DocumentationCSV_Feb2025.xlsx")
 
@@ -201,13 +203,16 @@ AHRF2024documentation[c(3311, 3313, 3317, 3319, 2494, 2496, 3309, 3310, 3311, 33
 
 
 ```{r}
+#| code-fold: true
+#| code-summary: "2025 Documentation"
+#| 
 AHRF2025documentation <- read_excel("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/documentation/AHRF_USER_TECH_2024-2025/Technical Documentation/AHRF 2024-2025 Technical Documentation.xlsx")
 
 AHRF2025documentation[c(2498, 3313, 3314, 3315, 3316, 3319, 3320, 3321, 3322), ]
 
 ```
 
-# County-level Michigan analysis
+## County-level Michigan analysis
 
 ```{r}
 # Create list of counties with a Corewell hospital
@@ -221,11 +226,9 @@ merged_county <- c("Mecosta", "Wayne", "Oakland", "Newaygo", "Kent", "Montcalm",
 north_county <-  c("Alger", "Baraga", "Chippewa", "Delta", "Dickinson", "Gogebic", "Houghton", "Iron", "Keweenaw", "Luce", "Mackinac", "Marquette", "Menominee", "Ontonagon", "Schoolcraft", "Alcona", "Alpena", "Arenac", "Benzie", "Charlevoix", "Cheboygan", "Crawford", "Emmet", "Grand Traverse", "Iosco", "Kalkaska", "Leelanau", "Manistee", "Montmorency", "Ogemaw", "Oscoda", "Otsego", "Presque Isle", "Roscommon", "Allegan", "Barry", "Kent", "Lake", "Mason", "Muskegon", "Newaygo", "Oceana", "Ottawa", "Clare", "Clinton", "Eaton", "Gladwin", "Gratiot", "Ingham", "Ionia", "Isabella", "Mecosta", "Missaukee", "Montcalm", "Osceola", "Wexford")
 ```
 
-## General hospitals in Michigan counties
+### General hospitals in Michigan counties
 
-
-
-### 2023
+#### 2023
 
 ```{r}
 # Base table (preventable stays data not available for 2023, 2022 data is included in the AHRF 2025 data)
@@ -245,7 +248,7 @@ gh23_MI <- generalhosp23_MI |>
 
 ```
 
-### 2022
+#### 2022
 
 ```{r}
 # Base table
@@ -265,7 +268,7 @@ gh22_MI <- generalhosp22_MI |>
 
 ```
 
-### 2021
+#### 2021
 
 ```{r}
 # Base table
@@ -285,9 +288,9 @@ gh21_MI <- generalhosp21_MI |>
 
 ```
 
-## Extra care hospitals in Michigan counties
+### Extra care hospitals in Michigan counties
 
-### 2023
+#### 2023
 
 ```{r}
 # Base table
@@ -306,7 +309,7 @@ ec23_MI <- extracare23_MI |>
   rename(hosp_ec23 = Hospitals, exp_ec23 = Expenditures, exp_per_hosp_ec23 = "Expenditures per Hospital", prevstays_22 = "Preventable Stays Rate")
 ```
 
-### 2022
+#### 2022
 
 ```{r}
 # Base table
@@ -327,7 +330,7 @@ ec22_MI <- extracare22_MI |>
 
 ```
 
-### 2021
+#### 2021
 
 ```{r}
 # Base table
@@ -526,11 +529,17 @@ gh_MI |>
 ec_MI <- ec_MI |>
   mutate("North County" = case_when(
   County %in% north_county ~ 1,
-  TRUE                      ~ 0
+  TRUE                     ~ 0
   ))
 
 ec_MI <- ec_MI |>
-  select(County, hosp_ec23, hosp_ec22, hosp_ec21, exp_per_hosp_ec23, exp_per_hosp_ec22, exp_per_hosp_ec21, "North County") |>
+  mutate("Corewell County" = case_when(
+  County %in% merged_county ~ 1,
+  TRUE                     ~ 0
+  ))
+
+ec_MI <- ec_MI |>
+  select(County, hosp_ec23, hosp_ec22, hosp_ec21, exp_per_hosp_ec23, exp_per_hosp_ec22, exp_per_hosp_ec21, "Corewell County", "North County") |>
   mutate(exp_per_hosp_pct_change21_22 = ((exp_per_hosp_ec22 - exp_per_hosp_ec21) / (exp_per_hosp_ec21)) * 100) |>
   mutate(exp_per_hosp_pct_change22_23 = ((exp_per_hosp_ec23 - exp_per_hosp_ec22) / (exp_per_hosp_ec22)) * 100) |>
   mutate(exp_per_hosp_pct_change21_23 = ((exp_per_hosp_ec23 - exp_per_hosp_ec21) / (exp_per_hosp_ec21)) * 100)
@@ -575,8 +584,7 @@ ec_MI |>
   )
 ```
 
-
-#### Preventable stays
+### Preventable stays
 ```{r}
 gh_MI |>
   select(County,hosp_gh23, hosp_gh22, hosp_gh21, exp_per_hosp_gh23, exp_per_hosp_gh22, exp_per_hosp_gh21, prevstays_pct_change21_22, "North County") |>
@@ -589,10 +597,126 @@ gh_MI |>
     .by = 'North County'
   )
 ```
+```{r}
+gh_MI |>
+  select(County,hosp_gh23, hosp_gh22, hosp_gh21, exp_per_hosp_gh23, exp_per_hosp_gh22, exp_per_hosp_gh21, prevstays_pct_change21_22, "Corewell County") |>
+  filter(hosp_gh22 != 0 & hosp_gh21 != 0 & hosp_gh23 != 0) |>
+    summarize(
+    avg_pct_change21_22 = mean(prevstays_pct_change21_22, na.rm = TRUE),
+    min_change         = min(prevstays_pct_change21_22, na.rm = TRUE),
+    max_change         = max(prevstays_pct_change21_22, na.rm = TRUE),
+    county_count       = n(),
+    .by = 'Corewell County'
+  )
+```
 
-#### Quick IL comparison
+### How closely are Corewell and North Counties linked?
 
-#### 2025, general hospitals in Illinois counties
+```{r}
+cor.test(gh_MI$"Corewell County", gh_MI$"North County")
+```
+
+## Regression tests
+
+### General hospitals
+
+```{r}
+gh_MI_lm <- gh_MI |>
+  select(County, hosp_gh23, hosp_gh22, hosp_gh21, exp_per_hosp_gh23, exp_per_hosp_gh22, exp_per_hosp_gh21, prevstays_21, prevstays_22, exp_per_hosp_pct_change21_22, exp_per_hosp_pct_change22_23, exp_per_hosp_pct_change21_23, prevstays_pct_change21_22, "Corewell County", "North County") |>
+  rename(cc = "Corewell County", nc = "North County") 
+```
+
+```{r}
+model <- lm(exp_per_hosp_gh23 ~ cc, data = gh_MI_lm)
+summary(model)
+```
+```{r}
+model <- lm(exp_per_hosp_gh22 ~ cc, data = gh_MI_lm)
+summary(model)
+```
+```{r}
+model <- lm(exp_per_hosp_gh21 ~ cc, data = gh_MI_lm)
+summary(model)
+```
+
+```{r}
+model <- lm(exp_per_hosp_gh23 ~ nc, data = gh_MI_lm)
+summary(model)
+```
+
+```{r}
+model <- lm(exp_per_hosp_gh22 ~ nc, data = gh_MI_lm)
+summary(model)
+```
+
+```{r}
+model <- lm(exp_per_hosp_gh21 ~ nc, data = gh_MI_lm)
+summary(model)
+```
+
+### Extra care hospitals
+
+```{r}
+ec_MI_lm <- ec_MI |>
+  select(County, hosp_ec23, hosp_ec22, hosp_ec21, exp_per_hosp_ec23, exp_per_hosp_ec22, exp_per_hosp_ec21, exp_per_hosp_pct_change21_22, exp_per_hosp_pct_change22_23, exp_per_hosp_pct_change21_23, "Corewell County", "North County") |>
+  rename(cc = "Corewell County", nc = "North County") 
+```
+
+```{r}
+model <- lm(exp_per_hosp_ec23 ~ cc, data = ec_MI_lm)
+summary(model)
+```
+
+```{r}
+model <- lm(exp_per_hosp_ec22 ~ cc, data = ec_MI_lm)
+summary(model)
+```
+
+```{r}
+model <- lm(exp_per_hosp_ec21 ~ cc, data = ec_MI_lm)
+summary(model)
+```
+
+```{r}
+model <- lm(exp_per_hosp_ec23 ~ nc, data = ec_MI_lm)
+summary(model)
+```
+
+```{r}
+model <- lm(exp_per_hosp_ec22 ~ nc, data = ec_MI_lm)
+summary(model)
+```
+
+```{r}
+model <- lm(exp_per_hosp_ec21 ~ nc, data = ec_MI_lm)
+summary(model)
+```
+
+### Preventable stays
+
+```{r}
+model <- lm(prevstays_22 ~ nc, data = gh_MI_lm)
+summary(model)
+```
+
+```{r}
+model <- lm(prevstays_21 ~ nc, data = gh_MI_lm)
+summary(model)
+```
+
+```{r}
+model <- lm(prevstays_22 ~ cc, data = gh_MI_lm)
+summary(model)
+```
+
+```{r}
+model <- lm(prevstays_21 ~ cc, data = gh_MI_lm)
+summary(model)
+```
+
+##### Quick IL comparison
+
+##### 2025, general hospitals in Illinois counties
 
 ```{r}
 generalhosp23_IL <- AHRF2025_IL |>
@@ -605,7 +729,7 @@ generalhosp23_IL <- AHRF2025_IL |>
 )
 ```
 
-#### 2025, extra care hospitals in Illinois counties
+##### 2025, extra care hospitals in Illinois counties
 
 ```{r}
 extracare23_IL <- AHRF2025_IL |>
@@ -618,11 +742,11 @@ extracare23_IL <- AHRF2025_IL |>
 )
 ```
 
-### National comparison by state
+## National comparison by state
 
-#### Short-term general hospitals
+### Short-term general hospitals
 
-##### Total short-term general hospital expenditures by state
+#### Total short-term general hospital expenditures by state
 
 ```{r}
 stgh_23_exp_by_state <- 
@@ -633,7 +757,7 @@ stgh_23_exp_by_state <-
   )
 ```
 
-##### Number of short-term general hospitals by state
+#### Number of short-term general hospitals by state
 
 ```{r}
 stgh_23_by_state <- 
@@ -645,14 +769,14 @@ stgh_23_by_state <-
   )
 ```
 
-##### Joining the two new data frames
+#### Joining the two new data frames
 
 ```{r}
 stgh_23 <-
 merge(x = stgh_23_exp_by_state, y = stgh_23_by_state, by = "st_name_abbrev", .keep_all=TRUE)
 ```
 
-##### Total short-term general hospital expenditures by state, per hospital in the state
+#### Total short-term general hospital expenditures by state, per hospital in the state
 
 ```{r}
 stgh_23 |>
@@ -661,7 +785,7 @@ stgh_23 |>
   )
 ```
 
-##### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
+#### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
 
 ```{r}
 # Renaming
@@ -683,11 +807,11 @@ generalhosp23 <-
   arrange(desc("Expenditures per Hospital"))
 ```
 
-### National comparison by state
+## National comparison by state
 
-#### Short-term non-general and long-term hospitals
+### Short-term non-general and long-term hospitals
 
-##### Total short-term non-general and long-term hospital expenditures by state
+#### Total short-term non-general and long-term hospital expenditures by state
 
 ```{r}
 stnglth_23_exp_by_state <- 
@@ -698,7 +822,7 @@ stnglth_23_exp_by_state <-
   )
 ```
 
-##### Number of short-term non-general and long-term hospitals by state
+#### Number of short-term non-general and long-term hospitals by state
 
 ```{r}
 stnglth_23_by_state <- 
@@ -710,14 +834,14 @@ stnglth_23_by_state <-
   )
 ```
 
-##### Joining the two new data frames
+#### Joining the two new data frames
 
 ```{r}
 stnglth_23 <-
 merge(x = stnglth_23_exp_by_state, y = stnglth_23_by_state, by = "st_name_abbrev", .keep_all=TRUE)
 ```
 
-##### Total short-term general hospital expenditures by state, per hospital in the state
+#### Total short-term general hospital expenditures by state, per hospital in the state
 
 ```{r}
 stnglth_23 |>
@@ -726,7 +850,7 @@ stnglth_23 |>
   )
 ```
 
-##### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
+#### Save total short term general hospital expenditures by state, per hospital in the state to use in other operations
 
 ```{r}
 # Renaming
