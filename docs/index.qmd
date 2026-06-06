@@ -4,8 +4,7 @@ format:
   html: 
     toc: true
     toc-depth: 3
-    math: katex
-editor: visual
+    editor: visual
 execute: 
   warning: false # suppress warnings
 date: last-modified
@@ -20,17 +19,11 @@ author:
 
 # Patients pay the price as Michigan healthcare systems consolidate
 
-::: {#fig-comparison layout="[[1,1]]"}
-![A rendering of Henry Ford Hospital's \$2.2 billion expansion in Detroit, which the health system calls "Destination: Grand" (Henry Ford Health).](https://github.com/djnf-data-2026/laine-cibulskis/tree/main/docs/expansion.png)
+![A rendering of Henry Ford Hospital's \$2.2 billion expansion in Detroit, which the health system calls "Destination: Grand" (Henry Ford Health).](https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis/main/docs/images/expansion.png)
 
-![CJ Smith rests in a hospital bed at the Ascension Providence Hospital in Southfield during a sickle cell crisis in 2024. Outlier Media called the disease a "poster child for medical inequity," and reported on the inability for Black adult patients to recieve proper care. Ascension controls over \$39 billion in assets and 90 hopsitals across the U.S. The [state allotted](https://www.michigan.gov/mdhhs/-/media/Project/Websites/mdhhs/Public-Health-Genomics/HEMQIP/2026-Strategic-Plan-to-Address-Sickle-Cell-Disease-Across-the-Lifespan.pdf) \$5 billion to sickle cell treatment, which supported Henry Ford Hospital's new sickle cell clinic. It opened in 2024 serving 180 people at the time, according to [Outlier Media](https://outliermedia.org/sickle-cell-care-future-better-tests-detroit/). Sickle cell disease is [estimated](https://www.michigan.gov/whitmer/news/proclamations/2025/06/19/june-19-2025-sickle-cell-awareness-day) to impact 4,000 Michiganders. (Cydni Elledge/Outlier Media)](https://github.com){width="100%"}
-:::
+![CJ Smith rests at the Ascension Providence Hospital in Southfield during a sickle cell crisis in 2024 (Cydni Elledge/Outlier Media).](https://raw.githubusercontent.com/djnf-data-2026/laine-cibulskis//main/docs/images/patient.png)
 
-::: {layout-ncol="2"}
-![A rendering of Henry Ford Hospital's \$2.2 billion expansion in Detroit, which the health system calls "Destination: Grand" (Henry Ford Health).](https://github.com/djnf-data-2026/laine-cibulskis/tree/main/docs/expansion.jpg?raw=true)
-
-![CJ Smith rests in a hospital bed at the Ascension Providence Hospital in Southfield during a sickle cell crisis in 2024. Outlier Media called the disease a "poster child for medical inequity," and reported on the inability for Black adult patients to recieve proper care. Ascension controls over \$39 billion in assets and 90 hopsitals across the U.S. The [state allotted](https://www.michigan.gov/mdhhs/-/media/Project/Websites/mdhhs/Public-Health-Genomics/HEMQIP/2026-Strategic-Plan-to-Address-Sickle-Cell-Disease-Across-the-Lifespan.pdf) \$5 billion to sickle cell treatment, which supported Henry Ford Hospital's new sickle cell clinic. It opened in 2024 serving 180 people at the time, according to [Outlier Media](https://outliermedia.org/sickle-cell-care-future-better-tests-detroit/). Sickle cell disease is [estimated](https://www.michigan.gov/whitmer/news/proclamations/2025/06/19/june-19-2025-sickle-cell-awareness-day) to impact 4,000 Michiganders. (Cydni Elledge/Outlier Media](https://github.com/djnf-data-2026/laine-cibulskis/tree/main/docs/patient.png?raw=true)
-:::
+*Outlier Media called the disease a "poster child for medical inequity," and reported on the inability for Black adult patients to receive proper care. Ascension controls over \$39 billion in assets and 90 hospitals across the U.S. The [state allotted](https://www.michigan.gov/mdhhs/-/media/Project/Websites/mdhhs/Public-Health-Genomics/HEMQIP/2026-Strategic-Plan-to-Address-Sickle-Cell-Disease-Across-the-Lifespan.pdf) \$5 billion to sickle cell treatment, which supported Henry Ford Hospital's new sickle cell clinic. It opened in 2024 serving 180 people at the time, according to [Outlier Media](https://outliermedia.org/sickle-cell-care-future-better-tests-detroit/). Sickle cell disease is [estimated](https://www.michigan.gov/whitmer/news/proclamations/2025/06/19/june-19-2025-sickle-cell-awareness-day) to impact 4,000 Michiganders.*
 
 Michigan hospital systems are getting bigger, but have patients paid a price for consolidation? This story will focus on the shrinking number of players in Michigan healthcare and how it has affected access to specialty care throughout the state.
 
@@ -135,6 +128,10 @@ TK
 
 Kim North Shine, senior public relations representative at the University of Michigan who specializes in public health as one of her topic areas, may be able to help me get in touch with both academic and healthcare sources. Connecting with the advocacy groups mentioned above will also help kick start the reporting side of the story.
 
+## Delivery expectations
+
+Mid-July, about halfway though the internship, would be an ideal delivery given the need for further data analysis and the amount of reporting needed to contextualize the data.
+
 # Data analysis
 
 ```{r}
@@ -172,18 +169,21 @@ AHRF2024_MI <- read.csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulsk
 **Short-term non-general hospitals** Short term non-general hospitals provide specialized care, and the majority of their patients stay for fewer than 30 days.
 
 **Long-term hospitals** Long-term hospitals may provide either non specialized or specialized care, and the majority of their patients stay for 30 or more days.
+
+**Preventable Hospital Stays Rate** Hospitalization for ambulatory care-sensitive conditions, diagnoses usually treatable in outpatient services, suggests that the quality of care provided in the outpatient setting was not accessible. The measure may also represent a tendency to overuse emergency room and urgent care as a main source of care.
 :::
 
 ::: callout-note
 ## Data Dictionary
 
 | Column name | Definition |
-|-------------------------|----------------------------------------------|
+|---------------------------|---------------------------------------------|
 | **General Hospital** | Includes only short-term general hosptials. |
 | **Extra Care** | Includes short-term non-general and long-term hospitals. |
 | **Hospitals** | The total count of either general hospitals or extra care hospitals, depending on the frame of analysis. |
 | **Expenditures** | Annual hospital expenditures, seperated by hospital type. |
-| **Expenditures per Hospital** | Annual hospital expenditures divided by the hospital count and seperated by hospital type. |
+| **Expenditures per Hospital** | Annual hospital expenditures divided by the hospital count and separated by hospital type. |
+| **Preventable Hospital Stays Rate** | The hospital discharge rate for ambulatory care-sensitive conditions per 100,000 FFS Medicare enrollees ages 18 and older. This measure is age-adjusted. |
 | **Corewell County** | These counties have a Corewell hospital, sourced from Corewell's hospital locations [page](https://careers.corewellhealth.org/us/en/hospital-locations) |
 :::
 
@@ -194,12 +194,15 @@ AHRF2024_MI <- read.csv("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulsk
 #| code-summary: "Documentation"
 
 AHRF2024documentation <- read_excel("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/documentation/AHRF 2023-2024 User Tech/AHRF 2023-2024 User Tech/AHRF 2023-2024 Technical DocumentationCSV_Feb2025.xlsx")
-# Expenditures
-AHRF2024documentation[c(3309, 3310, 3311, 3312, 3315, 3316, 3317, 3318), ]
 
+AHRF2024documentation[c(3311, 3313, 3317, 3319, 2494, 2496, 3309, 3310, 3311, 3312, 3315, 3316, 3317, 3318), ]
+```
+
+
+```{r}
 AHRF2025documentation <- read_excel("C:/Users/laine/OneDrive/Desktop/Code/DJNF/laine-cibulskis/documentation/AHRF_USER_TECH_2024-2025/Technical Documentation/AHRF 2024-2025 Technical Documentation.xlsx")
-# Expenditures
-AHRF2025documentation[c(3313, 3314, 3315, 3316, 3319, 3320, 3321, 3322), ]
+
+AHRF2025documentation[c(2498, 3313, 3314, 3315, 3316, 3319, 3320, 3321, 3322), ]
 
 ```
 
@@ -216,10 +219,10 @@ AHRF2025documentation[c(3313, 3314, 3315, 3316, 3319, 3320, 3321, 3322), ]
 ### 2023
 
 ```{r}
-# Base table
+# Base table (preventable stays data not available for 2023, 2022 data is included in the AHRF 2025 data)
 generalhosp23_MI <- AHRF2025_MI |>
-  select(cnty_name,stgh_reprtd_fac_exp_thou_23, stgh_rptng_exp_23) |>
-  rename(County = cnty_name, Hospitals = stgh_rptng_exp_23, Expenditures = stgh_reprtd_fac_exp_thou_23) |>
+  select(cnty_name, stgh_reprtd_fac_exp_thou_23, stgh_rptng_exp_23, medcr_ffs_prev_hosp_rate_22) |>
+  rename(County = cnty_name, Hospitals = stgh_rptng_exp_23, Expenditures = stgh_reprtd_fac_exp_thou_23, "Preventable Stays Rate" = medcr_ffs_prev_hosp_rate_22) |>
   mutate(Expenditures = Expenditures*1000) |>
   mutate("Expenditures per Hospital" = (Expenditures / Hospitals)) |>
   mutate_all(~replace(., is.nan(.), 0)) |>
@@ -228,8 +231,8 @@ generalhosp23_MI <- AHRF2025_MI |>
 
 # Table for large data set analysis
 gh23_MI <- generalhosp23_MI |>
-  select(County, Hospitals, Expenditures, "Expenditures per Hospital") |>
-  rename(hosp_gh23 = Hospitals, exp_gh23 = Expenditures, exp_per_hosp_gh23 = "Expenditures per Hospital")
+  select(County, Hospitals, Expenditures, "Expenditures per Hospital", "Preventable Stays Rate") |>
+  rename(hosp_gh23 = Hospitals, exp_gh23 = Expenditures, exp_per_hosp_gh23 = "Expenditures per Hospital", prevstays_22 = "Preventable Stays Rate")
 
 ```
 
@@ -258,8 +261,8 @@ gh22_MI <- generalhosp22_MI |>
 ```{r}
 # Base table
 generalhosp21_MI <- AHRF2024_MI |>
-  select(cnty_name,stgh_reprtd_fac_exp_thou_21, stgh_rptng_exp_21) |>
-  rename(County = cnty_name, Hospitals = stgh_rptng_exp_21, Expenditures = stgh_reprtd_fac_exp_thou_21) |>
+  select(cnty_name,stgh_reprtd_fac_exp_thou_21, stgh_rptng_exp_21, medcr_ffs_prev_hosp_rate_21) |>
+  rename(County = cnty_name, Hospitals = stgh_rptng_exp_21, Expenditures = stgh_reprtd_fac_exp_thou_21, "Preventable Stays Rate" = medcr_ffs_prev_hosp_rate_21) |>
   mutate(Expenditures = Expenditures*1000) |>
   mutate("Expenditures per Hospital" = (Expenditures / Hospitals)) |>
   mutate_all(~replace(., is.nan(.), 0)) |>
@@ -268,8 +271,8 @@ generalhosp21_MI <- AHRF2024_MI |>
 
 # Table for large data set analysis
 gh21_MI <- generalhosp21_MI |>
-  select(County, Hospitals, Expenditures, "Expenditures per Hospital") |>
-  rename(hosp_gh21 = Hospitals, exp_gh21 = Expenditures, exp_per_hosp_gh21 = "Expenditures per Hospital")
+  select(County, Hospitals, Expenditures, "Expenditures per Hospital", "Preventable Stays Rate") |>
+  rename(hosp_gh21 = Hospitals, exp_gh21 = Expenditures, exp_per_hosp_gh21 = "Expenditures per Hospital", prevstays_21 = "Preventable Stays Rate")
 
 ```
 
@@ -280,8 +283,8 @@ gh21_MI <- generalhosp21_MI |>
 ```{r}
 # Base table
 extracare23_MI <- AHRF2025_MI |>
-  select(cnty_name,stnglth_reprtd_fac_exp_thou_23, stnglth_rptng_exp_23) |>
-  rename(County = cnty_name, Hospitals = stnglth_rptng_exp_23, Expenditures = stnglth_reprtd_fac_exp_thou_23) |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_23, stnglth_rptng_exp_23, medcr_ffs_prev_hosp_rate_22) |>
+  rename(County = cnty_name, Hospitals = stnglth_rptng_exp_23, Expenditures = stnglth_reprtd_fac_exp_thou_23, "Preventable Stays Rate" = medcr_ffs_prev_hosp_rate_22) |>
   mutate(Expenditures = Expenditures*1000) |>
   mutate("Expenditures per Hospital" = (Expenditures / Hospitals)) |>
   mutate_all(~replace(., is.nan(.), 0)) |>
@@ -290,8 +293,8 @@ extracare23_MI <- AHRF2025_MI |>
 
 # Table for large data set analysis
 ec23_MI <- extracare23_MI |>
-  select(County, Hospitals, Expenditures, "Expenditures per Hospital") |>
-  rename(hosp_ec23 = Hospitals, exp_ec23 = Expenditures, exp_per_hosp_ec23 = "Expenditures per Hospital")
+  select(County, Hospitals, Expenditures, "Expenditures per Hospital", "Preventable Stays Rate") |>
+  rename(hosp_ec23 = Hospitals, exp_ec23 = Expenditures, exp_per_hosp_ec23 = "Expenditures per Hospital", prevstays_22 = "Preventable Stays Rate")
 ```
 
 ### 2022
@@ -321,8 +324,8 @@ ec22_MI <- extracare22_MI |>
 # Base table
 
 extracare21_MI <- AHRF2024_MI |>
-  select(cnty_name,stnglth_reprtd_fac_exp_thou_21, stnglth_rptng_exp_21) |>
-  rename(County = cnty_name, Hospitals = stnglth_rptng_exp_21, Expenditures = stnglth_reprtd_fac_exp_thou_21) |>
+  select(cnty_name,stnglth_reprtd_fac_exp_thou_21, stnglth_rptng_exp_21, medcr_ffs_prev_hosp_rate_21) |>
+  rename(County = cnty_name, Hospitals = stnglth_rptng_exp_21, Expenditures = stnglth_reprtd_fac_exp_thou_21, "Preventable Stays Rate" = medcr_ffs_prev_hosp_rate_21) |>
   mutate(Expenditures = Expenditures*1000) |>
   mutate("Expenditures per Hospital" = (Expenditures / Hospitals)) |>
   mutate_all(~replace(., is.nan(.), 0)) |>
@@ -331,8 +334,8 @@ extracare21_MI <- AHRF2024_MI |>
 
 # Table for large data set analysis
 ec21_MI <- extracare21_MI |>
-  select(County, Hospitals, Expenditures, "Expenditures per Hospital") |>
-  rename(hosp_ec21 = Hospitals, exp_ec21 = Expenditures, exp_per_hosp_ec21 = "Expenditures per Hospital")
+  select(County, Hospitals, Expenditures, "Expenditures per Hospital", "Preventable Stays Rate") |>
+  rename(hosp_ec21 = Hospitals, exp_ec21 = Expenditures, exp_per_hosp_ec21 = "Expenditures per Hospital", prevstays_21 = "Preventable Stays Rate")
 
 ```
 
@@ -347,14 +350,15 @@ gh_MI <- gh21_MI |>
   left_join(gh23_MI, by = "County") |>
   mutate("Corewell County" = case_when(
   County %in% merged_county ~ 1,
-  TRUE                      ~ 0
+  TRUE  ~ 0
   ))
 
 gh_MI <- gh_MI |>
-  select(County,hosp_gh23, hosp_gh22, hosp_gh21, exp_per_hosp_gh23, exp_per_hosp_gh22, exp_per_hosp_gh21, "Corewell County") |>
+  select(County,hosp_gh23, hosp_gh22, hosp_gh21, exp_per_hosp_gh23, exp_per_hosp_gh22, exp_per_hosp_gh21, prevstays_21, prevstays_22, "Corewell County") |>
   mutate(exp_per_hosp_pct_change21_22 = ((exp_per_hosp_gh22 - exp_per_hosp_gh21) / (exp_per_hosp_gh21)) * 100) |>
   mutate(exp_per_hosp_pct_change22_23 = ((exp_per_hosp_gh23 - exp_per_hosp_gh22) / (exp_per_hosp_gh22)) * 100) |>
-  mutate(exp_per_hosp_pct_change21_23 = ((exp_per_hosp_gh23 - exp_per_hosp_gh21) / (exp_per_hosp_gh21)) * 100)
+  mutate(exp_per_hosp_pct_change21_23 = ((exp_per_hosp_gh23 - exp_per_hosp_gh21) / (exp_per_hosp_gh21)) * 100) |>
+  mutate(prevstays_pct_change21_22 = ((prevstays_22 - prevstays_21) / (prevstays_22) *100))
 ```
 
 ```{r}
@@ -449,6 +453,20 @@ ec_MI |>
     avg_pct_change21_23 = mean(exp_per_hosp_pct_change21_23, na.rm = TRUE),
     min_change         = min(exp_per_hosp_pct_change21_23, na.rm = TRUE),
     max_change         = max(exp_per_hosp_pct_change21_23, na.rm = TRUE),
+    county_count       = n(),
+    .by = 'Corewell County'
+  )
+```
+
+## Preventable stays
+```{r}
+gh_MI |>
+  select(County,hosp_gh23, hosp_gh22, hosp_gh21, exp_per_hosp_gh23, exp_per_hosp_gh22, exp_per_hosp_gh21, prevstays_pct_change21_22, "Corewell County") |>
+  filter(hosp_gh22 != 0 & hosp_gh21 != 0 & hosp_gh23 != 0) |>
+    summarize(
+    avg_pct_change21_22 = mean(prevstays_pct_change21_22, na.rm = TRUE),
+    min_change         = min(prevstays_pct_change21_22, na.rm = TRUE),
+    max_change         = max(prevstays_pct_change21_22, na.rm = TRUE),
     county_count       = n(),
     .by = 'Corewell County'
   )
@@ -658,36 +676,6 @@ extracare23_MI |>
   summary(extracare23_IL$"Expenditures per Hospital")
 ```
 
-```{r}
-# generalhosp, nation
-summary(generalhosp23$"Expenditures per Hospital", na.rm = TRUE)
-```
-
-```{r}
-# generalhosp, MI
-summary(generalhosp23_MI$"Expenditures per Hospital", na.rm = TRUE)
-```
-
-```{r}
-# generalhosp, IL
-summary(generalhosp23_IL$"Expenditures per Hospital", na.rm = TRUE)
-```
-
-```{r}
-# extracare, nation
-summary(extracare23$"Expenditures per Hospital")
-```
-
-```{r}
-# extracare, MI
-summary(extracare23_MI$"Expenditures per Hospital")
-```
-
-```{r}
-# extracare, IL
-summary(extracare23_IL$"Expenditures per Hospital")
-```
-
 # Additional summary statistics
 
 ```{r}
@@ -759,3 +747,7 @@ dw_data_to_chart(generalhosp23, generalhosp23_chart)
 extracare23_chart <- dw_create_chart()
 dw_data_to_chart(extracare23, extracare23_chart)
 ```
+
+::::::::
+
+:::::::
