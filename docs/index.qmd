@@ -31,19 +31,24 @@ Michigan hospital systems are getting bigger, but have patients paid a price for
 
 This analysis focuses on the before and after effects of the Corewell merger on counties affected by the merger (those that have Corewell hospitals). Another distinction was also made to test health disparities between northern and southern Michigan.
 
-Last week, Blue Cross Blue Shield of Michigan finally reached a settlement with the University of Michigan Health (Michigan Medicine). The contract renegotiation between the two systems, which allows patients under the insurer to receive care at Michigan Medicine, had nearly failed, threatening 300,000 Detroit residents with a loss of care from one of the state's most reputable health systems. As in many industries, consolidation has taken over healthcare.
 
-In 2023, Michigan Medicine acquired another health system as well. Still, insurance companies blame hospitals for rising costs, and insurance companies blame hospitals. This April, Michigan Medicine sang praise for the results of the 2023 merger.
+### Context
 
-But a [May KFF](https://www.kff.org/health-costs/hospital-prices-have-risen-much-faster-for-private-insurance-than-medicare-since-2019/) study showed hospital prices are rising much faster for private insurance than Medicare since 2019. Another [KFF briefing from 2024](https://www.kff.org/health-costs/ten-things-to-know-about-consolidation-in-health-care-provider-markets/) explains that a large body of evidence points to healthcare consolidation increasing costs, but that the verdict on patient outcomes is less straightforward.
+In May, Blue Cross Blue Shield of Michigan finally reached a settlement with the University of Michigan Health (Michigan Medicine). The contract renegotiation between the two systems, which allows patients under the insurer to receive care at Michigan Medicine, had [nearly failed](https://www.detroitnews.com/story/business/2026/05/27/blue-cross-michigan-medicine-reach-deal/90274740007/), [threatening](https://www.detroitnews.com/story/business/2026/05/06/blue-cross-tells-250000-michigan-medicine-patients-find-new-doctors/89960599007/) 300,000 Detroit residents with a loss of care from one of the state's most reputable health systems. As in many industries, consolidation has taken over healthcare.
 
-Michigan Medicine [claims](https://prod.crainsdetroit.com/health-care/whats-behind-blue-cross-michigan-medicine-contract-dispute) it should be rewarded with better contracts thanks to its quality of care and focus on specialty medicine. But how has consolidation really worked out for patients in Michigan, from their health to their pocketbooks? Especially as Detroit's hospital buildings get shinier and taller, as with Henry Ford Hospital's in-progress \$2.2 billion, 20-story [expansion](https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#)?
+In 2023, Michigan Medicine acquired another health system. The year before, Beaumont Health System merged with Spectrum Health to create a combined 22-hospital system with 305 patient locations and 64,000 employees, [at the time of the merger](https://www.detroitnews.com/story/business/2022/10/11/new-beaumont-spectrum-hospital-system-becomes-corewell-health/69554912007/). 
 
-Thanks to an insurance dispute, [nearly](https://www.detroitnews.com/story/business/2026/05/27/blue-cross-michigan-medicine-reach-deal/90274740007/) 300,000 patients lost their access to the state's premier health system thanks to an insurance dispute [in June](https://www.detroitnews.com/story/business/2026/05/06/blue-cross-tells-250000-michigan-medicine-patients-find-new-doctors/89960599007/), healthcare costs [continue to soar](https://pmc.ncbi.nlm.nih.gov/articles/PMC12920308/) and a \$2.2 billion hospital construction project just reached [20 stories tall last month](https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#): it's time explain the juxtaposition between shiny buildings and growing systems with patient struggles.
+Insurance companies blame hospitals for rising costs, and hospitals blame the insurance companies. This April, Michigan Medicine sang praise for its merger after three years. Are hospitals merging to keep their power under the nation's insurers?
+
+A [May KFF](https://www.kff.org/health-costs/hospital-prices-have-risen-much-faster-for-private-insurance-than-medicare-since-2019/) study showed hospital prices are rising much faster for private insurance than Medicare since 2019. Another [KFF briefing from 2024](https://www.kff.org/health-costs/ten-things-to-know-about-consolidation-in-health-care-provider-markets/) explains that a large body of evidence points to healthcare consolidation increasing costs, but that the verdict on patient outcomes is less straightforward.
+
+Michigan Medicine [claims](https://prod.crainsdetroit.com/health-care/whats-behind-blue-cross-michigan-medicine-contract-dispute) it should be rewarded with better contracts thanks to its quality of care and focus on specialty medicine. As overall healthcare costs [continue to soar](https://pmc.ncbi.nlm.nih.gov/articles/PMC12920308/), how has consolidation really worked out for patients in Michigan, from their health to their pocketbooks? Especially as Detroit's hospital buildings get shinier and taller, as with Henry Ford Hospital's in-progress \$2.2 billion, 20-story [expansion](https://www.henryford.com/news/2026/05/henry-ford-hospital-construction-milestone#)?
+
+It's time to dig under the shiny buildings and growing systems to see how patients have been affected by healthcare mergers.
 
 <iframe title="Counties with a Corewell hospital associated with millions more in expenditures" aria-label="Table" id="datawrapper-chart-lWtgy" src="https://datawrapper.dwcdn.net/lWtgy/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1584" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
 
-Only Michigan's specialty care is concentrated in the populous Southwest area of the state: 16 of Michigan's 83 counties reported having hospitals providing specialty care. One key note for Michigan: that care is concentrated in the south of the state, as opposed to states with more equally distributed healthcare centers like Illinois, which has a similar overall population (Chicago and UIUC in southern Illinois are two major health centers). They're very populated Michigan counties, but the spending disparity is clear, especially as more investment is brought to Detroit.
+Beyond the mergers, Michigan's specialty care is concentrated in the populous Southeast area of the state: 16 of Michigan's 83 counties reported having hospitals providing specialty care. A part of this analysis also focuses on the healthcare in North versus South given this disparity. Could that geographic separation be an issue, as opposed to states states like Illinois, which has a similar overall population but has major health centers in Chicago and UIUC in southern Illinois, among others? They're very populated Michigan counties, but the spending disparity is clear, especially as more investment is brought to Detroit.
 
 <iframe title="Average per specialty hospital costs increased steeper in counties with a Corewell hospital" aria-label="Table" id="datawrapper-chart-UaaZO" src="https://datawrapper.dwcdn.net/UaaZO/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="618" data-external="1"></iframe><script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
 
@@ -119,12 +124,18 @@ A locator map could show detailed information about Detroit healthcare consolida
 
 A collaboration with a photographer could result in a patient photo story to add a human element.
 
-### Further reporting needs
+### Extending the analysis
 
-- Academic input on the nuances of healthcare market consolidation as it relates specifically to Michigan
-- Corporate and patient input
-- Insurance input (private, Medicare/Medicaid)
-- Continued exploration of data (direct patient costs, changes for particular hospital locations)
+- Begin analyzing the more recent per-hospital data, singling out facilities recently affected by mergers
+- Incorporate Wayne County consolidation data for a more narrow look at Detroit
+- Focus in on: pre- and post-merger metrics as it relates to patient health and insurance cost data
+
+### Reporting needs
+
+- Patient input
+- Academic input on the nuances of healthcare market consolidation as it specifically relates to Michigan
+- Input from hospital: both those under mergers and those that have remained independent
+- Insurance input (private, Medicare/Medicaid). Possibility for employer input on cost increases
 
 ### First reporting steps
 
